@@ -1,0 +1,73 @@
+{
+"skeleton": { "hash": "c9HEQVB5PMf3XX9XHbj6R8FxMfQ", "spine": "3.7.94", "width": 76, "height": 76, "images": "./img/", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "stone", "parent": "root" }
+],
+"slots": [
+	{ "name": "bonus_stone_empty", "bone": "stone", "attachment": "bonus_stone_empty" }
+],
+"skins": {
+	"default": {
+		"bonus_stone_empty": {
+			"bonus_stone_empty": { "width": 76, "height": 76 }
+		}
+	}
+},
+"animations": {
+	"in": {
+		"slots": {
+			"bonus_stone_empty": {
+				"color": [
+					{
+						"time": 0,
+						"color": "ffffff00",
+						"curve": [ 0.25, 0, 0.076, 1 ]
+					},
+					{ "time": 0.6667, "color": "ffffffff" }
+				]
+			}
+		},
+		"bones": {
+			"stone": {
+				"translate": [
+					{
+						"time": 0,
+						"x": 0,
+						"y": -20,
+						"curve": [ 0.25, 0, 0.076, 1 ]
+					},
+					{ "time": 0.6667, "x": 0, "y": 0 }
+				]
+			}
+		}
+	},
+	"out": {
+		"slots": {
+			"bonus_stone_empty": {
+				"color": [
+					{
+						"time": 0,
+						"color": "ffffffff",
+						"curve": [ 0.94, 0, 0.75, 1 ]
+					},
+					{ "time": 0.6667, "color": "ffffff00" }
+				]
+			}
+		},
+		"bones": {
+			"stone": {
+				"translate": [
+					{
+						"time": 0,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.94, 0, 0.75, 1 ]
+					},
+					{ "time": 0.6667, "x": 0, "y": -20 }
+				]
+			}
+		}
+	}
+}
+}

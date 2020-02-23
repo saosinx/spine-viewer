@@ -1,0 +1,345 @@
+{
+"skeleton": { "hash": "QVucC4meqeNEw928JrgKPxSOgww", "spine": "3.6.48", "width": 0, "height": 0, "images": "./img/" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "fx", "parent": "root" },
+	{ "name": "animal_to_stone", "parent": "fx" },
+	{ "name": "gold_shine", "parent": "fx" },
+	{ "name": "leaf", "parent": "fx", "x": -2, "y": 3 }
+],
+"slots": [
+	{ "name": "prize_revelation", "bone": "fx", "blend": "additive" },
+	{ "name": "leaf", "bone": "leaf" },
+	{ "name": "animal_to_stone", "bone": "animal_to_stone" },
+	{ "name": "gold_shine", "bone": "gold_shine", "blend": "additive" }
+],
+"skins": {
+	"default": {
+		"animal_to_stone": {
+			"animal_to_stone_fx_0001": { "x": 3.02, "y": 10.07, "width": 674, "height": 214 },
+			"animal_to_stone_fx_0002": { "x": 3.02, "y": 10.07, "width": 674, "height": 214 },
+			"animal_to_stone_fx_0003": { "x": 3.02, "y": 10.07, "width": 674, "height": 214 },
+			"animal_to_stone_fx_0004": { "x": 3.02, "y": 10.07, "width": 674, "height": 214 },
+			"animal_to_stone_fx_0005": { "x": 3.02, "y": 10.07, "width": 674, "height": 214 },
+			"animal_to_stone_fx_0006": { "x": 3.02, "y": 10.07, "width": 674, "height": 214 },
+			"animal_to_stone_fx_0007": { "x": 3.02, "y": 10.07, "width": 674, "height": 214 },
+			"animal_to_stone_fx_0008": { "x": 3.02, "y": 10.07, "width": 674, "height": 214 },
+			"animal_to_stone_fx_0009": { "x": 3.02, "y": 10.07, "width": 674, "height": 214 },
+			"animal_to_stone_fx_0010": { "x": 3.02, "y": 10.07, "width": 674, "height": 214 },
+			"animal_to_stone_fx_0011": { "x": 3.02, "y": 10.07, "width": 674, "height": 214 },
+			"animal_to_stone_fx_0012": { "x": 3.02, "y": 10.07, "width": 674, "height": 214 },
+			"animal_to_stone_fx_0013": { "x": 3.02, "y": 10.07, "width": 674, "height": 214 },
+			"animal_to_stone_fx_0014": { "x": 3.02, "y": 10.07, "width": 674, "height": 214 },
+			"animal_to_stone_fx_0015": { "x": 3.02, "y": 10.07, "width": 674, "height": 214 },
+			"animal_to_stone_fx_0016": { "x": 3.02, "y": 10.07, "width": 674, "height": 214 },
+			"animal_to_stone_fx_0017": { "x": 3.02, "y": 10.07, "width": 674, "height": 214 },
+			"animal_to_stone_fx_0018": { "x": 3.02, "y": 10.07, "width": 674, "height": 214 },
+			"animal_to_stone_fx_0019": { "x": 3.02, "y": 10.07, "width": 674, "height": 214 },
+			"animal_to_stone_fx_0020": { "x": 3.02, "y": 10.07, "width": 674, "height": 214 }
+		},
+		"gold_shine": {
+			"gold_shine": { "width": 743, "height": 654 }
+		},
+		"leaf": {
+			"bonus_prize_fx2_0001": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0002": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0003": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0004": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0005": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0006": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0007": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0008": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0009": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0010": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0011": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0012": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0013": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0014": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0015": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0016": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0017": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0018": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0019": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0020": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0021": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0022": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0023": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0024": { "x": 2, "y": -21, "width": 191, "height": 134 },
+			"bonus_prize_fx2_0025": { "x": 2, "y": -21, "width": 191, "height": 134 }
+		},
+		"prize_revelation": {
+			"bonus_prize_fx0001": { "x": -6, "width": 416, "height": 243 },
+			"bonus_prize_fx0002": { "x": -6, "width": 416, "height": 243 },
+			"bonus_prize_fx0003": { "x": -6, "width": 416, "height": 243 },
+			"bonus_prize_fx0004": { "x": -6, "width": 416, "height": 243 },
+			"bonus_prize_fx0005": { "x": -6, "width": 416, "height": 243 },
+			"bonus_prize_fx0006": { "x": -6, "width": 416, "height": 243 },
+			"bonus_prize_fx0007": { "x": -6, "width": 416, "height": 243 },
+			"bonus_prize_fx0008": { "x": -6, "width": 416, "height": 243 },
+			"bonus_prize_fx0009": { "x": -6, "width": 416, "height": 243 },
+			"bonus_prize_fx0010": { "x": -6, "width": 416, "height": 243 },
+			"bonus_prize_fx0011": { "x": -6, "width": 416, "height": 243 },
+			"bonus_prize_fx0012": { "x": -6, "width": 416, "height": 243 },
+			"bonus_prize_fx0013": { "x": -6, "width": 416, "height": 243 },
+			"bonus_prize_fx0014": { "x": -6, "width": 416, "height": 243 },
+			"bonus_prize_fx0015": { "x": -6, "width": 416, "height": 243 },
+			"bonus_prize_fx0016": { "x": -6, "width": 416, "height": 243 },
+			"bonus_prize_fx0017": { "x": -6, "width": 416, "height": 243 },
+			"bonus_prize_fx0018": { "x": -6, "width": 416, "height": 243 },
+			"bonus_prize_fx0019": { "x": -6, "width": 416, "height": 243 },
+			"bonus_prize_fx0020": { "x": -6, "width": 416, "height": 243 }
+		}
+	}
+},
+"animations": {
+	"animal_to_stone": {
+		"slots": {
+			"animal_to_stone": {
+				"attachment": [
+					{ "time": 0, "name": "animal_to_stone_fx_0001" },
+					{ "time": 0.0333, "name": "animal_to_stone_fx_0002" },
+					{ "time": 0.0667, "name": "animal_to_stone_fx_0003" },
+					{ "time": 0.1, "name": "animal_to_stone_fx_0004" },
+					{ "time": 0.1333, "name": "animal_to_stone_fx_0005" },
+					{ "time": 0.1667, "name": "animal_to_stone_fx_0006" },
+					{ "time": 0.2, "name": "animal_to_stone_fx_0007" },
+					{ "time": 0.2333, "name": "animal_to_stone_fx_0008" },
+					{ "time": 0.2667, "name": "animal_to_stone_fx_0009" },
+					{ "time": 0.3, "name": "animal_to_stone_fx_0010" },
+					{ "time": 0.3333, "name": "animal_to_stone_fx_0011" },
+					{ "time": 0.3667, "name": "animal_to_stone_fx_0012" },
+					{ "time": 0.4, "name": "animal_to_stone_fx_0013" },
+					{ "time": 0.4333, "name": "animal_to_stone_fx_0014" },
+					{ "time": 0.4667, "name": "animal_to_stone_fx_0015" },
+					{ "time": 0.5, "name": "animal_to_stone_fx_0016" },
+					{ "time": 0.5333, "name": "animal_to_stone_fx_0017" },
+					{ "time": 0.5667, "name": "animal_to_stone_fx_0018" },
+					{ "time": 0.6, "name": "animal_to_stone_fx_0019" },
+					{ "time": 0.6333, "name": "animal_to_stone_fx_0020" },
+					{ "time": 0.6667, "name": null }
+				]
+			}
+		}
+	},
+	"gold_shine_in": {
+		"slots": {
+			"gold_shine": {
+				"color": [
+					{
+						"time": 0,
+						"color": "ffffff00",
+						"curve": [ 0.311, 0.07, 0.224, 0.99 ]
+					},
+					{ "time": 0.5, "color": "ffffffff" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "gold_shine" }
+				]
+			}
+		},
+		"bones": {
+			"gold_shine": {
+				"scale": [
+					{ "time": 0, "x": 0.92, "y": 0.92 }
+				]
+			}
+		}
+	},
+	"gold_shine_loop": {
+		"slots": {
+			"gold_shine": {
+				"color": [
+					{
+						"time": 0,
+						"color": "ffffffff",
+						"curve": [ 0.624, 0.02, 0.384, 1 ]
+					},
+					{
+						"time": 1,
+						"color": "ffffffe5",
+						"curve": [ 0.624, 0.02, 0.384, 1 ]
+					},
+					{ "time": 2, "color": "ffffffff" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "gold_shine" }
+				]
+			}
+		},
+		"bones": {
+			"gold_shine": {
+				"scale": [
+					{
+						"time": 0,
+						"x": 1,
+						"y": 1,
+						"curve": [ 0.624, 0.02, 0.384, 1 ]
+					},
+					{
+						"time": 1,
+						"x": 1.04,
+						"y": 1.04,
+						"curve": [ 0.624, 0.02, 0.384, 1 ]
+					},
+					{ "time": 2, "x": 1, "y": 1 }
+				]
+			}
+		}
+	},
+	"gold_shine_out": {
+		"slots": {
+			"gold_shine": {
+				"color": [
+					{
+						"time": 0,
+						"color": "ffffffff",
+						"curve": [ 0.311, 0.07, 0.617, 1 ]
+					},
+					{ "time": 1, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "gold_shine" }
+				]
+			}
+		}
+	},
+	"prize_gold_revelation": {
+		"slots": {
+			"leaf": {
+				"attachment": [
+					{ "time": 0, "name": "bonus_prize_fx2_0001" },
+					{ "time": 0.0333, "name": "bonus_prize_fx2_0002" },
+					{ "time": 0.0667, "name": "bonus_prize_fx2_0003" },
+					{ "time": 0.1, "name": "bonus_prize_fx2_0004" },
+					{ "time": 0.1333, "name": "bonus_prize_fx2_0005" },
+					{ "time": 0.1667, "name": "bonus_prize_fx2_0006" },
+					{ "time": 0.2, "name": "bonus_prize_fx2_0007" },
+					{ "time": 0.2333, "name": "bonus_prize_fx2_0008" },
+					{ "time": 0.2667, "name": "bonus_prize_fx2_0009" },
+					{ "time": 0.3, "name": "bonus_prize_fx2_0010" },
+					{ "time": 0.3333, "name": "bonus_prize_fx2_0011" },
+					{ "time": 0.3667, "name": "bonus_prize_fx2_0012" },
+					{ "time": 0.4, "name": "bonus_prize_fx2_0013" },
+					{ "time": 0.4333, "name": "bonus_prize_fx2_0014" },
+					{ "time": 0.4667, "name": "bonus_prize_fx2_0015" },
+					{ "time": 0.5, "name": "bonus_prize_fx2_0016" },
+					{ "time": 0.5333, "name": "bonus_prize_fx2_0017" },
+					{ "time": 0.5667, "name": "bonus_prize_fx2_0018" },
+					{ "time": 0.6, "name": "bonus_prize_fx2_0019" },
+					{ "time": 0.6333, "name": "bonus_prize_fx2_0020" },
+					{ "time": 0.6667, "name": "bonus_prize_fx2_0021" },
+					{ "time": 0.7333, "name": "bonus_prize_fx2_0022" },
+					{ "time": 0.8, "name": "bonus_prize_fx2_0023" },
+					{ "time": 0.8667, "name": "bonus_prize_fx2_0024" },
+					{ "time": 0.9333, "name": "bonus_prize_fx2_0025" },
+					{ "time": 1, "name": null }
+				]
+			},
+			"prize_revelation": {
+				"color": [
+					{ "time": 0, "color": "ffa430ff" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "bonus_prize_fx0001" },
+					{ "time": 0.0333, "name": "bonus_prize_fx0002" },
+					{ "time": 0.0667, "name": "bonus_prize_fx0003" },
+					{ "time": 0.1, "name": "bonus_prize_fx0004" },
+					{ "time": 0.1333, "name": "bonus_prize_fx0005" },
+					{ "time": 0.1667, "name": "bonus_prize_fx0006" },
+					{ "time": 0.2, "name": "bonus_prize_fx0007" },
+					{ "time": 0.2333, "name": "bonus_prize_fx0008" },
+					{ "time": 0.2667, "name": "bonus_prize_fx0009" },
+					{ "time": 0.3, "name": "bonus_prize_fx0010" },
+					{ "time": 0.3333, "name": "bonus_prize_fx0011" },
+					{ "time": 0.4, "name": "bonus_prize_fx0012" },
+					{ "time": 0.4667, "name": "bonus_prize_fx0013" },
+					{ "time": 0.5333, "name": "bonus_prize_fx0014" },
+					{ "time": 0.6, "name": "bonus_prize_fx0015" },
+					{ "time": 0.6667, "name": "bonus_prize_fx0016" },
+					{ "time": 0.7333, "name": "bonus_prize_fx0017" },
+					{ "time": 0.8, "name": "bonus_prize_fx0018" },
+					{ "time": 0.8667, "name": "bonus_prize_fx0019" },
+					{ "time": 0.9333, "name": "bonus_prize_fx0020" },
+					{ "time": 1, "name": null }
+				]
+			}
+		},
+		"bones": {
+			"leaf": {
+				"translate": [
+					{ "time": 0, "x": -4, "y": 7 }
+				]
+			}
+		}
+	},
+	"prize_normal_revelation": {
+		"slots": {
+			"leaf": {
+				"attachment": [
+					{ "time": 0, "name": "bonus_prize_fx2_0001" },
+					{ "time": 0.0333, "name": "bonus_prize_fx2_0002" },
+					{ "time": 0.0667, "name": "bonus_prize_fx2_0003" },
+					{ "time": 0.1, "name": "bonus_prize_fx2_0004" },
+					{ "time": 0.1333, "name": "bonus_prize_fx2_0005" },
+					{ "time": 0.1667, "name": "bonus_prize_fx2_0006" },
+					{ "time": 0.2, "name": "bonus_prize_fx2_0007" },
+					{ "time": 0.2333, "name": "bonus_prize_fx2_0008" },
+					{ "time": 0.2667, "name": "bonus_prize_fx2_0009" },
+					{ "time": 0.3, "name": "bonus_prize_fx2_0010" },
+					{ "time": 0.3333, "name": "bonus_prize_fx2_0011" },
+					{ "time": 0.3667, "name": "bonus_prize_fx2_0012" },
+					{ "time": 0.4, "name": "bonus_prize_fx2_0013" },
+					{ "time": 0.4333, "name": "bonus_prize_fx2_0014" },
+					{ "time": 0.4667, "name": "bonus_prize_fx2_0015" },
+					{ "time": 0.5, "name": "bonus_prize_fx2_0016" },
+					{ "time": 0.5333, "name": "bonus_prize_fx2_0017" },
+					{ "time": 0.5667, "name": "bonus_prize_fx2_0018" },
+					{ "time": 0.6, "name": "bonus_prize_fx2_0019" },
+					{ "time": 0.6333, "name": "bonus_prize_fx2_0020" },
+					{ "time": 0.6667, "name": "bonus_prize_fx2_0021" },
+					{ "time": 0.7333, "name": "bonus_prize_fx2_0022" },
+					{ "time": 0.8, "name": "bonus_prize_fx2_0023" },
+					{ "time": 0.8667, "name": "bonus_prize_fx2_0024" },
+					{ "time": 0.9333, "name": "bonus_prize_fx2_0025" },
+					{ "time": 1, "name": null }
+				]
+			},
+			"prize_revelation": {
+				"color": [
+					{ "time": 0, "color": "86ff9eff" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "bonus_prize_fx0001" },
+					{ "time": 0.0333, "name": "bonus_prize_fx0002" },
+					{ "time": 0.0667, "name": "bonus_prize_fx0003" },
+					{ "time": 0.1, "name": "bonus_prize_fx0004" },
+					{ "time": 0.1333, "name": "bonus_prize_fx0005" },
+					{ "time": 0.1667, "name": "bonus_prize_fx0006" },
+					{ "time": 0.2, "name": "bonus_prize_fx0007" },
+					{ "time": 0.2333, "name": "bonus_prize_fx0008" },
+					{ "time": 0.2667, "name": "bonus_prize_fx0009" },
+					{ "time": 0.3, "name": "bonus_prize_fx0010" },
+					{ "time": 0.3333, "name": "bonus_prize_fx0011" },
+					{ "time": 0.4, "name": "bonus_prize_fx0012" },
+					{ "time": 0.4667, "name": "bonus_prize_fx0013" },
+					{ "time": 0.5333, "name": "bonus_prize_fx0014" },
+					{ "time": 0.6, "name": "bonus_prize_fx0015" },
+					{ "time": 0.6667, "name": "bonus_prize_fx0016" },
+					{ "time": 0.7333, "name": "bonus_prize_fx0017" },
+					{ "time": 0.8, "name": "bonus_prize_fx0018" },
+					{ "time": 0.8667, "name": "bonus_prize_fx0019" },
+					{ "time": 0.9333, "name": "bonus_prize_fx0020" },
+					{ "time": 1, "name": null }
+				]
+			}
+		},
+		"bones": {
+			"leaf": {
+				"translate": [
+					{ "time": 0, "x": -4, "y": 7 }
+				]
+			}
+		}
+	}
+}
+}

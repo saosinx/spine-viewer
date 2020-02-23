@@ -1,0 +1,791 @@
+{
+"skeleton": { "hash": "TjYMznhZFIqAApEdU7Hm209WOKw", "spine": "3.7.94", "width": 1418, "height": 1418, "images": "./img/", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "fx", "parent": "root", "scaleX": 2, "scaleY": 2 },
+	{ "name": "1", "parent": "fx" },
+	{ "name": "bingo", "parent": "root" },
+	{ "name": "celeb_bingo_coin1", "parent": "root", "x": -330.5, "y": 216.56 },
+	{ "name": "celeb_bingo_coin2", "parent": "root", "x": 335.35, "y": -28.64 },
+	{ "name": "celeb_bingo_coin3", "parent": "root", "x": 309.98, "y": -199.37 },
+	{ "name": "celeb_bingo_coin4", "parent": "root", "x": 237.64, "y": -145.12 },
+	{ "name": "celeb_bingo_coin5", "parent": "root", "x": -235.01, "y": -323.62 },
+	{ "name": "celeb_bingo_coin6", "parent": "root", "x": -411.88, "y": -104.43 },
+	{ "name": "celeb_bingo_plant1", "parent": "bingo", "x": -224.23, "y": -15.9 },
+	{ "name": "celeb_bingo_plant2", "parent": "bingo", "x": -177.19, "y": 12.52 },
+	{ "name": "celeb_bingo_plant3", "parent": "bingo", "x": 222.65, "y": 9.58 },
+	{ "name": "celeb_bingo_shine1", "parent": "root", "x": -2.68, "y": -35.49 },
+	{ "name": "celeb_bingo_shine2", "parent": "root", "x": -2.68, "y": -35.49, "scaleX": 2, "scaleY": 2 }
+],
+"slots": [
+	{ "name": "celeb_bingo_shine2", "bone": "celeb_bingo_shine2", "attachment": "celeb_bingo_shine2" },
+	{ "name": "celeb_bingo_plant3", "bone": "celeb_bingo_plant3", "attachment": "celeb_bingo_plant3" },
+	{ "name": "celeb_bingo_plant2", "bone": "celeb_bingo_plant2", "attachment": "celeb_bingo_plant2" },
+	{ "name": "celeb_bingo_plant1", "bone": "celeb_bingo_plant1", "attachment": "celeb_bingo_plant1" },
+	{ "name": "celeb_bingo_coin6", "bone": "celeb_bingo_coin6" },
+	{ "name": "celeb_bingo_coin5", "bone": "celeb_bingo_coin5" },
+	{ "name": "celeb_bingo_coin4", "bone": "celeb_bingo_coin4" },
+	{ "name": "celeb_bingo_coin3", "bone": "celeb_bingo_coin3" },
+	{ "name": "celeb_bingo_coin2", "bone": "celeb_bingo_coin2" },
+	{ "name": "celeb_bingo_coin1", "bone": "celeb_bingo_coin1" },
+	{ "name": "celeb_bingo", "bone": "bingo", "attachment": "celeb_bingo" },
+	{ "name": "celeb_bingo_shine1", "bone": "celeb_bingo_shine1", "attachment": "celeb_bingo_shine1", "blend": "additive" }
+],
+"skins": {
+	"default": {
+		"celeb_bingo": {
+			"celeb_bingo": { "width": 563, "height": 219 }
+		},
+		"celeb_bingo_coin1": {
+			"celeb_bingo_coin1": { "x": -5, "y": -0.56, "width": 121, "height": 148 }
+		},
+		"celeb_bingo_coin2": {
+			"celeb_bingo_coin2": { "x": 2.15, "y": 0.14, "width": 70, "height": 85 }
+		},
+		"celeb_bingo_coin3": {
+			"celeb_bingo_coin3": { "x": 2.52, "y": -2.63, "width": 41, "height": 37 }
+		},
+		"celeb_bingo_coin4": {
+			"celeb_bingo_coin4": { "x": 2.86, "y": -3.38, "width": 74, "height": 83 }
+		},
+		"celeb_bingo_coin5": {
+			"celeb_bingo_coin5": { "x": 2.51, "y": -0.38, "width": 73, "height": 90 }
+		},
+		"celeb_bingo_coin6": {
+			"celeb_bingo_coin6": { "x": -3.62, "y": -8.07, "width": 179, "height": 149 }
+		},
+		"celeb_bingo_plant1": {
+			"celeb_bingo_plant1": { "x": -74.27, "y": 8.9, "width": 175, "height": 99 }
+		},
+		"celeb_bingo_plant2": {
+			"celeb_bingo_plant2": { "x": -54.31, "y": 42.48, "width": 184, "height": 153 }
+		},
+		"celeb_bingo_plant3": {
+			"celeb_bingo_plant3": { "x": 76.35, "y": -43.58, "width": 247, "height": 267 }
+		},
+		"celeb_bingo_shine1": {
+			"celeb_bingo_shine1": { "x": 21.68, "y": 32.99, "width": 740, "height": 803 }
+		},
+		"celeb_bingo_shine2": {
+			"celeb_bingo_shine2": { "x": -27.82, "y": -0.51, "width": 709, "height": 709 }
+		}
+	}
+},
+"animations": {
+	"in": {
+		"slots": {
+			"celeb_bingo": {
+				"color": [
+					{ "time": 0, "color": "ffffff00" },
+					{ "time": 0.3333, "color": "ffffffff" }
+				]
+			},
+			"celeb_bingo_coin1": {
+				"color": [
+					{ "time": 1, "color": "ffffffff" },
+					{ "time": 1.1667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0.3333, "name": "celeb_bingo_coin1" }
+				]
+			},
+			"celeb_bingo_coin2": {
+				"color": [
+					{ "time": 1, "color": "ffffffff" },
+					{ "time": 1.1667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0.3333, "name": "celeb_bingo_coin2" }
+				]
+			},
+			"celeb_bingo_coin3": {
+				"color": [
+					{ "time": 1, "color": "ffffffff" },
+					{ "time": 1.1667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0.3333, "name": "celeb_bingo_coin3" }
+				]
+			},
+			"celeb_bingo_coin4": {
+				"color": [
+					{ "time": 1, "color": "ffffffff" },
+					{ "time": 1.1667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0.3333, "name": "celeb_bingo_coin4" }
+				]
+			},
+			"celeb_bingo_coin5": {
+				"color": [
+					{ "time": 1, "color": "ffffffff" },
+					{ "time": 1.1667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0.3333, "name": "celeb_bingo_coin5" }
+				]
+			},
+			"celeb_bingo_coin6": {
+				"color": [
+					{ "time": 1, "color": "ffffffff" },
+					{ "time": 1.1667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0.3333, "name": "celeb_bingo_coin6" }
+				]
+			},
+			"celeb_bingo_plant1": {
+				"color": [
+					{ "time": 0, "color": "ffffff00" },
+					{ "time": 0.3333, "color": "ffffffff" }
+				]
+			},
+			"celeb_bingo_plant2": {
+				"color": [
+					{ "time": 0, "color": "ffffff00" },
+					{ "time": 0.3333, "color": "ffffffff" }
+				]
+			},
+			"celeb_bingo_plant3": {
+				"color": [
+					{ "time": 0, "color": "ffffff00" },
+					{ "time": 0.3333, "color": "ffffffff" }
+				]
+			},
+			"celeb_bingo_shine1": {
+				"color": [
+					{ "time": 0, "color": "ffffff00" },
+					{ "time": 1.1667, "color": "ffffffff" }
+				]
+			}
+		},
+		"bones": {
+			"celeb_bingo_shine2": {
+				"scale": [
+					{ "time": 0, "x": 0.505, "y": 0.505 },
+					{
+						"time": 0.0667,
+						"x": 1.175,
+						"y": 1.175,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 0.6667, "x": 1, "y": 1 }
+				]
+			},
+			"bingo": {
+				"scale": [
+					{
+						"time": 0,
+						"x": 1.134,
+						"y": 1.134,
+						"curve": [ 0.25, 0, 0.075, 1 ]
+					},
+					{
+						"time": 0.3333,
+						"x": 0.913,
+						"y": 0.913,
+						"curve": [ 0.463, 0.01, 0.537, 1 ]
+					},
+					{ "time": 1, "x": 1, "y": 1 }
+				]
+			},
+			"celeb_bingo_plant3": {
+				"shear": [
+					{
+						"time": 0,
+						"x": 17.93,
+						"y": 0,
+						"curve": [ 0.25, 0, 0.075, 1 ]
+					},
+					{
+						"time": 0.5,
+						"x": -3.38,
+						"y": 0,
+						"curve": [ 0.463, 0.01, 0.537, 1 ]
+					},
+					{ "time": 1.1667, "x": 0, "y": 0 }
+				]
+			},
+			"celeb_bingo_plant1": {
+				"shear": [
+					{
+						"time": 0,
+						"x": -17.42,
+						"y": 0,
+						"curve": [ 0.25, 0, 0.075, 1 ]
+					},
+					{
+						"time": 0.5,
+						"x": 7.97,
+						"y": 0,
+						"curve": [ 0.463, 0.01, 0.537, 1 ]
+					},
+					{ "time": 1.1667, "x": 0, "y": 0 }
+				]
+			},
+			"celeb_bingo_plant2": {
+				"shear": [
+					{
+						"time": 0,
+						"x": -17.42,
+						"y": 0,
+						"curve": [ 0.25, 0, 0.075, 1 ]
+					},
+					{
+						"time": 0.5,
+						"x": 7.97,
+						"y": 0,
+						"curve": [ 0.463, 0.01, 0.537, 1 ]
+					},
+					{ "time": 1.1667, "x": 0, "y": 0 }
+				]
+			},
+			"celeb_bingo_coin4": {
+				"rotate": [
+					{
+						"time": 0.3333,
+						"angle": 0,
+						"curve": [ 0.001, 0, 0.07, 1 ]
+					},
+					{ "time": 1.1667, "angle": -140.47 }
+				],
+				"translate": [
+					{
+						"time": 0.3333,
+						"x": -150.54,
+						"y": 116.22,
+						"curve": [ 0.001, 0, 0.07, 1 ]
+					},
+					{ "time": 1.1667, "x": 157.56, "y": -161.46 }
+				]
+			},
+			"celeb_bingo_coin1": {
+				"rotate": [
+					{
+						"time": 0.3333,
+						"angle": 0,
+						"curve": [ 0, 0, 0.073, 1 ]
+					},
+					{ "time": 1.1667, "angle": 110.45 }
+				],
+				"translate": [
+					{
+						"time": 0.3333,
+						"x": 183.9,
+						"y": -180.85,
+						"curve": [ 0, 0, 0.073, 1 ]
+					},
+					{ "time": 1.1667, "x": -75.8, "y": 68.93 }
+				]
+			},
+			"celeb_bingo_coin2": {
+				"rotate": [
+					{
+						"time": 0.3333,
+						"angle": 0,
+						"curve": [ 0, 0, 0.076, 1 ]
+					},
+					{ "time": 1.1667, "angle": -104.25 }
+				],
+				"translate": [
+					{
+						"time": 0.3333,
+						"x": -100.58,
+						"y": 47.75,
+						"curve": [ 0, 0, 0.076, 1 ]
+					},
+					{ "time": 1.1667, "x": 183.9, "y": -11.18 }
+				]
+			},
+			"celeb_bingo_coin3": {
+				"rotate": [
+					{
+						"time": 0.3333,
+						"angle": 0,
+						"curve": [ 0, 0, 0.073, 1 ]
+					},
+					{ "time": 1.1667, "angle": -143.03 }
+				],
+				"translate": [
+					{
+						"time": 0.3333,
+						"x": -129.03,
+						"y": 170.69,
+						"curve": [ 0, 0, 0.073, 1 ]
+					},
+					{ "time": 1.1667, "x": 110.74, "y": 38.61 }
+				]
+			},
+			"celeb_bingo_coin5": {
+				"rotate": [
+					{
+						"time": 0.3333,
+						"angle": 0,
+						"curve": [ 0, 0, 0, 1 ]
+					},
+					{ "time": 1.1667, "angle": -140.32 }
+				],
+				"translate": [
+					{
+						"time": 0.3333,
+						"x": 107.7,
+						"y": 280.42,
+						"curve": [ 0, 0, 0, 1 ]
+					},
+					{ "time": 1.1667, "x": 12.19, "y": 14.22 }
+				]
+			},
+			"celeb_bingo_coin6": {
+				"rotate": [
+					{
+						"time": 0.3333,
+						"angle": 0,
+						"curve": [ 0, 0, 0.075, 1 ]
+					},
+					{ "time": 1.1667, "angle": -117.27 }
+				],
+				"translate": [
+					{
+						"time": 0.3333,
+						"x": 226.57,
+						"y": 97.54,
+						"curve": [ 0, 0, 0.075, 1 ]
+					},
+					{ "time": 1.1667, "x": -2.15, "y": -47.85 }
+				]
+			},
+			"celeb_bingo_shine1": {
+				"scale": [
+					{
+						"time": 0,
+						"x": 1.373,
+						"y": 1.373,
+						"curve": [ 0.475, 0.01, 0.543, 1 ]
+					},
+					{
+						"time": 0.5667,
+						"x": 0.865,
+						"y": 0.865,
+						"curve": [ 0.475, 0.01, 0.543, 1 ]
+					},
+					{ "time": 1.1667, "x": 1, "y": 1 }
+				]
+			}
+		}
+	},
+	"loop": {
+		"slots": {
+			"celeb_bingo_coin1": {
+				"color": [
+					{ "time": 0, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "celeb_bingo_coin1" }
+				]
+			},
+			"celeb_bingo_coin2": {
+				"color": [
+					{ "time": 0, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "celeb_bingo_coin2" }
+				]
+			},
+			"celeb_bingo_coin3": {
+				"color": [
+					{ "time": 0, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "celeb_bingo_coin3" }
+				]
+			},
+			"celeb_bingo_coin4": {
+				"color": [
+					{ "time": 0, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "celeb_bingo_coin4" }
+				]
+			},
+			"celeb_bingo_coin5": {
+				"color": [
+					{ "time": 0, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "celeb_bingo_coin5" }
+				]
+			},
+			"celeb_bingo_coin6": {
+				"color": [
+					{ "time": 0, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "celeb_bingo_coin6" }
+				]
+			}
+		},
+		"bones": {
+			"celeb_bingo_shine2": {
+				"scale": [
+					{
+						"time": 0,
+						"x": 1,
+						"y": 1,
+						"curve": [ 0.465, 0, 0.538, 1 ]
+					},
+					{
+						"time": 0.8333,
+						"x": 1.191,
+						"y": 1.191,
+						"curve": [ 0.465, 0, 0.538, 1 ]
+					},
+					{ "time": 1.6667, "x": 1, "y": 1 }
+				]
+			},
+			"bingo": {
+				"scale": [
+					{
+						"time": 0,
+						"x": 1,
+						"y": 1,
+						"curve": [ 0.465, 0.02, 0.535, 0.99 ]
+					},
+					{
+						"time": 0.7,
+						"x": 1.124,
+						"y": 1.124,
+						"curve": [ 0.465, 0.02, 0.535, 0.99 ]
+					},
+					{ "time": 1.4333, "x": 1, "y": 1 }
+				]
+			},
+			"celeb_bingo_plant3": {
+				"shear": [
+					{
+						"time": 0,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.459, 0.01, 0.541, 1 ]
+					},
+					{
+						"time": 0.9667,
+						"x": 9.17,
+						"y": 0,
+						"curve": [ 0.459, 0.01, 0.541, 1 ]
+					},
+					{ "time": 1.6667, "x": 0, "y": 0 }
+				]
+			},
+			"celeb_bingo_plant1": {
+				"shear": [
+					{
+						"time": 0,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.459, 0.01, 0.541, 1 ]
+					},
+					{
+						"time": 0.9667,
+						"x": -7.76,
+						"y": 0,
+						"curve": [ 0.459, 0.01, 0.541, 1 ]
+					},
+					{ "time": 1.6667, "x": 0, "y": 0 }
+				]
+			},
+			"celeb_bingo_plant2": {
+				"shear": [
+					{
+						"time": 0,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.459, 0.01, 0.541, 1 ]
+					},
+					{
+						"time": 0.9667,
+						"x": -7.76,
+						"y": 0,
+						"curve": [ 0.459, 0.01, 0.541, 1 ]
+					},
+					{ "time": 1.6667, "x": 0, "y": 0 }
+				]
+			},
+			"celeb_bingo_coin4": {
+				"rotate": [
+					{ "time": 0, "angle": -140.47 }
+				],
+				"translate": [
+					{ "time": 0, "x": 157.56, "y": -161.46 }
+				]
+			},
+			"celeb_bingo_coin1": {
+				"rotate": [
+					{ "time": 0, "angle": 110.45 }
+				],
+				"translate": [
+					{ "time": 0, "x": -75.8, "y": 68.93 }
+				]
+			},
+			"celeb_bingo_coin2": {
+				"rotate": [
+					{ "time": 0, "angle": -104.25 }
+				],
+				"translate": [
+					{ "time": 0, "x": 183.9, "y": -11.18 }
+				]
+			},
+			"celeb_bingo_coin3": {
+				"rotate": [
+					{ "time": 0, "angle": -143.03 }
+				],
+				"translate": [
+					{ "time": 0, "x": 110.74, "y": 38.61 }
+				]
+			},
+			"celeb_bingo_coin5": {
+				"rotate": [
+					{ "time": 0, "angle": -140.32 }
+				],
+				"translate": [
+					{ "time": 0, "x": 12.19, "y": 14.22 }
+				]
+			},
+			"celeb_bingo_coin6": {
+				"rotate": [
+					{ "time": 0, "angle": -117.27 }
+				],
+				"translate": [
+					{ "time": 0, "x": -2.15, "y": -47.85 }
+				]
+			},
+			"celeb_bingo_shine1": {
+				"scale": [
+					{
+						"time": 0,
+						"x": 1,
+						"y": 1,
+						"curve": [ 0.462, 0.01, 0.541, 1 ]
+					},
+					{
+						"time": 0.8667,
+						"x": 1.099,
+						"y": 1.099,
+						"curve": [ 0.462, 0.01, 0.541, 1 ]
+					},
+					{ "time": 1.6667, "x": 1, "y": 1 }
+				]
+			}
+		}
+	},
+	"out": {
+		"slots": {
+			"celeb_bingo": {
+				"color": [
+					{ "time": 0, "color": "ffffffff" },
+					{ "time": 0.8333, "color": "ffffff00" }
+				]
+			},
+			"celeb_bingo_coin1": {
+				"color": [
+					{ "time": 0, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "celeb_bingo_coin1" }
+				]
+			},
+			"celeb_bingo_coin2": {
+				"color": [
+					{ "time": 0, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "celeb_bingo_coin2" }
+				]
+			},
+			"celeb_bingo_coin3": {
+				"color": [
+					{ "time": 0, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "celeb_bingo_coin3" }
+				]
+			},
+			"celeb_bingo_coin4": {
+				"color": [
+					{ "time": 0, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "celeb_bingo_coin4" }
+				]
+			},
+			"celeb_bingo_coin5": {
+				"color": [
+					{ "time": 0, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "celeb_bingo_coin5" }
+				]
+			},
+			"celeb_bingo_coin6": {
+				"color": [
+					{ "time": 0, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "celeb_bingo_coin6" }
+				]
+			},
+			"celeb_bingo_plant1": {
+				"color": [
+					{ "time": 0, "color": "ffffffff" },
+					{ "time": 0.8333, "color": "ffffff00" }
+				]
+			},
+			"celeb_bingo_plant2": {
+				"color": [
+					{ "time": 0, "color": "ffffffff" },
+					{ "time": 0.8333, "color": "ffffff00" }
+				]
+			},
+			"celeb_bingo_plant3": {
+				"color": [
+					{ "time": 0, "color": "ffffffff" },
+					{ "time": 0.8333, "color": "ffffff00" }
+				]
+			},
+			"celeb_bingo_shine1": {
+				"color": [
+					{ "time": 0, "color": "ffffffff" },
+					{ "time": 0.8333, "color": "ffffff00" }
+				]
+			},
+			"celeb_bingo_shine2": {
+				"color": [
+					{ "time": 0, "color": "ffffffff" },
+					{ "time": 0.8333, "color": "ffffff00" }
+				]
+			}
+		},
+		"bones": {
+			"celeb_bingo_shine2": {
+				"scale": [
+					{
+						"time": 0,
+						"x": 1,
+						"y": 1,
+						"curve": [ 0.465, 0, 0.538, 1 ]
+					},
+					{ "time": 0.8333, "x": 1.191, "y": 1.191 }
+				]
+			},
+			"bingo": {
+				"scale": [
+					{
+						"time": 0,
+						"x": 1,
+						"y": 1,
+						"curve": [ 0.465, 0.02, 0.535, 0.99 ]
+					},
+					{
+						"time": 0.7,
+						"x": 1.124,
+						"y": 1.124,
+						"curve": [ 0.386, 0.04, 0.712, 0.41 ]
+					},
+					{ "time": 0.8333, "x": 1.115, "y": 1.115 }
+				]
+			},
+			"celeb_bingo_plant3": {
+				"shear": [
+					{
+						"time": 0,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.477, 0.01, 0.616, 0.78 ]
+					},
+					{ "time": 0.8333, "x": 8.84, "y": 0 }
+				]
+			},
+			"celeb_bingo_plant1": {
+				"shear": [
+					{
+						"time": 0,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.477, 0.01, 0.616, 0.78 ]
+					},
+					{ "time": 0.8333, "x": -7.48, "y": 0 }
+				]
+			},
+			"celeb_bingo_plant2": {
+				"shear": [
+					{
+						"time": 0,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.477, 0.01, 0.616, 0.78 ]
+					},
+					{ "time": 0.8333, "x": -7.48, "y": 0 }
+				]
+			},
+			"celeb_bingo_coin4": {
+				"rotate": [
+					{ "time": 0, "angle": -140.47 }
+				],
+				"translate": [
+					{ "time": 0, "x": 157.56, "y": -161.46 }
+				]
+			},
+			"celeb_bingo_coin1": {
+				"rotate": [
+					{ "time": 0, "angle": 110.45 }
+				],
+				"translate": [
+					{ "time": 0, "x": -75.8, "y": 68.93 }
+				]
+			},
+			"celeb_bingo_coin2": {
+				"rotate": [
+					{ "time": 0, "angle": -104.25 }
+				],
+				"translate": [
+					{ "time": 0, "x": 183.9, "y": -11.18 }
+				]
+			},
+			"celeb_bingo_coin3": {
+				"rotate": [
+					{ "time": 0, "angle": -143.03 }
+				],
+				"translate": [
+					{ "time": 0, "x": 110.74, "y": 38.61 }
+				]
+			},
+			"celeb_bingo_coin5": {
+				"rotate": [
+					{ "time": 0, "angle": -140.32 }
+				],
+				"translate": [
+					{ "time": 0, "x": 12.19, "y": 14.22 }
+				]
+			},
+			"celeb_bingo_coin6": {
+				"rotate": [
+					{ "time": 0, "angle": -117.27 }
+				],
+				"translate": [
+					{ "time": 0, "x": -2.15, "y": -47.85 }
+				]
+			},
+			"celeb_bingo_shine1": {
+				"scale": [
+					{
+						"time": 0,
+						"x": 1,
+						"y": 1,
+						"curve": [ 0.468, 0.01, 0.563, 0.93 ]
+					},
+					{ "time": 0.8333, "x": 1.098, "y": 1.098 }
+				]
+			}
+		}
+	}
+}
+}

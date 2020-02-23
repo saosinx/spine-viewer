@@ -1,0 +1,800 @@
+{
+"skeleton": { "hash": "Wq+DKQ1tKN174KcpjvILwOl9FcY", "spine": "3.7.94", "width": 77, "height": 78, "images": "./img/", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "nmbrs", "parent": "root", "x": 1.45, "y": -1.45 }
+],
+"slots": [
+	{ "name": "bonus_stones", "bone": "root", "attachment": "_color" },
+	{ "name": "bonus_stone_numbers", "bone": "nmbrs", "attachment": "_numbers" }
+],
+"skins": {
+	"default": {},
+	"1": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_1", "x": -4.19, "y": 1.45, "width": 22, "height": 41 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone9", "width": 77, "height": 78 }
+		}
+	},
+	"10": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_10", "x": 0.28, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone18", "path": "bonus_stone9", "width": 77, "height": 78 }
+		}
+	},
+	"11": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_11", "x": -3.18, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone1", "width": 77, "height": 78 }
+		}
+	},
+	"12": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_12", "x": -0.75, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone2", "path": "bonus_stone1", "width": 77, "height": 78 }
+		}
+	},
+	"13": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_13", "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone3", "path": "bonus_stone1", "width": 77, "height": 78 }
+		}
+	},
+	"14": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_14", "x": 0.03, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone4", "path": "bonus_stone1", "width": 77, "height": 78 }
+		}
+	},
+	"15": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_15", "x": 0.25, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone5", "path": "bonus_stone1", "width": 77, "height": 78 }
+		}
+	},
+	"16": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_16", "x": 0.28, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone6", "path": "bonus_stone1", "width": 77, "height": 78 }
+		}
+	},
+	"17": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_17", "x": 0.5, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone7", "path": "bonus_stone1", "width": 77, "height": 78 }
+		}
+	},
+	"18": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_18", "x": 1.5, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone8", "path": "bonus_stone1", "width": 77, "height": 78 }
+		}
+	},
+	"19": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_19", "x": 0.5, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone9", "path": "bonus_stone1", "width": 77, "height": 78 }
+		}
+	},
+	"2": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_2", "x": -0.74, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone10", "path": "bonus_stone9", "width": 77, "height": 78 }
+		}
+	},
+	"20": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_20", "x": 0.25, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone10", "path": "bonus_stone1", "width": 77, "height": 78 }
+		}
+	},
+	"21": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_21", "x": -2.24, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone2", "width": 77, "height": 78 }
+		}
+	},
+	"22": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_22", "x": -0.74, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone3", "path": "bonus_stone2", "width": 77, "height": 78 }
+		}
+	},
+	"23": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_23", "x": -0.5, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone4", "path": "bonus_stone2", "width": 77, "height": 78 }
+		}
+	},
+	"24": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_24", "x": -0.5, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone5", "path": "bonus_stone2", "width": 77, "height": 78 }
+		}
+	},
+	"25": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_25", "x": -0.5, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone6", "path": "bonus_stone2", "width": 77, "height": 78 }
+		}
+	},
+	"26": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_26", "x": 0.25, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone7", "path": "bonus_stone2", "width": 77, "height": 78 }
+		}
+	},
+	"27": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_27", "x": -0.17, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone8", "path": "bonus_stone2", "width": 77, "height": 78 }
+		}
+	},
+	"28": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_28", "x": 0.5, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone9", "path": "bonus_stone2", "width": 77, "height": 78 }
+		}
+	},
+	"29": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_29", "x": 0.15, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone10", "path": "bonus_stone2", "width": 77, "height": 78 }
+		}
+	},
+	"3": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_3", "x": 0.5, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone11", "path": "bonus_stone9", "width": 77, "height": 78 }
+		}
+	},
+	"30": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_30", "x": 1.65, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone11", "path": "bonus_stone2", "width": 77, "height": 78 }
+		}
+	},
+	"31": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_31", "x": -1.59, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone3", "width": 77, "height": 78 }
+		}
+	},
+	"32": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_32", "x": 0.7, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone4", "path": "bonus_stone3", "width": 77, "height": 78 }
+		}
+	},
+	"33": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_33", "x": 0.5, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone5", "path": "bonus_stone3", "width": 77, "height": 78 }
+		}
+	},
+	"34": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_34", "x": 0.5, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone6", "path": "bonus_stone3", "width": 77, "height": 78 }
+		}
+	},
+	"35": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_35", "x": 0.7, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone7", "path": "bonus_stone3", "width": 77, "height": 78 }
+		}
+	},
+	"36": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_36", "x": 1.31, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone8", "path": "bonus_stone3", "width": 77, "height": 78 }
+		}
+	},
+	"37": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_37", "x": 1.11, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone9", "path": "bonus_stone3", "width": 77, "height": 78 }
+		}
+	},
+	"38": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_38", "x": 2.48, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone10", "path": "bonus_stone3", "width": 77, "height": 78 }
+		}
+	},
+	"39": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_39", "x": 1.38, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone11", "path": "bonus_stone3", "width": 77, "height": 78 }
+		}
+	},
+	"4": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_4", "x": -1.04, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone12", "path": "bonus_stone9", "width": 77, "height": 78 }
+		}
+	},
+	"40": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_40", "x": -0.6, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone12", "path": "bonus_stone3", "width": 77, "height": 78 }
+		}
+	},
+	"41": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_41", "x": -3.02, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone6", "width": 77, "height": 78 }
+		}
+	},
+	"42": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_42", "x": -1.04, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone7", "path": "bonus_stone6", "width": 77, "height": 78 }
+		}
+	},
+	"43": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_43", "x": -0.38, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone8", "path": "bonus_stone6", "width": 77, "height": 78 }
+		}
+	},
+	"44": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_44", "x": -1.48, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone9", "path": "bonus_stone6", "width": 77, "height": 78 }
+		}
+	},
+	"45": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_45", "x": -0.38, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone10", "path": "bonus_stone6", "width": 77, "height": 78 }
+		}
+	},
+	"46": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_46", "x": -0.16, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone11", "path": "bonus_stone6", "width": 77, "height": 78 }
+		}
+	},
+	"47": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_47", "x": -0.38, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone12", "path": "bonus_stone6", "width": 77, "height": 78 }
+		}
+	},
+	"48": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_48", "x": 0.5, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone13", "path": "bonus_stone6", "width": 77, "height": 78 }
+		}
+	},
+	"49": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_49", "x": -0.16, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone14", "path": "bonus_stone6", "width": 77, "height": 78 }
+		}
+	},
+	"5": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_5", "x": 0.72, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone13", "path": "bonus_stone9", "width": 77, "height": 78 }
+		}
+	},
+	"50": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_50", "x": 1.16, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone15", "path": "bonus_stone6", "width": 77, "height": 78 }
+		}
+	},
+	"51": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_51", "x": -1.7, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone4", "width": 77, "height": 78 }
+		}
+	},
+	"52": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_52", "x": 0.5, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone5", "path": "bonus_stone4", "width": 77, "height": 78 }
+		}
+	},
+	"53": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_53", "x": 0.94, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone6", "path": "bonus_stone4", "width": 77, "height": 78 }
+		}
+	},
+	"54": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_54", "x": 0.72, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone7", "path": "bonus_stone4", "width": 77, "height": 78 }
+		}
+	},
+	"55": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_55", "x": 1.6, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone8", "path": "bonus_stone4", "width": 77, "height": 78 }
+		}
+	},
+	"56": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_56", "x": 1.6, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone9", "path": "bonus_stone4", "width": 77, "height": 78 }
+		}
+	},
+	"57": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_57", "x": 1.6, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone10", "path": "bonus_stone4", "width": 77, "height": 78 }
+		}
+	},
+	"58": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_58", "x": 1.82, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone11", "path": "bonus_stone4", "width": 77, "height": 78 }
+		}
+	},
+	"59": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_59", "x": 1.6, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone12", "path": "bonus_stone4", "width": 77, "height": 78 }
+		}
+	},
+	"6": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_6", "x": 0.72, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone14", "path": "bonus_stone9", "width": 77, "height": 78 }
+		}
+	},
+	"60": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_60", "x": -0.38, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone13", "path": "bonus_stone4", "width": 77, "height": 78 }
+		}
+	},
+	"61": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_61", "x": -3.02, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone7", "width": 77, "height": 78 }
+		}
+	},
+	"62": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_62", "x": -0.82, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone8", "path": "bonus_stone7", "width": 77, "height": 78 }
+		}
+	},
+	"63": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_63", "x": 0.06, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone9", "path": "bonus_stone7", "width": 77, "height": 78 }
+		}
+	},
+	"64": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_64", "x": -0.38, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone10", "path": "bonus_stone7", "width": 77, "height": 78 }
+		}
+	},
+	"65": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_65", "x": 0.28, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone11", "path": "bonus_stone7", "width": 77, "height": 78 }
+		}
+	},
+	"66": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_66", "x": 0.28, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone12", "path": "bonus_stone7", "width": 77, "height": 78 }
+		}
+	},
+	"67": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_67", "x": 0.5, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone13", "path": "bonus_stone7", "width": 77, "height": 78 }
+		}
+	},
+	"68": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_68", "x": 0.5, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone14", "path": "bonus_stone7", "width": 77, "height": 78 }
+		}
+	},
+	"69": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_69", "x": -0.16, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone15", "path": "bonus_stone7", "width": 77, "height": 78 }
+		}
+	},
+	"7": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_7", "x": 1.82, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone15", "path": "bonus_stone9", "width": 77, "height": 78 }
+		}
+	},
+	"70": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_70", "x": 1.6, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone16", "path": "bonus_stone7", "width": 77, "height": 78 }
+		}
+	},
+	"71": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_71", "x": -0.6, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone5", "width": 77, "height": 78 }
+		}
+	},
+	"72": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_72", "x": 1.16, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone6", "path": "bonus_stone5", "width": 77, "height": 78 }
+		}
+	},
+	"73": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_73", "x": 1.6, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone7", "path": "bonus_stone5", "width": 77, "height": 78 }
+		}
+	},
+	"74": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_74", "x": 1.82, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone8", "path": "bonus_stone5", "width": 77, "height": 78 }
+		}
+	},
+	"75": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_75", "x": 2.26, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone9", "path": "bonus_stone5", "width": 77, "height": 78 }
+		}
+	},
+	"76": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_76", "x": 3.36, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone10", "path": "bonus_stone5", "width": 77, "height": 78 }
+		}
+	},
+	"77": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_77", "x": 1.82, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone11", "path": "bonus_stone5", "width": 77, "height": 78 }
+		}
+	},
+	"78": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_78", "x": 3.14, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone12", "path": "bonus_stone5", "width": 77, "height": 78 }
+		}
+	},
+	"79": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_79", "x": 2.7, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone13", "path": "bonus_stone5", "width": 77, "height": 78 }
+		}
+	},
+	"8": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_8", "x": 2.7, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone16", "path": "bonus_stone9", "width": 77, "height": 78 }
+		}
+	},
+	"80": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_80", "x": 0.72, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone14", "path": "bonus_stone5", "width": 77, "height": 78 }
+		}
+	},
+	"81": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_81", "x": -1.7, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone8", "width": 75, "height": 76 }
+		}
+	},
+	"82": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_82", "x": 0.28, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone9", "path": "bonus_stone8", "width": 75, "height": 76 }
+		}
+	},
+	"83": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_83", "x": 0.5, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone10", "path": "bonus_stone8", "width": 75, "height": 76 }
+		}
+	},
+	"84": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_84", "x": 0.72, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone11", "path": "bonus_stone8", "width": 75, "height": 76 }
+		}
+	},
+	"85": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_85", "x": 0.94, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone12", "path": "bonus_stone8", "width": 75, "height": 76 }
+		}
+	},
+	"86": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_86", "x": 0.94, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone13", "path": "bonus_stone8", "width": 75, "height": 76 }
+		}
+	},
+	"87": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_87", "x": 0.72, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone14", "path": "bonus_stone8", "width": 75, "height": 76 }
+		}
+	},
+	"88": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_88", "x": 2.26, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone15", "path": "bonus_stone8", "width": 75, "height": 76 }
+		}
+	},
+	"89": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_89", "x": 1.16, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone16", "path": "bonus_stone8", "width": 75, "height": 76 }
+		}
+	},
+	"9": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_9", "x": 0.5, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone17", "path": "bonus_stone9", "width": 77, "height": 78 }
+		}
+	},
+	"90": {
+		"bonus_stone_numbers": {
+			"_numbers": { "name": "sn_90", "x": 0.5, "y": 0.5, "width": 97, "height": 65 }
+		},
+		"bonus_stones": {
+			"_color": { "name": "bonus_stone17", "path": "bonus_stone8", "width": 75, "height": 76 }
+		}
+	}
+},
+"animations": {
+	"in": {
+		"bones": {
+			"root": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 0.0333, "x": 0, "y": 25.15, "curve": "stepped" },
+					{ "time": 0.1, "x": 0, "y": 36.29, "curve": "stepped" },
+					{ "time": 0.1667, "x": 0, "y": 39.63, "curve": "stepped" },
+					{ "time": 0.2333, "x": 0, "y": 40.72, "curve": "stepped" },
+					{ "time": 0.3, "x": 0, "y": 37.03, "curve": "stepped" },
+					{ "time": 0.3333, "x": 0, "y": 12.79, "curve": "stepped" },
+					{ "time": 0.3667, "x": 0, "y": -1.97, "curve": "stepped" },
+					{ "time": 0.4333, "x": 0, "y": 0 }
+				],
+				"scale": [
+					{ "time": 0, "x": 0.955, "y": 1.031, "curve": "stepped" },
+					{ "time": 0.0333, "x": 0.983, "y": 1.014, "curve": "stepped" },
+					{ "time": 0.1, "x": 1, "y": 1, "curve": "stepped" },
+					{ "time": 0.2333, "x": 1, "y": 1, "curve": "stepped" },
+					{ "time": 0.3, "x": 0.98, "y": 1.014, "curve": "stepped" },
+					{ "time": 0.3333, "x": 0.958, "y": 1.069, "curve": "stepped" },
+					{ "time": 0.3667, "x": 1.006, "y": 0.983, "curve": "stepped" },
+					{ "time": 0.4333, "x": 1, "y": 1 }
+				]
+			}
+		}
+	},
+	"out": {
+		"slots": {
+			"bonus_stone_numbers": {
+				"color": [
+					{
+						"time": 0,
+						"color": "ffffffff",
+						"curve": [ 0.779, 0, 0.617, 1 ]
+					},
+					{ "time": 0.5, "color": "ffffff00" }
+				]
+			},
+			"bonus_stones": {
+				"color": [
+					{
+						"time": 0,
+						"color": "ffffffff",
+						"curve": [ 0.779, 0, 0.617, 1 ]
+					},
+					{ "time": 0.5, "color": "ffffff00" }
+				]
+			}
+		},
+		"bones": {
+			"root": {
+				"translate": [
+					{
+						"time": 0,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.779, 0, 0.617, 1 ]
+					},
+					{ "time": 0.5, "x": 0, "y": -5.24 }
+				]
+			}
+		}
+	}
+}
+}

@@ -1,0 +1,21 @@
+{
+"skeleton": { "hash": "4M8Jojq87SqoqmhVdR/P/5EN+v8", "spine": "3.7.94", "width": 75, "height": 68, "images": "./img/", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "bg", "parent": "root" },
+	{ "name": "master", "parent": "root" }
+],
+"slots": [
+	{ "name": "number_ticket", "bone": "bg", "attachment": "number_ticket" }
+],
+"skins": {
+	"default": {
+		"number_ticket": {
+			"number_ticket": { "x": 0.5, "width": 75, "height": 68 }
+		}
+	}
+},
+"animations": {
+	"animation": {}
+}
+}

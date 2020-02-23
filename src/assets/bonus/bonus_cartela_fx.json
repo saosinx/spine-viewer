@@ -1,0 +1,390 @@
+{
+"skeleton": { "hash": "rpL/5JIiJ84Tf6rvOsfNzepwaNI", "spine": "3.7.94", "width": 0, "height": 0 },
+"bones": [
+	{ "name": "root" },
+	{ "name": "point", "parent": "root" },
+	{ "name": "bingo", "parent": "point", "scaleX": 1.16, "scaleY": 1.16 },
+	{ "name": "win_square", "parent": "point" }
+],
+"slots": [
+	{ "name": "point2", "bone": "point" },
+	{ "name": "point", "bone": "point" },
+	{ "name": "cartela_fx", "bone": "point" },
+	{ "name": "bingo", "bone": "bingo", "blend": "additive" },
+	{ "name": "cartela_win_square", "bone": "win_square" }
+],
+"skins": {
+	"default": {
+		"bingo": {
+			"bonus_cartela_bingofx_0001": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0002": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0003": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0004": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0005": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0006": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0007": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0008": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0009": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0010": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0011": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0012": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0013": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0014": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0015": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0016": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0017": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0018": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0019": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0020": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0021": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0022": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0023": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0024": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0025": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0026": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0027": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0028": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0029": { "width": 444, "height": 304 },
+			"bonus_cartela_bingofx_0030": { "width": 444, "height": 304 }
+		},
+		"cartela_fx": {
+			"bonus_cartela_winfx_0001": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0002": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0003": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0004": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0005": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0006": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0007": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0008": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0009": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0010": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0011": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0012": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0013": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0014": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0015": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0016": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0017": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0018": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0019": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0020": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0021": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0022": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0023": { "width": 514, "height": 310 },
+			"bonus_cartela_winfx_0024": { "width": 514, "height": 310 }
+		},
+		"cartela_win_square": {
+			"cartela_point_line_fx0001": { "width": 220, "height": 160 },
+			"cartela_point_line_fx0002": { "width": 220, "height": 160 },
+			"cartela_point_line_fx0003": { "width": 220, "height": 160 },
+			"cartela_point_line_fx0004": { "width": 220, "height": 160 },
+			"cartela_point_line_fx0005": { "width": 220, "height": 160 },
+			"cartela_point_line_fx0006": { "width": 220, "height": 160 },
+			"cartela_point_line_fx0007": { "width": 220, "height": 160 },
+			"cartela_point_line_fx0008": { "width": 220, "height": 160 },
+			"cartela_point_line_fx0009": { "width": 220, "height": 160 },
+			"cartela_point_line_fx0010": { "width": 220, "height": 160 },
+			"cartela_point_line_fx0011": { "width": 220, "height": 160 },
+			"cartela_point_line_fx0012": { "width": 220, "height": 160 },
+			"cartela_point_line_fx0013": { "width": 220, "height": 160 },
+			"cartela_point_line_fx0014": { "width": 220, "height": 160 },
+			"cartela_point_line_fx0015": { "width": 220, "height": 160 },
+			"cartela_point_line_fx0016": { "width": 220, "height": 160 },
+			"cartela_point_line_fx0017": { "width": 220, "height": 160 },
+			"cartela_point_line_fx0018": { "width": 220, "height": 160 },
+			"cartela_point_line_fx0019": { "width": 220, "height": 160 },
+			"cartela_point_line_fx0020": { "width": 220, "height": 160 },
+			"cartela_point_line_fx0021": { "width": 220, "height": 160 }
+		},
+		"point": {
+			"cartela_point_fx0001": { "width": 70, "height": 67 },
+			"cartela_point_fx0002": { "width": 70, "height": 67 },
+			"cartela_point_fx0003": { "width": 70, "height": 67 },
+			"cartela_point_fx0004": { "width": 70, "height": 67 },
+			"cartela_point_fx0005": { "width": 70, "height": 67 },
+			"cartela_point_fx0006": { "width": 70, "height": 67 },
+			"cartela_point_fx0007": { "width": 70, "height": 67 },
+			"cartela_point_fx0008": { "width": 70, "height": 67 },
+			"cartela_point_fx0009": { "width": 70, "height": 67 },
+			"cartela_point_fx0010": { "width": 70, "height": 67 }
+		},
+		"point2": {
+			"cartela_point_fx0001": { "width": 70, "height": 67 },
+			"cartela_point_fx0002": { "width": 70, "height": 67 },
+			"cartela_point_fx0003": { "width": 70, "height": 67 },
+			"cartela_point_fx0004": { "width": 70, "height": 67 },
+			"cartela_point_fx0005": { "width": 70, "height": 67 },
+			"cartela_point_fx0006": { "width": 70, "height": 67 },
+			"cartela_point_fx0007": { "width": 70, "height": 67 },
+			"cartela_point_fx0008": { "width": 70, "height": 67 },
+			"cartela_point_fx0009": { "width": 70, "height": 67 },
+			"cartela_point_fx0010": { "width": 70, "height": 67 }
+		}
+	}
+},
+"animations": {
+	"bingo_win": {
+		"slots": {
+			"bingo": {
+				"attachment": [
+					{ "time": 0, "name": "bonus_cartela_bingofx_0016" },
+					{ "time": 0.0333, "name": "bonus_cartela_bingofx_0002" },
+					{ "time": 0.0667, "name": "bonus_cartela_bingofx_0003" },
+					{ "time": 0.1, "name": "bonus_cartela_bingofx_0004" },
+					{ "time": 0.1333, "name": "bonus_cartela_bingofx_0005" },
+					{ "time": 0.1667, "name": "bonus_cartela_bingofx_0006" },
+					{ "time": 0.2, "name": "bonus_cartela_bingofx_0007" },
+					{ "time": 0.2333, "name": "bonus_cartela_bingofx_0008" },
+					{ "time": 0.2667, "name": "bonus_cartela_bingofx_0009" },
+					{ "time": 0.3, "name": "bonus_cartela_bingofx_0010" },
+					{ "time": 0.3333, "name": "bonus_cartela_bingofx_0011" },
+					{ "time": 0.3667, "name": "bonus_cartela_bingofx_0012" },
+					{ "time": 0.4, "name": "bonus_cartela_bingofx_0013" },
+					{ "time": 0.4333, "name": "bonus_cartela_bingofx_0014" },
+					{ "time": 0.4667, "name": "bonus_cartela_bingofx_0015" },
+					{ "time": 0.5, "name": "bonus_cartela_bingofx_0016" },
+					{ "time": 0.5333, "name": "bonus_cartela_bingofx_0017" },
+					{ "time": 0.5667, "name": "bonus_cartela_bingofx_0018" },
+					{ "time": 0.6, "name": "bonus_cartela_bingofx_0019" },
+					{ "time": 0.6333, "name": "bonus_cartela_bingofx_0020" },
+					{ "time": 0.6667, "name": "bonus_cartela_bingofx_0021" },
+					{ "time": 0.7, "name": "bonus_cartela_bingofx_0022" },
+					{ "time": 0.7333, "name": "bonus_cartela_bingofx_0023" },
+					{ "time": 0.7667, "name": "bonus_cartela_bingofx_0024" },
+					{ "time": 0.8, "name": "bonus_cartela_bingofx_0025" },
+					{ "time": 0.8333, "name": "bonus_cartela_bingofx_0026" },
+					{ "time": 0.8667, "name": "bonus_cartela_bingofx_0027" },
+					{ "time": 0.9, "name": "bonus_cartela_bingofx_0028" },
+					{ "time": 0.9333, "name": "bonus_cartela_bingofx_0029" },
+					{ "time": 0.9667, "name": "bonus_cartela_bingofx_0030" }
+				]
+			}
+		}
+	},
+	"cartela_win": {
+		"slots": {
+			"cartela_fx": {
+				"attachment": [
+					{ "time": 0, "name": "bonus_cartela_winfx_0001" },
+					{ "time": 0.0333, "name": "bonus_cartela_winfx_0002" },
+					{ "time": 0.0667, "name": "bonus_cartela_winfx_0003" },
+					{ "time": 0.1, "name": "bonus_cartela_winfx_0004" },
+					{ "time": 0.1333, "name": "bonus_cartela_winfx_0005" },
+					{ "time": 0.1667, "name": "bonus_cartela_winfx_0006" },
+					{ "time": 0.2, "name": "bonus_cartela_winfx_0007" },
+					{ "time": 0.2333, "name": "bonus_cartela_winfx_0008" },
+					{ "time": 0.2667, "name": "bonus_cartela_winfx_0009" },
+					{ "time": 0.3, "name": "bonus_cartela_winfx_0010" },
+					{ "time": 0.3333, "name": "bonus_cartela_winfx_0011" },
+					{ "time": 0.3667, "name": "bonus_cartela_winfx_0012" },
+					{ "time": 0.4, "name": "bonus_cartela_winfx_0013" },
+					{ "time": 0.4333, "name": "bonus_cartela_winfx_0014" },
+					{ "time": 0.4667, "name": "bonus_cartela_winfx_0015" },
+					{ "time": 0.5, "name": "bonus_cartela_winfx_0016" },
+					{ "time": 0.5333, "name": "bonus_cartela_winfx_0017" },
+					{ "time": 0.5667, "name": "bonus_cartela_winfx_0018" },
+					{ "time": 0.6, "name": "bonus_cartela_winfx_0019" },
+					{ "time": 0.6333, "name": "bonus_cartela_winfx_0020" },
+					{ "time": 0.6667, "name": "bonus_cartela_winfx_0021" },
+					{ "time": 0.7, "name": "bonus_cartela_winfx_0022" },
+					{ "time": 0.7333, "name": "bonus_cartela_winfx_0023" },
+					{ "time": 0.7667, "name": "bonus_cartela_winfx_0024" }
+				]
+			}
+		},
+		"bones": {
+			"point": {
+				"translate": [
+					{ "time": 0, "x": -6.31, "y": -5.26 }
+				]
+			}
+		}
+	},
+	"point_in": {
+		"slots": {
+			"cartela_win_square": {
+				"attachment": [
+					{ "time": 0.0333, "name": "cartela_point_line_fx0001" },
+					{ "time": 0.0667, "name": "cartela_point_line_fx0002" },
+					{ "time": 0.1, "name": "cartela_point_line_fx0003" },
+					{ "time": 0.1333, "name": "cartela_point_line_fx0004" },
+					{ "time": 0.1667, "name": "cartela_point_line_fx0005" },
+					{ "time": 0.2, "name": "cartela_point_line_fx0006" },
+					{ "time": 0.2333, "name": "cartela_point_line_fx0007" },
+					{ "time": 0.2667, "name": "cartela_point_line_fx0008" },
+					{ "time": 0.3, "name": "cartela_point_line_fx0009" },
+					{ "time": 0.3333, "name": "cartela_point_line_fx0010" },
+					{ "time": 0.3667, "name": "cartela_point_line_fx0011" },
+					{ "time": 0.4, "name": "cartela_point_line_fx0012" },
+					{ "time": 0.4333, "name": "cartela_point_line_fx0013" },
+					{ "time": 0.4667, "name": "cartela_point_line_fx0014" },
+					{ "time": 0.5, "name": "cartela_point_line_fx0015" },
+					{ "time": 0.5333, "name": "cartela_point_line_fx0016" },
+					{ "time": 0.5667, "name": "cartela_point_line_fx0017" },
+					{ "time": 0.6, "name": "cartela_point_line_fx0018" },
+					{ "time": 0.6333, "name": "cartela_point_line_fx0019" },
+					{ "time": 0.6667, "name": "cartela_point_line_fx0020" },
+					{ "time": 0.7, "name": "cartela_point_line_fx0021" }
+				]
+			},
+			"point": {
+				"color": [
+					{ "time": 0, "color": "72ff44ff" }
+				],
+				"attachment": [
+					{ "time": 0.5333, "name": "cartela_point_fx0001" },
+					{ "time": 0.5667, "name": "cartela_point_fx0002" },
+					{ "time": 0.6, "name": "cartela_point_fx0003" },
+					{ "time": 0.6333, "name": "cartela_point_fx0004" },
+					{ "time": 0.7, "name": "cartela_point_fx0005" },
+					{ "time": 0.7667, "name": "cartela_point_fx0006" },
+					{ "time": 0.8333, "name": "cartela_point_fx0007" },
+					{ "time": 0.9, "name": "cartela_point_fx0008" },
+					{ "time": 0.9667, "name": "cartela_point_fx0009" },
+					{ "time": 1.0333, "name": "cartela_point_fx0010" }
+				]
+			},
+			"point2": {
+				"color": [
+					{ "time": 0, "color": "ffffffff" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "cartela_point_fx0001" },
+					{ "time": 0.0333, "name": "cartela_point_fx0002" },
+					{ "time": 0.0667, "name": "cartela_point_fx0003" },
+					{ "time": 0.1, "name": "cartela_point_fx0004" },
+					{ "time": 0.1667, "name": "cartela_point_fx0005" },
+					{ "time": 0.2333, "name": "cartela_point_fx0006" },
+					{ "time": 0.3, "name": "cartela_point_fx0007" },
+					{ "time": 0.3667, "name": "cartela_point_fx0008" },
+					{ "time": 0.4333, "name": "cartela_point_fx0009" },
+					{ "time": 0.5, "name": "cartela_point_fx0010" }
+				]
+			}
+		},
+		"bones": {
+			"win_square": {
+				"scale": [
+					{ "time": 0, "x": 1, "y": 1 }
+				]
+			}
+		}
+	},
+	"point_win_in": {
+		"slots": {
+			"cartela_win_square": {
+				"attachment": [
+					{ "time": 0.0333, "name": "cartela_point_line_fx0001" },
+					{ "time": 0.0667, "name": "cartela_point_line_fx0002" },
+					{ "time": 0.1, "name": "cartela_point_line_fx0003" },
+					{ "time": 0.1333, "name": "cartela_point_line_fx0004" },
+					{ "time": 0.1667, "name": "cartela_point_line_fx0005" },
+					{ "time": 0.2, "name": "cartela_point_line_fx0006" },
+					{ "time": 0.2333, "name": "cartela_point_line_fx0007" },
+					{ "time": 0.2667, "name": "cartela_point_line_fx0008" },
+					{ "time": 0.3, "name": "cartela_point_line_fx0009" },
+					{ "time": 0.3333, "name": "cartela_point_line_fx0010" },
+					{ "time": 0.3667, "name": "cartela_point_line_fx0011" },
+					{ "time": 0.4, "name": "cartela_point_line_fx0012" },
+					{ "time": 0.4333, "name": "cartela_point_line_fx0013" },
+					{ "time": 0.4667, "name": "cartela_point_line_fx0014" },
+					{ "time": 0.5, "name": "cartela_point_line_fx0015" },
+					{ "time": 0.5333, "name": "cartela_point_line_fx0016" },
+					{ "time": 0.5667, "name": "cartela_point_line_fx0017" },
+					{ "time": 0.6, "name": "cartela_point_line_fx0018" },
+					{ "time": 0.6333, "name": "cartela_point_line_fx0019" },
+					{ "time": 0.6667, "name": "cartela_point_line_fx0020" },
+					{ "time": 0.7, "name": "cartela_point_line_fx0021" }
+				]
+			},
+			"point": {
+				"color": [
+					{
+						"time": 0,
+						"color": "72ff44ff",
+						"curve": [ 0.311, 0.07, 0.617, 1 ]
+					},
+					{
+						"time": 0.2667,
+						"color": "43fbffff",
+						"curve": [ 0.311, 0.07, 0.617, 1 ]
+					},
+					{
+						"time": 0.7333,
+						"color": "72ff44ff",
+						"curve": [ 0.311, 0.07, 0.617, 1 ]
+					},
+					{
+						"time": 1,
+						"color": "43fbffff",
+						"curve": [ 0.311, 0.07, 0.617, 1 ]
+					},
+					{
+						"time": 1.4667,
+						"color": "72ff44ff",
+						"curve": [ 0.311, 0.07, 0.617, 1 ]
+					},
+					{ "time": 2.3333, "color": "43fbffff" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "cartela_point_fx0010" }
+				]
+			},
+			"point2": {
+				"color": [
+					{
+						"time": 0,
+						"color": "72ff44ff",
+						"curve": [ 0.311, 0.07, 0.617, 1 ]
+					},
+					{
+						"time": 0.2667,
+						"color": "43fbffff",
+						"curve": [ 0.311, 0.07, 0.617, 1 ]
+					},
+					{
+						"time": 0.7333,
+						"color": "72ff44ff",
+						"curve": [ 0.311, 0.07, 0.617, 1 ]
+					},
+					{
+						"time": 1,
+						"color": "43fbffff",
+						"curve": [ 0.311, 0.07, 0.617, 1 ]
+					},
+					{
+						"time": 1.4667,
+						"color": "72ff44ff",
+						"curve": [ 0.311, 0.07, 0.617, 1 ]
+					},
+					{ "time": 2.3333, "color": "43fbffff" }
+				]
+			}
+		},
+		"bones": {
+			"win_square": {
+				"scale": [
+					{ "time": 0, "x": 1, "y": 1 }
+				]
+			}
+		}
+	},
+	"point_win_loop": {
+		"slots": {
+			"point": {
+				"color": [
+					{ "time": 0, "color": "43fbffff" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "cartela_point_fx0010" }
+				]
+			},
+			"point2": {
+				"color": [
+					{ "time": 0, "color": "43fbffff" }
+				]
+			}
+		}
+	}
+}
+}

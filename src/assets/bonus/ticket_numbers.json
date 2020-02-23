@@ -1,0 +1,516 @@
+{
+"skeleton": { "hash": "bqBPL4CzE/y98o1Qr1xC1tDSA+k", "spine": "3.7.94", "width": 75, "height": 68, "images": "./img/", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "master", "parent": "root" },
+	{ "name": "numbers", "parent": "master" }
+],
+"slots": [
+	{ "name": "numbers", "bone": "numbers", "attachment": "number" }
+],
+"skins": {
+	"default": {},
+	"01": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_01", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"02": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_02", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"03": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_03", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"04": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_04", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"05": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_05", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"06": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_06", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"07": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_07", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"08": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_08", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"09": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_09", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"10": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_10", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"11": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_11", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"12": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_12", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"13": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_13", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"14": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_14", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"15": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_15", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"16": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_16", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"17": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_17", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"18": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_18", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"19": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_19", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"20": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_20", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"21": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_21", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"22": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_22", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"23": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_23", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"24": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_24", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"25": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_25", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"26": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_26", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"27": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_27", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"28": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_28", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"29": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_29", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"30": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_30", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"31": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_31", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"32": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_32", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"33": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_33", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"34": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_34", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"35": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_35", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"36": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_36", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"37": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_37", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"38": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_38", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"39": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_39", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"40": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_40", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"41": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_41", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"42": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_42", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"43": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_43", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"44": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_44", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"45": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_45", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"46": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_46", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"47": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_47", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"48": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_48", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"49": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_49", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"50": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_50", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"51": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_51", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"52": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_52", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"53": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_53", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"54": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_54", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"55": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_55", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"56": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_56", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"57": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_57", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"58": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_58", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"59": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_59", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"60": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_60", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"61": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_61", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"62": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_62", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"63": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_63", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"64": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_64", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"65": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_65", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"66": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_66", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"67": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_67", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"68": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_68", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"69": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_69", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"70": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_70", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"71": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_71", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"72": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_72", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"73": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_73", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"74": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_74", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"75": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_75", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"76": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_76", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"77": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_77", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"78": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_78", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"79": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_79", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"80": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_80", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"81": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_81", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"82": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_82", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"83": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_83", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"84": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_84", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"85": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_85", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"86": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_86", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"87": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_87", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"88": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_88", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"89": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_89", "x": 0.5, "width": 75, "height": 68 }
+		}
+	},
+	"90": {
+		"numbers": {
+			"number": { "name": "ticket_numbers_90", "x": 0.5, "width": 75, "height": 68 }
+		}
+	}
+},
+"animations": {
+	"in": {
+		"slots": {
+			"numbers": {
+				"color": [
+					{
+						"time": 0,
+						"color": "ffffff00",
+						"curve": [ 0.25, 0, 0.071, 1 ]
+					},
+					{ "time": 0.5, "color": "ffffffff" }
+				]
+			}
+		},
+		"bones": {
+			"master": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": -10 },
+					{ "time": 0.3333, "x": 0, "y": 0 }
+				]
+			}
+		}
+	},
+	"loop": {},
+	"out": {
+		"slots": {
+			"numbers": {
+				"color": [
+					{
+						"time": 0,
+						"color": "ffffffff",
+						"curve": [ 0.925, 0, 0.75, 1 ]
+					},
+					{ "time": 0.5, "color": "ffffff00" }
+				]
+			}
+		},
+		"bones": {
+			"numbers": {
+				"translate": [
+					{
+						"time": 0,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.925, 0, 0.75, 1 ]
+					},
+					{ "time": 0.5, "x": 0, "y": -10 }
+				]
+			}
+		}
+	}
+}
+}
