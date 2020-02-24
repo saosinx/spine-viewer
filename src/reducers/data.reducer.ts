@@ -1,9 +1,9 @@
 import { createAction, createReducer, Dispatch } from 'redux-act'
 
 interface IState {
-	projects: any[]
-	files: any[]
-	validationResults: object
+	projects: IProject[]
+	files: IFileList
+	validationResults: IValidation
 }
 
 const initialState: IState = {
@@ -14,26 +14,26 @@ const initialState: IState = {
 
 const reducer = createReducer<typeof initialState>({}, initialState)
 
-export const getProjects = createAction<any, 'GET_PROJECTS'>('GET_PROJECTS')
-export const postFiles = createAction<any, 'POST_FILES'>('POST_FILES')
-export const stateValidation = createAction<object, 'STATE_VALIDATION'>('STATE_VALIDATION')
+export const getProjects = createAction<IProject[], 'GET_PROJECTS'>('GET_PROJECTS')
+export const postFiles = createAction<IFileList, 'POST_FILES'>('POST_FILES')
+export const stateValidation = createAction<IValidation, 'STATE_VALIDATION'>('STATE_VALIDATION')
 
-reducer.on(getProjects, (state: IState, projects: any[] = []) => ({
+reducer.on(getProjects, (state: IState, projects: IProject[] = []) => ({
 	...state,
 	projects: [...projects],
 }))
 
-reducer.on(postFiles, (state: IState, files: any[] = []) => ({
+reducer.on(postFiles, (state: IState, files: IFileList = []) => ({
 	...state,
 	files: [...files],
 }))
 
-reducer.on(stateValidation, (state: IState, validationResults: object = []) => ({
+reducer.on(stateValidation, (state: IState, validationResults: IValidation = {}) => ({
 	...state,
 	validationResults: { ...validationResults },
 }))
 
-export const postFilesAsync = (files: any[]): any => (dispatch: Dispatch) => {
+export const postFilesAsync = (files: IFileList): any => (dispatch: Dispatch) => {
 	dispatch(postFiles(files))
 	return Promise.resolve(files)
 }

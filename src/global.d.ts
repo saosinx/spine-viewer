@@ -6,6 +6,10 @@ interface IFile {
 	webkitRelativePath: string
 }
 
+interface IFileList extends Array {
+	[Symbol.iterator](): IterableIterator<IFile>
+}
+
 interface ISpine {
 	animations: string[]
 	skeletonFile: IFile
@@ -29,7 +33,7 @@ interface ISpine {
 interface IProject {
 	base: string
 	imageFiles: IFile[]
-	imagesMap: {}
+	imagesMap: Object
 	spines: ISpine[]
 }
 

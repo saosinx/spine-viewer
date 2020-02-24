@@ -5,11 +5,28 @@ import { dispatch } from '../../store'
 import { RootState } from '../../reducers'
 import { postFilesAsync } from '../../reducers/data.reducer'
 
-type InputProps = {
-	files: any[]
+type FileInputProps = {
+	onChange(): void
 }
 
-class Input extends React.PureComponent<InputProps, {}> {
+const FileInput = React.forwardRef<HTMLInputElement, FileInputProps>((props, ref) => (
+	<input
+		{...{
+			onChange: props.onChange,
+			ref: ref,
+			type: 'file',
+			directory: '',
+			mozdirectory: '',
+			webkitdirectory: '',
+			multiple: true,
+			style: {
+				display: 'none',
+			},
+		}}
+	/>
+))
+
+class Input extends React.PureComponent<{ files: any[] }, {}> {
 	constructor(props: any) {
 		super(props)
 
@@ -20,7 +37,7 @@ class Input extends React.PureComponent<InputProps, {}> {
 	private inputFileRef = React.createRef<HTMLInputElement>()
 
 	handleChange() {
-		const files: any[] = Object.values(this.inputFileRef.current!.files as any)
+		const files: IFileList = Object.values(this.inputFileRef.current!.files as IFileList | FileList)
 		dispatch(postFilesAsync(files)).then(() => {
 			window.postMessage({ files }, '*')
 		})
@@ -34,20 +51,7 @@ class Input extends React.PureComponent<InputProps, {}> {
 		return (
 			<S.Input>
 				<S.ButtonContainer>
-					<input
-						{...{
-							onChange: this.handleChange,
-							ref: this.inputFileRef,
-							type: 'file',
-							directory: '',
-							mozdirectory: '',
-							webkitdirectory: '',
-							multiple: true,
-							style: {
-								display: 'none',
-							},
-						}}
-					/>
+					<FileInput onChange={this.handleChange} ref={this.inputFileRef} />
 					<S.Button type="button" onClick={this.handleClick}>
 						<S.Icon>
 							<svg

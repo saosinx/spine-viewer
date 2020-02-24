@@ -110,7 +110,7 @@ function Tooltip(props: any) {
 		<AntdTooltip
 			title={props.title}
 			overlayStyle={{
-				whiteSpace: 'pre-wrap'
+				whiteSpace: 'pre-wrap',
 			}}
 			placement="bottom"
 			mouseEnterDelay={0}
