@@ -1,0 +1,230 @@
+{
+"skeleton": { "hash": "djt7PbWtSQeiHPyjBIGqYfH7dYc", "spine": "3.7.94", "width": 373, "height": 270, "images": "./img/", "audio": "D:/SVN_Jogo do Bicho Bingo/Sources/ui/sources_animation" },
+"bones": [
+	{ "name": "master" },
+	{ "name": "shine", "parent": "master", "x": -77 },
+	{ "name": "shine2", "parent": "master", "x": -77 },
+	{ "name": "shine3", "parent": "master", "x": -77 }
+],
+"slots": [
+	{ "name": "5th_animal", "bone": "master", "color": "ffa95bff", "attachment": "5th_animal", "blend": "additive" },
+	{ "name": "5th_animal_shine1", "bone": "shine", "color": "ffa95bff", "attachment": "5th_animal_shine1", "blend": "additive" },
+	{ "name": "5th_animal_shine2", "bone": "shine2", "color": "ffa95bff", "attachment": "5th_animal_shine1", "blend": "additive" },
+	{ "name": "5th_animal_shine3", "bone": "shine3", "color": "ffa95bff", "attachment": "5th_animal_shine1", "blend": "additive" }
+],
+"skins": {
+	"default": {
+		"5th_animal": {
+			"5th_animal": { "y": 0.5, "width": 316, "height": 169 }
+		},
+		"5th_animal_shine1": {
+			"5th_animal_shine1": { "x": 0.5, "width": 271, "height": 270 }
+		},
+		"5th_animal_shine2": {
+			"5th_animal_shine1": { "x": -2.5, "width": 271, "height": 270 }
+		},
+		"5th_animal_shine3": {
+			"5th_animal_shine1": { "x": 3.5, "width": 271, "height": 270 }
+		}
+	}
+},
+"animations": {
+	"loop_x2": {
+		"slots": {
+			"5th_animal": {
+				"color": [
+					{ "time": 0, "color": "6fff80ff" }
+				]
+			},
+			"5th_animal_shine1": {
+				"color": [
+					{ "time": 0, "color": "6fff80ff" }
+				]
+			},
+			"5th_animal_shine2": {
+				"color": [
+					{ "time": 0, "color": "6fff80ff" }
+				]
+			},
+			"5th_animal_shine3": {
+				"color": [
+					{ "time": 0, "color": "6fff80ff" }
+				]
+			}
+		},
+		"bones": {
+			"shine2": {
+				"rotate": [
+					{
+						"time": 0,
+						"angle": 0,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{
+						"time": 1,
+						"angle": 15,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{ "time": 2, "angle": 0 }
+				]
+			},
+			"shine3": {
+				"rotate": [
+					{
+						"time": 0,
+						"angle": 0,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{
+						"time": 1,
+						"angle": -15,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{ "time": 2, "angle": 0 }
+				]
+			},
+			"shine": {
+				"scale": [
+					{
+						"time": 0,
+						"x": 1,
+						"y": 1,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{
+						"time": 1,
+						"x": 1.072,
+						"y": 1.072,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{ "time": 2, "x": 1, "y": 1 }
+				]
+			}
+		}
+	},
+	"loop_x3": {
+		"slots": {
+			"5th_animal": {
+				"color": [
+					{ "time": 0, "color": "ea56ffff" }
+				]
+			},
+			"5th_animal_shine1": {
+				"color": [
+					{ "time": 0, "color": "ea56ffff" }
+				]
+			},
+			"5th_animal_shine2": {
+				"color": [
+					{ "time": 0, "color": "ea56ffff" }
+				]
+			},
+			"5th_animal_shine3": {
+				"color": [
+					{ "time": 0, "color": "ea56ffff" }
+				]
+			}
+		},
+		"bones": {
+			"shine2": {
+				"rotate": [
+					{
+						"time": 0,
+						"angle": 0,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{
+						"time": 1,
+						"angle": 15,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{ "time": 2, "angle": 0 }
+				]
+			},
+			"shine3": {
+				"rotate": [
+					{
+						"time": 0,
+						"angle": 0,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{
+						"time": 1,
+						"angle": -15,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{ "time": 2, "angle": 0 }
+				]
+			},
+			"shine": {
+				"scale": [
+					{
+						"time": 0,
+						"x": 1,
+						"y": 1,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{
+						"time": 1,
+						"x": 1.072,
+						"y": 1.072,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{ "time": 2, "x": 1, "y": 1 }
+				]
+			}
+		}
+	},
+	"loop_x5": {
+		"bones": {
+			"shine2": {
+				"rotate": [
+					{
+						"time": 0,
+						"angle": 0,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{
+						"time": 1,
+						"angle": 15,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{ "time": 2, "angle": 0 }
+				]
+			},
+			"shine3": {
+				"rotate": [
+					{
+						"time": 0,
+						"angle": 0,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{
+						"time": 1,
+						"angle": -15,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{ "time": 2, "angle": 0 }
+				]
+			},
+			"shine": {
+				"scale": [
+					{
+						"time": 0,
+						"x": 1,
+						"y": 1,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{
+						"time": 1,
+						"x": 1.072,
+						"y": 1.072,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{ "time": 2, "x": 1, "y": 1 }
+				]
+			}
+		}
+	}
+}
+}

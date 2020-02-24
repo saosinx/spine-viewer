@@ -1,0 +1,42 @@
+{
+"skeleton": { "hash": "sm+4u8FsZwjOws9jGvZJncD+uPw", "spine": "3.7.94", "width": 0, "height": 0, "images": "./img/", "audio": "D:/SVN_Jogo do Bicho Bingo/Export_Animation/ui/sources_animation" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "fx", "parent": "root" },
+	{ "name": "bet_individual_mark", "parent": "root" }
+],
+"slots": [
+	{ "name": "bet_cards", "bone": "fx", "blend": "additive" },
+	{ "name": "betl_mark", "bone": "bet_individual_mark", "blend": "additive" }
+],
+"skins": {
+	"default": {
+		"bet_cards": {
+			"botton_bet_card_shine": { "width": 466, "height": 278 }
+		},
+		"betl_mark": {
+			"bet_complete_mark": { "width": 479, "height": 292 },
+			"bet_individual_mark": { "x": 2.39, "y": -1.86, "width": 203, "height": 200 }
+		}
+	}
+},
+"animations": {
+	"botton_bet": {
+		"slots": {
+			"bet_cards": {
+				"color": [
+					{
+						"time": 0,
+						"color": "ffffffff",
+						"curve": [ 0.25, 0, 0, 1 ]
+					},
+					{ "time": 0.5, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "botton_bet_card_shine" }
+				]
+			}
+		}
+	}
+}
+}

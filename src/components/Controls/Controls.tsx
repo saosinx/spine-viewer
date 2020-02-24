@@ -18,16 +18,14 @@ class Controls extends React.PureComponent<ControlsProps, {}> {
 
 	validateProjects(projects: any[]) {
 		function extractImageStrings(skin: { [x: string]: any }, collection: Set<string>) {
-			Object.keys(skin).forEach(key => {
+			Object.keys(skin).forEach((key, i, keys) => {
 				const image = skin[key]
-				if (image.path !== undefined) {
+				if (image.path) {
 					collection.add(image.path)
-				} else if (image.name !== undefined) {
+				} else if (image.name) {
 					collection.add(image.name)
-				} else if (image.type === undefined) {
+				} else if (image.type === 'mesh' || !image.type) {
 					collection.add(key)
-				} else if (image.type === 'clipping') {
-					collection.add(image.end)
 				}
 			})
 		}
@@ -39,7 +37,7 @@ class Controls extends React.PureComponent<ControlsProps, {}> {
 				image.name.replace(/\.[^/.]+$/, '')
 			)
 			const requiredImagesSet = new Set<string>()
-
+			console.log(project)
 			project.spines.forEach(spine => {
 				for (let [key, value] of Object.entries(spine.skeletonJson.skins)) {
 					if (Object.keys(key).length !== 0) {

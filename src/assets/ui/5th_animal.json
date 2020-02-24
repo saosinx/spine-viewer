@@ -1,0 +1,93 @@
+{
+"skeleton": { "hash": "vW7nUS8eYC5/eZApHSt7wHbFJLA", "spine": "3.7.94", "width": 473.88, "height": 343.02, "images": "./img/", "audio": "" },
+"bones": [
+	{ "name": "master", "y": -1, "scaleX": 1.27, "scaleY": 1.27 },
+	{ "name": "shine", "parent": "master", "x": -77 },
+	{ "name": "shine2", "parent": "master", "x": -77 },
+	{ "name": "shine3", "parent": "master", "x": -77 }
+],
+"slots": [
+	{ "name": "5th_animal", "bone": "master", "attachment": "5th_animal", "blend": "additive" },
+	{ "name": "5th_animal_shine1", "bone": "shine", "attachment": "5th_animal_shine1", "blend": "additive" },
+	{ "name": "5th_animal_shine2", "bone": "shine2", "color": "ff00daff", "attachment": "5th_animal_shine1", "blend": "additive" },
+	{ "name": "5th_animal_shine3", "bone": "shine3", "color": "000effff", "attachment": "5th_animal_shine1", "blend": "additive" }
+],
+"skins": {
+	"default": {
+		"5th_animal": {
+			"5th_animal": { "y": 0.5, "width": 316, "height": 169 }
+		},
+		"5th_animal_shine1": {
+			"5th_animal_shine1": { "x": 0.5, "width": 271, "height": 270 }
+		},
+		"5th_animal_shine2": {
+			"5th_animal_shine1": { "x": -2.5, "width": 271, "height": 270 }
+		},
+		"5th_animal_shine3": {
+			"5th_animal_shine1": { "x": 3.5, "width": 271, "height": 270 }
+		}
+	}
+},
+"animations": {
+	"loop": {
+		"slots": {
+			"5th_animal": {
+				"color": [
+					{ "time": 0, "color": "ffffffff" },
+					{ "time": 1, "color": "ffffffc7" },
+					{ "time": 2, "color": "ffffffff" }
+				]
+			}
+		},
+		"bones": {
+			"shine2": {
+				"rotate": [
+					{
+						"time": 0,
+						"angle": 0,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{
+						"time": 1,
+						"angle": 15,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{ "time": 2, "angle": 0 }
+				]
+			},
+			"shine3": {
+				"rotate": [
+					{
+						"time": 0,
+						"angle": 0,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{
+						"time": 1,
+						"angle": -15,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{ "time": 2, "angle": 0 }
+				]
+			},
+			"shine": {
+				"scale": [
+					{
+						"time": 0,
+						"x": 1,
+						"y": 1,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{
+						"time": 1,
+						"x": 1.072,
+						"y": 1.072,
+						"curve": [ 0.579, 0, 0.427, 1 ]
+					},
+					{ "time": 2, "x": 1, "y": 1 }
+				]
+			}
+		}
+	}
+}
+}

@@ -1,0 +1,140 @@
+{
+"skeleton": { "hash": "/mOMNnd0IZJPBu2rZ+U+Fj5Smas", "spine": "3.7.94", "width": 0, "height": 0, "images": "./img/", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "fx", "parent": "root" }
+],
+"slots": [
+	{ "name": "fx2", "bone": "fx", "blend": "additive" },
+	{ "name": "fx", "bone": "fx" }
+],
+"skins": {
+	"default": {
+		"fx": {
+			"coin_explosion0001": { "width": 480, "height": 296 },
+			"coin_explosion0002": { "width": 480, "height": 296 },
+			"coin_explosion0003": { "width": 480, "height": 296 },
+			"coin_explosion0004": { "width": 480, "height": 296 },
+			"coin_explosion0005": { "width": 480, "height": 296 },
+			"coin_explosion0006": { "width": 480, "height": 296 },
+			"coin_explosion0007": { "width": 480, "height": 296 },
+			"coin_explosion0008": { "width": 480, "height": 296 },
+			"coin_explosion0009": { "width": 480, "height": 296 },
+			"coin_explosion0010": { "width": 480, "height": 296 },
+			"coin_explosion0011": { "width": 480, "height": 296 },
+			"coin_explosion0012": { "width": 480, "height": 296 },
+			"coin_explosion0013": { "width": 480, "height": 296 }
+		},
+		"fx2": {
+			"coin_explosion0001": { "width": 480, "height": 296 },
+			"coin_explosion0002": { "width": 480, "height": 296 },
+			"coin_explosion0003": { "width": 480, "height": 296 },
+			"coin_explosion0004": { "width": 480, "height": 296 },
+			"coin_explosion0005": { "width": 480, "height": 296 },
+			"coin_explosion0006": { "width": 480, "height": 296 },
+			"coin_explosion0007": { "width": 480, "height": 296 },
+			"coin_explosion0008": { "width": 480, "height": 296 },
+			"coin_explosion0009": { "width": 480, "height": 296 },
+			"coin_explosion0010": { "width": 480, "height": 296 },
+			"coin_explosion0011": { "width": 480, "height": 296 },
+			"coin_explosion0012": { "width": 480, "height": 296 },
+			"coin_explosion0013": { "width": 480, "height": 296 }
+		}
+	}
+},
+"animations": {
+	"explosion": {
+		"slots": {
+			"fx": {
+				"attachment": [
+					{ "time": 0, "name": "coin_explosion0001" },
+					{ "time": 0.0667, "name": "coin_explosion0002" },
+					{ "time": 0.1333, "name": "coin_explosion0003" },
+					{ "time": 0.2, "name": "coin_explosion0004" },
+					{ "time": 0.2667, "name": "coin_explosion0005" },
+					{ "time": 0.3333, "name": "coin_explosion0006" },
+					{ "time": 0.4, "name": "coin_explosion0007" },
+					{ "time": 0.4667, "name": "coin_explosion0008" },
+					{ "time": 0.5333, "name": "coin_explosion0009" },
+					{ "time": 0.6, "name": "coin_explosion0010" },
+					{ "time": 0.6667, "name": "coin_explosion0011" },
+					{ "time": 0.7333, "name": "coin_explosion0012" },
+					{ "time": 0.8, "name": "coin_explosion0013" },
+					{ "time": 0.9333, "name": null }
+				]
+			},
+			"fx2": {
+				"color": [
+					{ "time": 0, "color": "ffffff46" }
+				],
+				"attachment": [
+					{ "time": 0.0667, "name": "coin_explosion0001" },
+					{ "time": 0.1333, "name": "coin_explosion0002" },
+					{ "time": 0.2, "name": "coin_explosion0003" },
+					{ "time": 0.2667, "name": "coin_explosion0004" },
+					{ "time": 0.3333, "name": "coin_explosion0005" },
+					{ "time": 0.4, "name": "coin_explosion0006" },
+					{ "time": 0.4667, "name": "coin_explosion0007" },
+					{ "time": 0.5333, "name": "coin_explosion0008" },
+					{ "time": 0.6, "name": "coin_explosion0009" },
+					{ "time": 0.6667, "name": "coin_explosion0010" },
+					{ "time": 0.7333, "name": "coin_explosion0011" },
+					{ "time": 0.8, "name": "coin_explosion0012" },
+					{ "time": 0.8667, "name": "coin_explosion0013" },
+					{ "time": 1, "name": null }
+				]
+			}
+		}
+	},
+	"explosion_size_2x": {
+		"slots": {
+			"fx": {
+				"attachment": [
+					{ "time": 0, "name": "coin_explosion0001" },
+					{ "time": 0.0667, "name": "coin_explosion0002" },
+					{ "time": 0.1333, "name": "coin_explosion0003" },
+					{ "time": 0.2, "name": "coin_explosion0004" },
+					{ "time": 0.2667, "name": "coin_explosion0005" },
+					{ "time": 0.3333, "name": "coin_explosion0006" },
+					{ "time": 0.4, "name": "coin_explosion0007" },
+					{ "time": 0.4667, "name": "coin_explosion0008" },
+					{ "time": 0.5333, "name": "coin_explosion0009" },
+					{ "time": 0.6, "name": "coin_explosion0010" },
+					{ "time": 0.6667, "name": "coin_explosion0011" },
+					{ "time": 0.7333, "name": "coin_explosion0012" },
+					{ "time": 0.8, "name": "coin_explosion0013" },
+					{ "time": 0.9333, "name": null }
+				]
+			},
+			"fx2": {
+				"color": [
+					{ "time": 0, "color": "ffffff46" }
+				],
+				"attachment": [
+					{ "time": 0.0667, "name": "coin_explosion0001" },
+					{ "time": 0.1333, "name": "coin_explosion0002" },
+					{ "time": 0.2, "name": "coin_explosion0003" },
+					{ "time": 0.2667, "name": "coin_explosion0004" },
+					{ "time": 0.3333, "name": "coin_explosion0005" },
+					{ "time": 0.4, "name": "coin_explosion0006" },
+					{ "time": 0.4667, "name": "coin_explosion0007" },
+					{ "time": 0.5333, "name": "coin_explosion0008" },
+					{ "time": 0.6, "name": "coin_explosion0009" },
+					{ "time": 0.6667, "name": "coin_explosion0010" },
+					{ "time": 0.7333, "name": "coin_explosion0011" },
+					{ "time": 0.8, "name": "coin_explosion0012" },
+					{ "time": 0.8667, "name": "coin_explosion0013" },
+					{ "time": 1, "name": null }
+				]
+			}
+		},
+		"bones": {
+			"root": {
+				"scale": [
+					{ "time": 0, "x": 2, "y": 2 }
+				]
+			}
+		}
+	}
+}
+}

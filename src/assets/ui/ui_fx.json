@@ -1,0 +1,146 @@
+{
+"skeleton": { "hash": "bK9Or0sSoHzjTU5bNBmbUlGFgxU", "spine": "3.7.94", "width": 0, "height": 0, "images": "./img/", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "fx", "parent": "root" },
+	{ "name": "fx2", "parent": "root" },
+	{ "name": "bet_individual_mark", "parent": "root" },
+	{ "name": "bone", "parent": "root" }
+],
+"slots": [
+	{ "name": "bet_cards", "bone": "fx", "blend": "additive" },
+	{ "name": "animal_to_ui", "bone": "fx2", "blend": "additive" },
+	{ "name": "betl_mark", "bone": "bet_individual_mark", "blend": "additive" }
+],
+"skins": {
+	"default": {
+		"animal_to_ui": {
+			"animal_to_ui_fx0001": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0002": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0003": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0004": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0005": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0006": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0007": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0008": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0009": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0010": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0011": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0012": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0013": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0014": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0015": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0016": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0017": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0018": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0019": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0020": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0021": { "y": 0.5, "width": 472, "height": 522 },
+			"animal_to_ui_fx0022": { "y": 0.5, "width": 472, "height": 522 }
+		},
+		"bet_cards": {
+			"bet_card_shine": { "x": 0.5, "width": 469, "height": 280 }
+		},
+		"betl_mark": {
+			"bet_complete_mark": { "width": 479, "height": 292 },
+			"bet_individual_mark": { "x": 2.39, "y": -1.86, "width": 203, "height": 200 }
+		}
+	}
+},
+"animations": {
+	"animal_to_ui": {
+		"slots": {
+			"animal_to_ui": {
+				"attachment": [
+					{ "time": 0, "name": "animal_to_ui_fx0001" },
+					{ "time": 0.0333, "name": "animal_to_ui_fx0002" },
+					{ "time": 0.1, "name": "animal_to_ui_fx0003" },
+					{ "time": 0.1667, "name": "animal_to_ui_fx0004" },
+					{ "time": 0.2333, "name": "animal_to_ui_fx0005" },
+					{ "time": 0.3, "name": "animal_to_ui_fx0006" },
+					{ "time": 0.3333, "name": "animal_to_ui_fx0007" },
+					{ "time": 0.3667, "name": "animal_to_ui_fx0008" },
+					{ "time": 0.4, "name": "animal_to_ui_fx0009" },
+					{ "time": 0.4333, "name": "animal_to_ui_fx0010" },
+					{ "time": 0.5, "name": "animal_to_ui_fx0011" },
+					{ "time": 0.5667, "name": "animal_to_ui_fx0012" },
+					{ "time": 0.6333, "name": "animal_to_ui_fx0013" },
+					{ "time": 0.7, "name": "animal_to_ui_fx0014" },
+					{ "time": 0.7667, "name": "animal_to_ui_fx0015" },
+					{ "time": 0.8333, "name": "animal_to_ui_fx0016" },
+					{ "time": 0.9, "name": "animal_to_ui_fx0017" },
+					{ "time": 0.9667, "name": "animal_to_ui_fx0018" },
+					{ "time": 1.0333, "name": "animal_to_ui_fx0019" },
+					{ "time": 1.1, "name": "animal_to_ui_fx0020" },
+					{ "time": 1.1667, "name": "animal_to_ui_fx0021" },
+					{ "time": 1.2333, "name": "animal_to_ui_fx0022" },
+					{ "time": 1.3, "name": null }
+				]
+			}
+		},
+		"bones": {
+			"fx2": {
+				"translate": [
+					{ "time": 0, "x": 2.55, "y": -80.2 }
+				]
+			}
+		}
+	},
+	"bet_in": {
+		"slots": {
+			"bet_cards": {
+				"color": [
+					{
+						"time": 0,
+						"color": "ffffff28",
+						"curve": [ 0.25, 0, 0, 1 ]
+					},
+					{
+						"time": 0.5,
+						"color": "ffffffff",
+						"curve": [ 0, 0, 0.003, 1 ]
+					},
+					{ "time": 1, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "bet_card_shine" }
+				]
+			}
+		}
+	},
+	"complete_mark": {
+		"slots": {
+			"betl_mark": {
+				"color": [
+					{
+						"time": 0,
+						"color": "ffffffef",
+						"curve": [ 0, 0, 0, 1 ]
+					},
+					{ "time": 1, "color": "ffffff7a" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "bet_complete_mark" }
+				]
+			}
+		}
+	},
+	"individual_mark": {
+		"slots": {
+			"betl_mark": {
+				"color": [
+					{
+						"time": 0,
+						"color": "ffffffff",
+						"curve": [ 0, 0, 0, 1 ]
+					},
+					{ "time": 1, "color": "ffffff7b" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "bet_individual_mark" }
+				]
+			}
+		}
+	}
+}
+}
