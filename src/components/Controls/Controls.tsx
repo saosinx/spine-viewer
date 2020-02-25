@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { SimpleActionCreator } from 'redux-act'
 import { RootState } from '../../reducers'
 import { stateValidation } from '../../reducers/data.reducer'
 import Collapse from './Collapse'
@@ -8,7 +9,7 @@ import * as S from './styled'
 
 type ControlsProps = {
 	projects: IProject[]
-	stateValidation: any
+	stateValidation: SimpleActionCreator<IValidation, 'STATE_VALIDATION'>
 }
 
 class Controls extends React.PureComponent<ControlsProps, {}> {
@@ -16,9 +17,9 @@ class Controls extends React.PureComponent<ControlsProps, {}> {
 		this.props.stateValidation(this.validateProjects(this.props.projects))
 	}
 
-	validateProjects(projects: any[]) {
+	validateProjects(projects: IProject[]) {
 		function extractImageStrings(skin: { [x: string]: any }, collection: Set<string>) {
-			Object.keys(skin).forEach((key, i, keys) => {
+			Object.keys(skin).forEach(key => {
 				const image = skin[key]
 				if (image.path) {
 					collection.add(image.path)
@@ -33,28 +34,24 @@ class Controls extends React.PureComponent<ControlsProps, {}> {
 		const validationResults: IValidation = {}
 
 		projects.forEach((project: IProject) => {
+			const requiredImagesSet = new Set<string>()
 			const projectImages: string[] = project.imageFiles.map(image =>
 				image.name.replace(/\.[^/.]+$/, '')
 			)
-			const requiredImagesSet = new Set<string>()
-			console.log(project)
+
 			project.spines.forEach(spine => {
-				for (let [key, value] of Object.entries(spine.skeletonJson.skins)) {
-					if (Object.keys(key).length !== 0) {
-						for (let i in value as any) {
-							extractImageStrings((value as any)[i], requiredImagesSet)
-						}
+				for (let [, value] of Object.entries(spine.skeletonJson.skins)) {
+					for (let i in value as any) {
+						extractImageStrings((value as any)[i], requiredImagesSet)
 					}
 				}
 			})
 
 			const requiredImages = [...requiredImagesSet]
-			const unusedImages = projectImages.filter(image => !requiredImages.includes(image))
-			const missedImages = requiredImages.filter(image => !projectImages.includes(image))
 
 			validationResults[project.base] = {
-				unusedImages,
-				missedImages,
+				unusedImages: projectImages.filter(image => !requiredImages.includes(image)),
+				missedImages: requiredImages.filter(image => !projectImages.includes(image)),
 			}
 		})
 

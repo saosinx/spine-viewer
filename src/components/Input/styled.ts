@@ -1,7 +1,12 @@
 import styled from 'styled-components/macro'
 
-const ButtonContainer = styled.div``
 const Icon = styled.i``
+const ButtonContainer = styled.div`
+	input[type='file'] {
+		display: none;
+	}
+`
+
 const Button = styled.button`
 	line-height: 1.499;
 	position: relative;
