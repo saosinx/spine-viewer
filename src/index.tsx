@@ -49,7 +49,7 @@ const GlobalStyles = createGlobalStyle`
 
 	.ant-tooltip-inner {
 		max-height: 31.25rem;
-		overflow-y: scroll;
+		overflow-y: auto;
 	}
 `
 

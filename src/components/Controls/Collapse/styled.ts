@@ -2,7 +2,7 @@ import styled from 'styled-components/macro'
 import { ButtonProps } from './Collapse'
 import { Button as AntButton, Collapse as AntCollapse, Icon as AntIcon } from 'antd'
 
-const Button = styled(AntButton)<ButtonProps & { active: string; onClick: any } & any>`
+const Button = styled(AntButton)<ButtonProps & any>`
 	height: 1.5rem;
 	padding: 0 0.5rem;
 	transition: all 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);

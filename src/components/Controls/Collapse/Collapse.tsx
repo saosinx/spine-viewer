@@ -17,13 +17,9 @@ export type ButtonProps = {
 	handleControlSet(opts: IControlState): void
 }
 
-class Button extends React.Component<ButtonProps, { active: boolean }> {
-	constructor(props: any) {
+class Button extends React.Component<ButtonProps, {}> {
+	constructor(props: ButtonProps) {
 		super(props)
-
-		this.state = {
-			active: false,
-		}
 
 		this.handleClick = this.handleClick.bind(this)
 	}
@@ -54,11 +50,7 @@ class Button extends React.Component<ButtonProps, { active: boolean }> {
 
 	render() {
 		return (
-			<S.Button
-				group={this.props.group}
-				active={this.state.active.toString()}
-				onClick={this.handleClick}
-			>
+			<S.Button group={this.props.group} onClick={this.handleClick}>
 				{this.props.name}
 			</S.Button>
 		)
@@ -66,18 +58,18 @@ class Button extends React.Component<ButtonProps, { active: boolean }> {
 }
 
 type ButtonGroupProps = {
-	group: 'skins' | 'animations'
+	skin?: boolean
 	spine: ISpine
 	project: IProject
 	controlState: IControlState
 }
 
-function ButtonGroup({ group, spine, project, controlState }: ButtonGroupProps) {
+function ButtonGroup(props: ButtonGroupProps) {
 	const handleControlSet = (opts: IControlState) => {
 		dispatch(setControlAsync(opts)).then((opts: IControlState) => {
 			window.postMessage(
 				{
-					projectName: project.base,
+					projectName: props.project.base,
 					spineName: opts.spine,
 					animation: opts.animation,
 					skin: opts.skin,
@@ -87,18 +79,18 @@ function ButtonGroup({ group, spine, project, controlState }: ButtonGroupProps) 
 		})
 	}
 
+	const group = props.skin ? 'skins' : 'animations'
+	const { spine, controlState } = props
+
 	return (
 		<S.ButtonGroup>
-			{spine[group].map((name, index) => (
+			{props.spine[group].map((name, index) => (
 				<Button
-					key={`${index}-${group}`}
+					key={index.toString()}
 					animation={group === 'animations' ? name : spine.animations[0]}
-					controlState={controlState}
-					group={group}
-					handleControlSet={handleControlSet}
-					name={name}
 					skin={group === 'skins' ? name : spine.skins[0]}
 					spine={spine.skeletonFile.name}
+					{...{ group, name, controlState, handleControlSet }}
 				/>
 			))}
 		</S.ButtonGroup>
@@ -167,34 +159,25 @@ type CollapseProps = {
 
 class Collapse extends React.PureComponent<CollapseProps, {}> {
 	render() {
+		const { projects, controlState, validationResults } = this.props
+
 		return (
-			<S.Collapse defaultActiveKey={[...this.props.projects.keys()]}>
-				{this.props.projects.map((project: IProject, index: number) => (
+			<S.Collapse defaultActiveKey={[...projects.keys()]}>
+				{projects.map((project: IProject, index: number) => (
 					<S.Panel
+						key={index.toString()}
 						header={
 							<PanelHeader
 								title={project.base}
-								validationResults={this.props.validationResults[project.base]}
+								validationResults={validationResults[project.base]}
 							/>
 						}
-						key={index.toString()}
 					>
 						{project.spines.map((spine: ISpine, index: number) => (
-							<S.PanelSection key={`${index}-PanelSection`}>
+							<S.PanelSection key={index.toString()}>
 								<S.PanelSectionTitle>{spine.skeletonFile.name}</S.PanelSectionTitle>
-
-								<ButtonGroup
-									group="animations"
-									spine={spine}
-									project={project}
-									controlState={this.props.controlState}
-								/>
-								<ButtonGroup
-									group="skins"
-									spine={spine}
-									project={project}
-									controlState={this.props.controlState}
-								/>
+								<ButtonGroup {...{ spine, project, controlState }} />
+								<ButtonGroup skin {...{ spine, project, controlState }} />
 							</S.PanelSection>
 						))}
 					</S.Panel>
