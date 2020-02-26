@@ -46,6 +46,11 @@ const GlobalStyles = createGlobalStyle`
   		pointer-events: none !important;
 		}
 	}
+
+	.ant-tooltip-inner {
+		max-height: 31.25rem;
+		overflow-y: scroll;
+	}
 `
 
 const store = configureStore()

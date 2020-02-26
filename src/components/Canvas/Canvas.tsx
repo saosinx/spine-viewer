@@ -2,7 +2,9 @@ import React from 'react'
 
 import * as S from './styled'
 
-class ColorPicker extends React.PureComponent<{}, { color: string }> {
+class ColorPicker extends React.Component<{}, { color: string }> {
+	private inputColorRef = React.createRef<HTMLInputElement>()
+	
 	constructor(props: any) {
 		super(props)
 
@@ -13,14 +15,12 @@ class ColorPicker extends React.PureComponent<{}, { color: string }> {
 		this.handleColorChange = this.handleColorChange.bind(this)
 	}
 
-	private inputColorRef = React.createRef<HTMLInputElement>()
 
-	handleColorChange(ev: MouseEvent) {
+	handleColorChange(ev: React.SyntheticEvent) {
+		ev.persist()
 		this.setState(() => ({
 			color: (ev.target as HTMLInputElement).value,
-		}))
-
-		window.postMessage({ backgroundColor: this.state.color }, '*')
+		}), () => window.postMessage({ backgroundColor: this.state.color }, '*'))
 	}
 
 	render() {
@@ -37,7 +37,7 @@ class ColorPicker extends React.PureComponent<{}, { color: string }> {
 	}
 }
 
-class Canvas extends React.PureComponent<{}, {}> {
+class Canvas extends React.Component<{}, {}> {
 	private canvasRef = React.createRef<HTMLCanvasElement>()
 
 	render() {
