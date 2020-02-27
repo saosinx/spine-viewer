@@ -1,6 +1,7 @@
 import { IState as ICanvasState } from '../../../reducers/canvas.reducer'
 
 export type ButtonProps = {
+	active?: boolean
 	animation: string | undefined
 	skin: string | undefined
 	handleControlSet(args: any): void
