@@ -3,6 +3,8 @@ import { Collapse as AntCollapse, Icon as AntIcon } from 'antd'
 
 const Panel = styled(AntCollapse.Panel)`
 	&&& {
+		transition: all 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+		
 		> .ant-collapse-header {
 			background: ${props => props.theme.colors.alabaster};
 			color: ${props => props.theme.colors.black85};
@@ -42,7 +44,7 @@ const Collapse = styled(AntCollapse)`
 `
 
 const PanelSectionTitle = styled.div`
-	color: ${props => props.theme.colors.black65}
+	color: ${props => props.theme.colors.black65};
 `
 
 const PanelSection = styled.div`

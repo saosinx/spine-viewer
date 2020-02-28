@@ -7,12 +7,8 @@ interface IGlobalTheme {
 }
 
 const theme: IGlobalTheme = {
-	light: {
-		...light,
-	},
-	dark: {
-		...dark,
-	},
+	light,
+	dark
 }
 
 export { theme }

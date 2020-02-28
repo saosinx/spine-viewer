@@ -16,7 +16,7 @@ declare module 'styled-components' {
 			scienceBlue: string
 			snowy: string
 			white: string
-		}
+		},
 	}
 
 	export interface ITheme extends IDefaultTheme {}

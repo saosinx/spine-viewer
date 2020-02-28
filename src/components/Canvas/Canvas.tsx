@@ -57,7 +57,7 @@ class Canvas extends React.Component<{}, { isDrawing: boolean }> {
 	}
 
 	handleMouseMove = (ev: React.MouseEvent<HTMLCanvasElement>): void => {
-		this.state.isDrawing && console.log(...[ev.movementX, ev.movementY], 'translating')
+		this.state.isDrawing && window.postMessage({ translation: [ev.movementX, ev.movementY] }, '*')
 	}
 
 	handleMouseDown = (ev: React.MouseEvent<HTMLCanvasElement>): void => {
@@ -73,7 +73,7 @@ class Canvas extends React.Component<{}, { isDrawing: boolean }> {
 	}
 
 	handleWheel = (ev: React.WheelEvent<HTMLCanvasElement>): void => {
-		console.log('onWheel:', ev.deltaY)
+		window.postMessage({ zoom: ev.deltaY }, '*')
 	}
 
 	render() {
