@@ -5,6 +5,9 @@ import * as Types from './types'
 import * as S from './styled'
 
 const Button: React.FC<Types.ButtonProps> = props => {
+	const type = props.animation ? 'animation' : 'skin'
+	const active = props.active ? true : false
+
 	const handleClick = () => {
 		props.handleControlSet({
 			animation: props.animation,
@@ -12,10 +15,8 @@ const Button: React.FC<Types.ButtonProps> = props => {
 		})
 	}
 
-	const type = props.animation ? 'animation' : 'skin'
-
 	return (
-		<S.Button type={type} onClick={handleClick}>
+		<S.Button active={active.toString()} type={type} onClick={handleClick}>
 			{props.animation || props.skin}
 		</S.Button>
 	)
@@ -53,6 +54,7 @@ const ButtonGroup: React.FC<Types.ButtonGroupProps> = props => {
 			{props.objects.map((object, index) => (
 				<Button
 					key={index.toString()}
+					active={props.canvasState.animation === object || props.canvasState.skin === object}
 					animation={props.type === 'animations' ? object : undefined}
 					skin={props.type === 'skins' ? object : undefined}
 					handleControlSet={handleControlSet}

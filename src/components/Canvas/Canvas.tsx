@@ -4,7 +4,7 @@ import * as S from './styled'
 
 class ColorPicker extends React.Component<{}, { color: string }> {
 	private inputColorRef = React.createRef<HTMLInputElement>()
-	
+
 	constructor(props: any) {
 		super(props)
 
@@ -15,12 +15,14 @@ class ColorPicker extends React.Component<{}, { color: string }> {
 		this.handleColorChange = this.handleColorChange.bind(this)
 	}
 
-
 	handleColorChange(ev: React.SyntheticEvent) {
 		ev.persist()
-		this.setState(() => ({
-			color: (ev.target as HTMLInputElement).value,
-		}), () => window.postMessage({ backgroundColor: this.state.color }, '*'))
+		this.setState(
+			() => ({
+				color: (ev.target as HTMLInputElement).value,
+			}),
+			() => window.postMessage({ backgroundColor: this.state.color }, '*')
+		)
 	}
 
 	render() {
@@ -37,14 +39,56 @@ class ColorPicker extends React.Component<{}, { color: string }> {
 	}
 }
 
-class Canvas extends React.Component<{}, {}> {
+class Canvas extends React.Component<{}, { isDrawing: boolean }> {
+	state = { isDrawing: false }
+
 	private canvasRef = React.createRef<HTMLCanvasElement>()
+
+	startTranslation = (): void => {
+		this.setState(() => ({
+			isDrawing: true,
+		}))
+	}
+
+	stopTranslation = (): void => {
+		this.setState(() => ({
+			isDrawing: false,
+		}))
+	}
+
+	handleMouseMove = (ev: React.MouseEvent<HTMLCanvasElement>): void => {
+		this.state.isDrawing && console.log(...[ev.movementX, ev.movementY], 'translating')
+	}
+
+	handleMouseDown = (ev: React.MouseEvent<HTMLCanvasElement>): void => {
+		!ev.button && this.startTranslation()
+	}
+
+	handleMouseUp = (ev: React.MouseEvent<HTMLCanvasElement>): void => {
+		this.state.isDrawing && this.stopTranslation()
+	}
+
+	handleMouseLeave = (ev: React.MouseEvent<HTMLCanvasElement>): void => {
+		this.state.isDrawing && this.stopTranslation()
+	}
+
+	handleWheel = (ev: React.WheelEvent<HTMLCanvasElement>): void => {
+		console.log('onWheel:', ev.deltaY)
+	}
 
 	render() {
 		return (
 			<S.CanvasContainer className="block canvas-container">
 				<ColorPicker />
-				<S.Canvas id="canvas" ref={this.canvasRef} />
+				<S.Canvas
+					id="canvas"
+					ref={this.canvasRef}
+					onWheel={this.handleWheel}
+					onMouseUp={this.handleMouseUp}
+					onMouseDown={this.handleMouseDown}
+					onMouseMove={this.handleMouseMove}
+					onMouseLeave={this.handleMouseLeave}
+				/>
 			</S.CanvasContainer>
 		)
 	}
