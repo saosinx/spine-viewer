@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { createGlobalStyle } from 'styled-components/macro'
+import { createGlobalStyle, ThemeProvider } from 'styled-components/macro'
 import configureStore from './store'
+import { theme } from './themes/'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 
@@ -55,15 +56,22 @@ const GlobalStyles = createGlobalStyle`
 
 const store = configureStore()
 
-ReactDOM.render(
-	<Provider store={store}>
-		<>
-			<GlobalStyles />
-			<App />
-		</>
-	</Provider>,
-	document.getElementById('root')
-)
+const render = function() {
+	ReactDOM.render(
+		<Provider store={store}>
+			<ThemeProvider theme={store.getState().theme.value === 'light' ? theme.light : theme.dark}>
+				<>
+					<GlobalStyles />
+					<App />
+				</>
+			</ThemeProvider>
+		</Provider>,
+		document.getElementById('root')
+	)
+}
+
+render()
+store.subscribe(() => render())
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -24,9 +24,9 @@ const Button = styled.button`
 	padding: 0 0.9375rem;
 	font-size: 0.875rem;
 	border-radius: 0.25rem;
-	color: rgba(0, 0, 0, 0.65);
-	background-color: #fff;
-	border-color: #d9d9d9;
+	color: ${props => props.theme.colors.black65};
+	background-color: transparent;
+	border-color: ${props => props.theme.colors.alto};
 
 	& > ${Icon} + span,
 	& > span + ${Icon} {
@@ -41,20 +41,20 @@ const Button = styled.button`
 
 	&:hover,
 	&:focus {
-		color: #40a9ff;
-		border-color: #40a9ff;
+		color: ${props => props.theme.colors.dodgerBlue};
+		border-color: ${props => props.theme.colors.dodgerBlue};
 	}
 
 	&:active {
-		color: #096dd9;
-		border-color: #096dd9;
+		color: ${props => props.theme.colors.scienceBlue};
+		border-color: ${props => props.theme.colors.scienceBlue};
 	}
 
 	&:hover,
 	&:focus,
 	&:active {
 		text-decoration: none;
-		background-color: #fff;
+		background-color: transparent;
 	}
 `
 

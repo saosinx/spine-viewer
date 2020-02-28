@@ -2,6 +2,7 @@ import React from 'react'
 import { getProjects } from './reducers/data.reducer'
 import { dispatch } from './store'
 import Main from './components/Main'
+import ThemeSwitcher from './components/ThemeSwitcher'
 
 export default class App extends React.Component<{}, {}> {
 	body: HTMLElement
@@ -43,6 +44,11 @@ export default class App extends React.Component<{}, {}> {
 	}
 
 	render() {
-		return <Main />
+		return (
+			<>
+				<ThemeSwitcher />
+				<Main />
+			</>
+		)
 	}
 }
