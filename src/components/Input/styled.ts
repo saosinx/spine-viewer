@@ -58,7 +58,9 @@ const Button = styled.button`
 	}
 `
 
-const InputLog = styled.span``
+const InputLog = styled.span`
+	color: ${props => props.theme.colors.black65};
+`
 
 const Input = styled.div`
 	display: flex;

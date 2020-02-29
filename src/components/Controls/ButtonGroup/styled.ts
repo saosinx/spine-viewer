@@ -8,45 +8,52 @@ const Button = styled(AntButton)<any>`
 		color: ${props => props.theme.colors.black65};
 		height: 1.5rem;
 		padding: 0 0.5rem;
-		
-		&:focus {
-			background: ${props =>
-				props.type === 'animation' ? props.theme.colors.dodgerBlue : '#ee3737'};
-			border-color: ${props =>
-				props.type === 'animation' ? props.theme.colors.dodgerBlue : '#ee3737'};
+		transition: all 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+		background: ${({ trigger, active, theme }) =>
+			active !== 'true'
+				? ''
+				: trigger === 'animation'
+				? theme.colors.dodgerBlue
+				: theme.colors.pomegranatea};
+		border-color: ${({ trigger, active, theme }) =>
+			active !== 'true'
+				? ''
+				: trigger === 'animation'
+				? theme.colors.dodgerBlue
+				: theme.colors.pomegranatea};
+
+		&:hover {
+			background: ${({ trigger, active, theme }) =>
+				active !== 'true'
+					? 'transparent'
+					: trigger === 'animation'
+					? theme.colors.dodgerBlue
+					: theme.colors.pomegranatea};
+			border-color: ${({ trigger, active, theme }) =>
+				active === 'true'
+					? ''
+					: trigger === 'animation'
+					? theme.colors.dodgerBlue
+					: theme.colors.pomegranatea};
+			color: ${({ trigger, active, theme }) =>
+				active === 'true'
+					? theme.colors.black65
+					: trigger === 'animation'
+					? theme.colors.dodgerBlue
+					: theme.colors.pomegranatea};
 		}
 
-		&,
+		&:hover + & {
+			border-left-color: ${({ trigger, theme }) =>
+				trigger === 'animation' ? theme.colors.dodgerBlue : theme.colors.pomegranatea};
+		}
+
+		&:hover,
 		&:active,
 		&:focus {
-			outline: 0;
-		}
-
-		&:hover,
-		&:focus {
-			color: ${props =>
-				props.type === 'animation' ? props.theme.colors.dodgerBlue : '#ee3737'};
-			border-color: ${props =>
-				props.type === 'animation' ? props.theme.colors.dodgerBlue : '#ee3737'};
-		}
-
-		&:hover + &,
-		&:focus + & {
-			border-left-color: ${props => props.type === 'animation' ? props.theme.colors.dodgerBlue : '#ee3737'};
-		}
-
-		&:active {
-			color: ${props =>
-				props.type === 'animation' ? props.theme.colors.scienceBlue : '#ee3737'};
-			border-color: ${props =>
-				props.type === 'animation' ? props.theme.colors.scienceBlue : '#ee3737'};
-		}
-
-		&:hover,
-		&:focus,
-		&:active {
 			text-decoration: none;
-			background-color: transparent;
+			outline: 0;
 		}
 	}
 `
@@ -54,7 +61,7 @@ const Button = styled(AntButton)<any>`
 const ButtonGroup = styled(AntButton.Group)<any>`
 	&&& {
 		transition: all 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
-	
+
 		${Button} {
 			border-radius: 0;
 			margin-left: -0.0625rem;

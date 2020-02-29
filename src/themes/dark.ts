@@ -10,12 +10,13 @@ const theme: IDefaultTheme = {
 		cashmere: '#e8cda5',
 		dodgerBlue: '#40a9ff',
 		peachOrange: '#ffcf96',
+		pomegranatea: '#cd0a0a',
 		punch: '#dc3545',
 		sanMarino: '#436a9f',
 		scienceBlue: '#096dd9',
 		snowy: '#141414',
 		white: '#000000',
-	}
+	},
 }
 
 export default theme

@@ -5,7 +5,7 @@ import * as Types from './types'
 import * as S from './styled'
 
 const Button: React.FC<Types.ButtonProps> = props => {
-	const type = props.animation ? 'animation' : 'skin'
+	const trigger = props.animation ? 'animation' : 'skin'
 	const active = props.active ? true : false
 
 	const handleClick = () => {
@@ -16,24 +16,24 @@ const Button: React.FC<Types.ButtonProps> = props => {
 	}
 
 	return (
-		<S.Button active={active.toString()} type={type} onClick={handleClick}>
+		<S.Button active={active.toString()} trigger={trigger} onClick={handleClick}>
 			{props.animation || props.skin}
 		</S.Button>
 	)
 }
 
-const ButtonGroup: React.FC<Types.ButtonGroupProps> = props => {
+const ButtonGroup: React.FC<Types.ButtonGroupProps> = ({ canvasState, spine, ...props }) => {
 	const handleControlSet = ({ animation, skin }: any): void => {
 		const opts = {
 			projectName: props.project.base,
-			spineName: props.spine.skeletonFile.name,
-			animation: animation || props.canvasState.animation || props.spine.animations[0],
-			skin: skin || props.canvasState.skin || props.spine.skins[0],
+			spineName: spine.skeletonFile.name,
+			animation: animation || canvasState.animation || spine.animations[0],
+			skin: skin || canvasState.skin || spine.skins[0],
 		}
 
-		if (props.spine.skeletonFile.name !== props.canvasState.spineName) {
-			opts.animation = animation || props.spine.animations[0]
-			opts.skin = skin || props.spine.skins[0]
+		if (spine.skeletonFile.name !== canvasState.spineName) {
+			opts.animation = animation || spine.animations[0]
+			opts.skin = skin || spine.skins[0]
 		}
 
 		dispatch(setAnimationAsync(opts)).then((opts: ICanvasState) => {
@@ -54,7 +54,10 @@ const ButtonGroup: React.FC<Types.ButtonGroupProps> = props => {
 			{props.objects.map((object, index) => (
 				<Button
 					key={index.toString()}
-					active={props.canvasState.animation === object || props.canvasState.skin === object}
+					active={
+						canvasState.spineName === spine.skeletonFile.name &&
+						(canvasState.animation === object || canvasState.skin === object)
+					}
 					animation={props.type === 'animations' ? object : undefined}
 					skin={props.type === 'skins' ? object : undefined}
 					handleControlSet={handleControlSet}

@@ -11,12 +11,13 @@ declare module 'styled-components' {
 			cashmere: string
 			dodgerBlue: string
 			peachOrange: string
+			pomegranatea: string
 			punch: string
 			sanMarino: string
 			scienceBlue: string
 			snowy: string
 			white: string
-		},
+		}
 	}
 
 	export interface ITheme extends IDefaultTheme {}
