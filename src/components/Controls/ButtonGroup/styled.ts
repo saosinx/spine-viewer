@@ -32,7 +32,7 @@ const Button = styled(AntButton)<any>`
 					: theme.colors.pomegranatea};
 			border-color: ${({ trigger, active, theme }) =>
 				active === 'true'
-					? ''
+					? theme.colors.alto
 					: trigger === 'animation'
 					? theme.colors.dodgerBlue
 					: theme.colors.pomegranatea};
