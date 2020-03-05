@@ -38,8 +38,11 @@ interface IProject {
 }
 
 interface IValidationResults {
-	unusedImages: string[]
-	missedImages: string[]
+	images: {
+		size: number
+		unused: string[]
+		missed: string[]
+	}
 }
 
 interface IValidation {

@@ -18,6 +18,8 @@ class Controls extends React.PureComponent<ControlsProps, {}> {
 	}
 
 	validateProjects(projects: IProject[]) {
+		const validationResults: IValidation = {}
+
 		function extractImageStrings(skin: { [x: string]: any }, collection: Set<string>) {
 			Object.keys(skin).forEach(key => {
 				const image = skin[key]
@@ -31,13 +33,13 @@ class Controls extends React.PureComponent<ControlsProps, {}> {
 			})
 		}
 
-		const validationResults: IValidation = {}
-
 		projects.forEach((project: IProject) => {
 			const requiredImagesSet = new Set<string>()
 			const projectImages: string[] = project.imageFiles.map(image =>
 				image.name.replace(/\.[^/.]+$/, '')
 			)
+
+			console.log(Object.values(project.imageFiles))
 
 			project.spines.forEach(spine => {
 				for (let [, value] of Object.entries(spine.skeletonJson.skins)) {
@@ -48,10 +50,22 @@ class Controls extends React.PureComponent<ControlsProps, {}> {
 			})
 
 			const requiredImages = [...requiredImagesSet]
+			const results: IValidationResults['images'] = {
+				size: 0,
+				unused: projectImages.filter(image => !requiredImages.includes(image)),
+				missed: requiredImages.filter(image => !projectImages.includes(image)),
+			}
+
+			results.unused.forEach((image: string) => {
+				for (let i = 0; i < project.imageFiles.length; i += 1 ) {
+					if (project.imageFiles[i].name.replace(/\.[^/.]+$/, '') === image) {
+						results.size = results.size + project.imageFiles[i].size
+					}
+				}
+			})
 
 			validationResults[project.base] = {
-				unusedImages: projectImages.filter(image => !requiredImages.includes(image)),
-				missedImages: requiredImages.filter(image => !projectImages.includes(image)),
+				images: {...results}
 			}
 		})
 

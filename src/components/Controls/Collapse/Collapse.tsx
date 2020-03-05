@@ -27,20 +27,20 @@ const PanelHeader: React.FC<Types.PanelHeaderProps> = props => {
 			<span>{props.title}</span>
 			{!!props.validationResults && (
 				<>
-					{!!props.validationResults.unusedImages.length && (
+					{!!props.validationResults.images.unused.length && (
 						<Tooltip
 							title={`${
-								props.validationResults.unusedImages.length
-							} unused images:\n${props.validationResults.unusedImages.join('\n')}`}
+								props.validationResults.images.unused.length
+							} unused images:\n${props.validationResults.images.unused.join('\n')}`}
 						>
 							<S.Icon type="warning" theme="twoTone" twoToneColor="#ffcc00" />
 						</Tooltip>
 					)}
-					{!!props.validationResults.missedImages.length && (
+					{!!props.validationResults.images.missed.length && (
 						<Tooltip
 							title={`${
-								props.validationResults.missedImages.length
-							} missed images:\n${props.validationResults.missedImages.join('\n')}`}
+								props.validationResults.images.missed.length
+							} missed images:\n${props.validationResults.images.missed.join('\n')}`}
 						>
 							<S.Icon type="exclamation-circle" theme="twoTone" twoToneColor="#eb2f96" />
 						</Tooltip>
