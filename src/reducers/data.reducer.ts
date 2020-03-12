@@ -3,13 +3,13 @@ import { createAction, createReducer, Dispatch } from 'redux-act'
 interface IState {
 	projects: IProject[]
 	files: IFileList
-	validationResults: IValidation
+	validation: IValidation
 }
 
 const initialState: IState = {
 	projects: [],
 	files: [],
-	validationResults: {},
+	validation: {},
 }
 
 const reducer = createReducer<typeof initialState>({}, initialState)
@@ -28,9 +28,9 @@ reducer.on(postFiles, (state: IState, files: IFileList = []) => ({
 	files: [...files],
 }))
 
-reducer.on(stateValidation, (state: IState, validationResults: IValidation = {}) => ({
+reducer.on(stateValidation, (state: IState, validation: IValidation = {}) => ({
 	...state,
-	validationResults: { ...validationResults },
+	validation: { ...validation },
 }))
 
 export const postFilesAsync = (files: IFileList): any => (dispatch: Dispatch) => {

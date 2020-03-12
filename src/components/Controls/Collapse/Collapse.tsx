@@ -21,26 +21,26 @@ const Tooltip: React.FC<Types.TooltipProps> = props => {
 	)
 }
 
-const PanelHeader: React.FC<Types.PanelHeaderProps> = props => {
+const PanelHeader: React.FC<Types.PanelHeaderProps> = ({ title, validation }) => {
 	return (
 		<S.PanelHeader>
-			<span>{props.title}</span>
-			{!!props.validationResults && (
+			<span>{title}</span>
+			{!!validation && (
 				<>
-					{!!props.validationResults.images.unused.length && (
+					{!!validation.images.unused.length && (
 						<Tooltip
-							title={`${
-								props.validationResults.images.unused.length
-							} unused images:\n${props.validationResults.images.unused.join('\n')}`}
+							title={`${validation.images.unused.length} unused images (${
+								validation.images.size
+							}):\n${validation.images.unused.join('\n')}`}
 						>
 							<S.Icon type="warning" theme="twoTone" twoToneColor="#ffcc00" />
 						</Tooltip>
 					)}
-					{!!props.validationResults.images.missed.length && (
+					{!!validation.images.missed.length && (
 						<Tooltip
 							title={`${
-								props.validationResults.images.missed.length
-							} missed images:\n${props.validationResults.images.missed.join('\n')}`}
+								validation.images.missed.length
+							} missed images:\n${validation.images.missed.join('\n')}`}
 						>
 							<S.Icon type="exclamation-circle" theme="twoTone" twoToneColor="#eb2f96" />
 						</Tooltip>
@@ -53,19 +53,14 @@ const PanelHeader: React.FC<Types.PanelHeaderProps> = props => {
 
 class Collapse extends React.PureComponent<Types.CollapseProps, {}> {
 	render() {
-		const { projects, canvasState, validationResults } = this.props
+		const { projects, canvasState, validation } = this.props
 
 		return (
 			<S.Collapse defaultActiveKey={[...projects.keys()]}>
 				{projects.map((project: IProject, index: number) => (
 					<S.Panel
 						key={index.toString()}
-						header={
-							<PanelHeader
-								title={project.base}
-								validationResults={validationResults[project.base]}
-							/>
-						}
+						header={<PanelHeader title={project.base} validation={validation[project.base]} />}
 					>
 						{project.spines.map((spine: ISpine, index: number) => (
 							<S.PanelSection key={index.toString()}>
@@ -94,7 +89,7 @@ function mapStateToProps(state: RootState) {
 		canvasState: {
 			...state.canvas,
 		},
-		validationResults: state.data.validationResults,
+		validation: state.data.validation,
 	}
 }
 

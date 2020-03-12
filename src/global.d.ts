@@ -37,14 +37,14 @@ interface IProject {
 	spines: ISpine[]
 }
 
-interface IValidationResults {
+interface Ivalidation {
 	images: {
-		size: number
+		size: string | number
 		unused: string[]
 		missed: string[]
 	}
 }
 
 interface IValidation {
-	[key: string]: IValidationResults
+	[key: string]: Ivalidation
 }

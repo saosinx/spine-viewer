@@ -13,14 +13,14 @@ type ControlsProps = {
 }
 
 class Controls extends React.PureComponent<ControlsProps, {}> {
-	componentDidUpdate() {
-		this.props.stateValidation(this.validateProjects(this.props.projects))
-	}
+	private toMegabytes = (value: number): string => (value / 1024 ** 2).toFixed(2) + 'MB'
 
-	validateProjects(projects: IProject[]) {
-		const validationResults: IValidation = {}
+	private toKilobytes = (value: number): string => (value / 1024).toFixed(2) + 'KB'
 
-		function extractImageStrings(skin: { [x: string]: any }, collection: Set<string>) {
+	private validateProjects(projects: IProject[]) {
+		const validation: IValidation = {}
+
+		function extractImageNames(skin: { [x: string]: any }, collection: Set<string>) {
 			Object.keys(skin).forEach(key => {
 				const image = skin[key]
 				if (image.path) {
@@ -39,37 +39,44 @@ class Controls extends React.PureComponent<ControlsProps, {}> {
 				image.name.replace(/\.[^/.]+$/, '')
 			)
 
-			console.log(Object.values(project.imageFiles))
-
 			project.spines.forEach(spine => {
 				for (let [, value] of Object.entries(spine.skeletonJson.skins)) {
 					for (let i in value as any) {
-						extractImageStrings((value as any)[i], requiredImagesSet)
+						extractImageNames((value as any)[i], requiredImagesSet)
 					}
 				}
 			})
 
 			const requiredImages = [...requiredImagesSet]
-			const results: IValidationResults['images'] = {
+			const results: Ivalidation['images'] = {
 				size: 0,
 				unused: projectImages.filter(image => !requiredImages.includes(image)),
 				missed: requiredImages.filter(image => !projectImages.includes(image)),
 			}
 
-			results.unused.forEach((image: string) => {
-				for (let i = 0; i < project.imageFiles.length; i += 1 ) {
-					if (project.imageFiles[i].name.replace(/\.[^/.]+$/, '') === image) {
-						results.size = results.size + project.imageFiles[i].size
+			if (results.unused.length) {
+				let size = 0
+				results.unused.forEach((image: string) => {
+					for (let i = 0; i < project.imageFiles.length; i += 1) {
+						if (project.imageFiles[i].name.replace(/\.[^/.]+$/, '') === image) {
+							size = size + (project.imageFiles[i].size as any)
+						}
 					}
-				}
-			})
+				})
 
-			validationResults[project.base] = {
-				images: {...results}
+				results.size = size > 102400 ? this.toMegabytes(size) : this.toKilobytes(size)
+			}
+
+			validation[project.base] = {
+				images: { ...results },
 			}
 		})
 
-		return validationResults
+		return validation
+	}
+
+	componentDidUpdate() {
+		this.props.stateValidation(this.validateProjects(this.props.projects))
 	}
 
 	render() {
