@@ -5,10 +5,11 @@ import * as S from './styled'
 type CanvasState = {
 	isDrawing: boolean
 	clientRect: DOMRect | undefined
+	zoom: number
 }
 
 class Canvas extends React.PureComponent<{}, CanvasState> {
-	state = { isDrawing: false, clientRect: undefined }
+	state = { isDrawing: false, clientRect: undefined, translation: [0, 0],  zoom: 1 }
 
 	private canvasRef = React.createRef<HTMLCanvasElement>()
 
@@ -34,16 +35,24 @@ class Canvas extends React.PureComponent<{}, CanvasState> {
 	}
 
 	handleMouseMove = (ev: React.MouseEvent<HTMLCanvasElement>) => {
-		this.state.isDrawing &&
-			window.postMessage(
-				{
-					translation: [
-						ev.clientX - (this.state.clientRect! as DOMRect).left,
-						ev.clientY - (this.state.clientRect! as DOMRect).top,
-					],
-				},
-				'*'
-			)
+		if (!this.state.isDrawing) return
+
+		const translation = [
+			this.state.translation[0] + ev.movementX,
+			this.state.translation[1] + ev.movementY
+		]
+
+		this.setState(state => ({
+			...state,
+			translation
+		}))
+
+		window.postMessage(
+			{
+				translation
+			},
+			'*'
+		)
 	}
 
 	handleMouseUp = () => this.state.isDrawing && this.stopTranslation()
@@ -53,8 +62,15 @@ class Canvas extends React.PureComponent<{}, CanvasState> {
 	handleMouseDown = (ev: React.MouseEvent<HTMLCanvasElement>) =>
 		!ev.button && this.startTranslation()
 
-	handleWheel = (ev: React.WheelEvent<HTMLCanvasElement>) =>
-		window.postMessage({ zoom: ev.deltaY }, '*')
+	handleWheel = (ev: React.WheelEvent<HTMLCanvasElement>) => {
+		const k = ev.deltaY < 0 ? 1.1 : 0.9
+		const zoom = this.state.zoom * k
+		this.setState(state => ({
+			...state,
+			zoom,
+		}))
+		window.postMessage({ zoom }, '*')
+	}
 
 	handleWindowResize = () => this.updateBounds()
 
