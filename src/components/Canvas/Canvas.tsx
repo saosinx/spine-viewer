@@ -9,7 +9,7 @@ type CanvasState = {
 }
 
 class Canvas extends React.PureComponent<{}, CanvasState> {
-	state = { isDrawing: false, clientRect: undefined, translation: [0, 0],  zoom: 1 }
+	state = { isDrawing: false, clientRect: undefined, translation: [0, 0], zoom: 1 }
 
 	private canvasRef = React.createRef<HTMLCanvasElement>()
 
@@ -39,17 +39,17 @@ class Canvas extends React.PureComponent<{}, CanvasState> {
 
 		const translation = [
 			this.state.translation[0] + ev.movementX,
-			this.state.translation[1] + ev.movementY
+			this.state.translation[1] + ev.movementY,
 		]
 
 		this.setState(state => ({
 			...state,
-			translation
+			translation,
 		}))
 
 		window.postMessage(
 			{
-				translation
+				translation,
 			},
 			'*'
 		)
@@ -59,24 +59,41 @@ class Canvas extends React.PureComponent<{}, CanvasState> {
 
 	handleMouseLeave = () => this.state.isDrawing && this.stopTranslation()
 
-	handleMouseDown = (ev: React.MouseEvent<HTMLCanvasElement>) =>
+	handleMouseDown = (ev: React.MouseEvent<HTMLCanvasElement>) => {
 		!ev.button && this.startTranslation()
+
+		if (ev.button === 2) {
+			const translation = [0, 0]
+			const zoom = 1
+
+			this.setState(state => ({
+				...state,
+				translation,
+				zoom,
+			}))
+
+			window.postMessage({ translation, zoom }, '*')
+		}
+	}
 
 	handleWheel = (ev: React.WheelEvent<HTMLCanvasElement>) => {
 		const k = ev.deltaY < 0 ? 1.1 : 0.9
 		const zoom = this.state.zoom * k
+
 		this.setState(state => ({
 			...state,
 			zoom,
 		}))
+
 		window.postMessage({ zoom }, '*')
 	}
+
+	handleContextMenu = (ev: React.MouseEvent<HTMLCanvasElement>) => ev.preventDefault()
 
 	handleWindowResize = () => this.updateBounds()
 
 	componentDidMount() {
 		this.updateBounds()
-
 		window.addEventListener('resize', this.handleWindowResize)
 	}
 
@@ -96,6 +113,7 @@ class Canvas extends React.PureComponent<{}, CanvasState> {
 					onMouseDown={this.handleMouseDown}
 					onMouseMove={this.handleMouseMove}
 					onMouseLeave={this.handleMouseLeave}
+					onContextMenu={this.handleContextMenu}
 				/>
 			</S.CanvasContainer>
 		)
