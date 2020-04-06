@@ -26,11 +26,9 @@ class Controls extends React.PureComponent<ControlsProps, {}> {
 	}
 }
 
-function mapStateToProps(state: RootState) {
-	return {
-		projects: state.data.projects,
-	}
-}
+const mapStateToProps = (state: RootState) => ({
+	projects: state.data.projects,
+})
 
 const mapDispatchToProps = {
 	stateValidation,

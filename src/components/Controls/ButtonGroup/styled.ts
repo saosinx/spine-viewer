@@ -4,8 +4,8 @@ import { Button as AntButton } from 'antd'
 const Button = styled(AntButton)<any>`
 	&&& {
 		background: transparent;
-		border-color: ${props => props.theme.colors.alto};
-		color: ${props => props.theme.colors.black65};
+		border-color: ${({ theme }) => theme.colors.alto};
+		color: ${({ theme }) => theme.colors.black65};
 		height: 1.5rem;
 		padding: 0 0.5rem;
 		transition: all 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -16,6 +16,7 @@ const Button = styled(AntButton)<any>`
 				: trigger === 'animation'
 				? theme.colors.dodgerBlue
 				: theme.colors.pomegranatea};
+
 		border-color: ${({ trigger, active, theme }) =>
 			active !== 'true'
 				? ''
@@ -30,12 +31,14 @@ const Button = styled(AntButton)<any>`
 					: trigger === 'animation'
 					? theme.colors.dodgerBlue
 					: theme.colors.pomegranatea};
+
 			border-color: ${({ trigger, active, theme }) =>
 				active === 'true'
 					? theme.colors.alto
 					: trigger === 'animation'
 					? theme.colors.dodgerBlue
 					: theme.colors.pomegranatea};
+
 			color: ${({ trigger, active, theme }) =>
 				active === 'true'
 					? theme.colors.black65

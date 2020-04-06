@@ -29,12 +29,11 @@ reducer.on(postFiles, (state: IState, files: IFileList = []) => ({
 }))
 
 reducer.on(stateValidation, (state: IState, projects: IProject[]) => {
+	const trimExtenstion = (string: string): string => string.replace(/\.[^/.]+$/, '')
 	const toMegabytes = (value: number): string => (value / 1024 ** 2).toFixed(2) + 'MB'
 	const toKilobytes = (value: number): string => (value / 1024).toFixed(2) + 'KB'
 
-	const validation: IValidation = {}
-
-	function extractImageNames(skin: { [x: string]: any }, collection: Set<string>) {
+	const extractImageNames = function (skin: { [x: string]: any }, collection: Set<string>) {
 		Object.keys(skin).forEach(key => {
 			const image = skin[key]
 			if (image.path) {
@@ -47,11 +46,11 @@ reducer.on(stateValidation, (state: IState, projects: IProject[]) => {
 		})
 	}
 
+	const validation: IValidation = {}
+
 	projects.forEach((project: IProject) => {
 		const requiredImagesSet = new Set<string>()
-		const projectImages: string[] = project.imageFiles.map(image =>
-			image.name.replace(/\.[^/.]+$/, '')
-		)
+		const projectImages = project.imageFiles.map(({ name }) => trimExtenstion(name))
 
 		project.spines.forEach(spine => {
 			for (let [, value] of Object.entries(spine.skeletonJson.skins)) {

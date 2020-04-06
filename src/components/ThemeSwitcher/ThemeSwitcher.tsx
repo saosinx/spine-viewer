@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { connect } from 'react-redux'
+import { RootState } from '../../reducers'
 import { dispatch } from '../../store'
 import { setTheme } from '../../reducers/theme.reducer'
 
@@ -58,14 +59,8 @@ class ThemeSwitcher extends React.Component<{ theme: string }, { isChecked: bool
 	}
 }
 
-interface IStateProps {
-	theme: string
-}
+const mapStateToProps = (state: RootState) => ({
+	theme: state.theme.value,
+})
 
-function mapStateToProps(state: any): IStateProps {
-	return {
-		theme: state.theme.value,
-	}
-}
-
-export default connect<IStateProps, {}, {}>(mapStateToProps)(ThemeSwitcher)
+export default connect(mapStateToProps)(ThemeSwitcher)

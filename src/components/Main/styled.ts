@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro'
 
 const Main = styled.main`
-	background: ${props => props.theme.colors.white};
+	background: ${({ theme }) => theme.colors.white};
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: auto;

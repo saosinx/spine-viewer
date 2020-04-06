@@ -84,13 +84,11 @@ class Collapse extends React.PureComponent<Types.CollapseProps, {}> {
 	}
 }
 
-function mapStateToProps(state: RootState) {
-	return {
-		canvasState: {
-			...state.canvas,
-		},
-		validation: state.data.validation,
-	}
-}
+const mapStateToProps = (state: RootState) => ({
+	canvasState: {
+		...state.canvas,
+	},
+	validation: state.data.validation,
+})
 
 export default connect(mapStateToProps)(Collapse)

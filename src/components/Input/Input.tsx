@@ -66,10 +66,8 @@ class Input extends React.PureComponent<{ files: IFile[] }, {}> {
 	}
 }
 
-function mapStateToProps(state: RootState) {
-	return {
-		files: state.data.files,
-	}
-}
+const mapStateToProps = (state: RootState) => ({
+	files: state.data.files,
+})
 
 export default connect(mapStateToProps)(Input)

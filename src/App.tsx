@@ -27,7 +27,6 @@ export default class App extends React.Component<{}, {}> {
 	}
 
 	handleMessage(ev: MessageEvent) {
-		// console.log('postMessage:', ev.data.translation)
 		if (ev.data.projects) {
 			dispatch(getProjects(ev.data.projects))
 		}

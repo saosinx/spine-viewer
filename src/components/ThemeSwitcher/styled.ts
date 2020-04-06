@@ -14,8 +14,8 @@ const ThemeSwitcher = styled.div`
 `
 
 const ToggleSwitch = styled.label<{ checked?: boolean }>`
-	background-color: ${props =>
-		props.checked ? props.theme.colors.sanMarino : props.theme.colors.anakiwa};
+	background-color: ${({ checked, theme }) =>
+		checked ? theme.colors.sanMarino : theme.colors.anakiwa};
 	border-radius: 5.25rem;
 	cursor: pointer;
 	display: inline-block;
@@ -26,7 +26,7 @@ const ToggleSwitch = styled.label<{ checked?: boolean }>`
 `
 
 const ToggleKnob = styled.span`
-	background-color: ${props => props.theme.colors.peachOrange};
+	background-color: ${({ theme }) => theme.colors.peachOrange};
 	border-radius: 50%;
 	box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.3);
 	display: inline-block;
@@ -41,7 +41,7 @@ const ToggleKnob = styled.span`
 `
 
 const Crater = styled.span`
-	background-color: ${props => props.theme.colors.cashmere};
+	background-color: ${({ theme }) => theme.colors.cashmere};
 	border-radius: 100%;
 	opacity: 0;
 	position: absolute;
@@ -70,7 +70,7 @@ const Crater = styled.span`
 `
 
 const Star = styled.span`
-	background-color: ${props => props.theme.colors.white};
+	background-color: ${({ theme }) => theme.colors.white};
 	border-radius: 50%;
 	position: absolute;
 	transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
@@ -139,7 +139,7 @@ const ThemeSwitcherInput = styled.input`
 
 	&:checked {
 		+ ${ToggleKnob} {
-			background-color: ${props => props.theme.colors.peach};
+			background-color: ${({theme}) => theme.colors.peach};
 			transform: translate(2.5rem, 0) rotate(0);
 
 			${Crater} {

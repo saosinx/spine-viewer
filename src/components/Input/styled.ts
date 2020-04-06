@@ -24,9 +24,9 @@ const Button = styled.button`
 	padding: 0 0.9375rem;
 	font-size: 0.875rem;
 	border-radius: 0.25rem;
-	color: ${props => props.theme.colors.black65};
+	color: ${({ theme }) => theme.colors.black65};
 	background-color: transparent;
-	border-color: ${props => props.theme.colors.alto};
+	border-color: ${({ theme }) => theme.colors.alto};
 
 	& > ${Icon} + span,
 	& > span + ${Icon} {
@@ -41,13 +41,13 @@ const Button = styled.button`
 
 	&:hover,
 	&:focus {
-		color: ${props => props.theme.colors.dodgerBlue};
-		border-color: ${props => props.theme.colors.dodgerBlue};
+		color: ${({ theme }) => theme.colors.dodgerBlue};
+		border-color: ${({ theme }) => theme.colors.dodgerBlue};
 	}
 
 	&:active {
-		color: ${props => props.theme.colors.scienceBlue};
-		border-color: ${props => props.theme.colors.scienceBlue};
+		color: ${({ theme }) => theme.colors.scienceBlue};
+		border-color: ${({ theme }) => theme.colors.scienceBlue};
 	}
 
 	&:hover,
@@ -59,7 +59,7 @@ const Button = styled.button`
 `
 
 const InputLog = styled.span`
-	color: ${props => props.theme.colors.black65};
+	color: ${({ theme }) => theme.colors.black65};
 `
 
 const Input = styled.div`
