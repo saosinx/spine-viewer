@@ -1,8 +1,6 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { dispatch } from '../../store'
-import { RootState } from '../../reducers'
-import { postFilesAsync } from '../../reducers/data.reducer'
+
+import { postFilesAsync } from '../reducer'
 import * as S from './styled'
 
 const FileInput = React.forwardRef<HTMLInputElement, { onChange(): void }>((props, ref) => (
@@ -32,7 +30,12 @@ const InputButton: React.FC<{ onClick(): void }> = props => {
 	)
 }
 
-class Input extends React.PureComponent<{ files: IFile[] }, {}> {
+type InputProps = {
+	files: IFile[]
+	postFilesAsync: typeof postFilesAsync
+}
+
+export default class Input extends React.PureComponent<InputProps, {}> {
 	private inputFileRef = React.createRef<HTMLInputElement>()
 
 	constructor(props: any) {
@@ -44,7 +47,7 @@ class Input extends React.PureComponent<{ files: IFile[] }, {}> {
 
 	handleChange() {
 		const files: IFileList = Object.values(this.inputFileRef.current!.files as IFileList | FileList)
-		dispatch(postFilesAsync(files)).then(() => {
+		this.props.postFilesAsync(files).then(() => {
 			window.postMessage({ files }, '*')
 		})
 	}
@@ -65,9 +68,3 @@ class Input extends React.PureComponent<{ files: IFile[] }, {}> {
 		)
 	}
 }
-
-const mapStateToProps = (state: RootState) => ({
-	files: state.data.files,
-})
-
-export default connect(mapStateToProps)(Input)

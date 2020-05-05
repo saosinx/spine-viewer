@@ -1,7 +1,6 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import { Tooltip as AntdTooltip } from 'antd'
-import { RootState } from '../../../reducers'
+
 import ButtonGroup from '../ButtonGroup'
 import * as Types from './types'
 import * as S from './styled'
@@ -21,26 +20,26 @@ const Tooltip: React.FC<Types.TooltipProps> = props => {
 	)
 }
 
-const PanelHeader: React.FC<Types.PanelHeaderProps> = ({ title, validation }) => {
+const PanelHeader: React.FC<Types.PanelHeaderProps> = ({ title, results }) => {
 	return (
 		<S.PanelHeader>
 			<span>{title}</span>
-			{!!validation && (
+			{!!results && (
 				<>
-					{!!validation.images.unused.length && (
+					{!!results.images.unused.length && (
 						<Tooltip
-							title={`${validation.images.unused.length} unused images (${
-								validation.images.size
-							}):\n${validation.images.unused.join('\n')}`}
+							title={`${results.images.unused.length} unused images (${
+								results.images.size
+							}):\n${results.images.unused.join('\n')}`}
 						>
 							<S.Icon type="warning" theme="twoTone" twoToneColor="#ffcc00" />
 						</Tooltip>
 					)}
-					{!!validation.images.missed.length && (
+					{!!results.images.missed.length && (
 						<Tooltip
-							title={`${
-								validation.images.missed.length
-							} missed images:\n${validation.images.missed.join('\n')}`}
+							title={`${results.images.missed.length} missed images:\n${results.images.missed.join(
+								'\n'
+							)}`}
 						>
 							<S.Icon type="exclamation-circle" theme="twoTone" twoToneColor="#eb2f96" />
 						</Tooltip>
@@ -51,16 +50,16 @@ const PanelHeader: React.FC<Types.PanelHeaderProps> = ({ title, validation }) =>
 	)
 }
 
-class Collapse extends React.PureComponent<Types.CollapseProps, {}> {
+export default class Collapse extends React.PureComponent<Types.CollapseProps, {}> {
 	render() {
-		const { projects, canvasState, validation } = this.props
+		const { projects, canvasState, results } = this.props
 
 		return (
 			<S.Collapse defaultActiveKey={[...projects.keys()]}>
 				{projects.map((project: IProject, index: number) => (
 					<S.Panel
 						key={index.toString()}
-						header={<PanelHeader title={project.base} validation={validation[project.base]} />}
+						header={<PanelHeader title={project.base} results={results[project.base]} />}
 					>
 						{project.spines.map((spine: ISpine, index: number) => (
 							<S.PanelSection key={index.toString()}>
@@ -83,12 +82,3 @@ class Collapse extends React.PureComponent<Types.CollapseProps, {}> {
 		)
 	}
 }
-
-const mapStateToProps = (state: RootState) => ({
-	canvasState: {
-		...state.canvas,
-	},
-	validation: state.data.validation,
-})
-
-export default connect(mapStateToProps)(Collapse)

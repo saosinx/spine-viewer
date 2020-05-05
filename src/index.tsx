@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { createGlobalStyle, ThemeProvider } from 'styled-components/macro'
 import configureStore from './store'
-import { theme } from './themes/'
-import App from './App'
+import { theme } from './themes'
+import App from './app'
 import * as serviceWorker from './serviceWorker'
 
 const GlobalStyles = createGlobalStyle`
@@ -56,7 +56,7 @@ const GlobalStyles = createGlobalStyle`
 
 const store = configureStore()
 
-const render = function() {
+const render = function () {
 	ReactDOM.render(
 		<Provider store={store}>
 			<ThemeProvider theme={store.getState().theme.value === 'light' ? theme.light : theme.dark}>

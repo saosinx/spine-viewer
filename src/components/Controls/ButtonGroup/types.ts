@@ -1,4 +1,4 @@
-import { IState as ICanvasState } from '../../../reducers/canvas.reducer'
+import { IState as ICanvasState } from './reducer'
 
 export type ButtonProps = {
 	active?: boolean

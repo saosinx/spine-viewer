@@ -1,8 +1,6 @@
 import React from 'react'
-import { getProjects } from './reducers/data.reducer'
-import { dispatch } from './store'
-import Main from './components/Main'
-import ThemeSwitcher from './components/ThemeSwitcher'
+import Main from '../components/Main'
+import ThemeSwitcher from '../components/ThemeSwitcher'
 
 export default class App extends React.Component<{}, {}> {
 	body: HTMLElement
@@ -26,20 +24,12 @@ export default class App extends React.Component<{}, {}> {
 		this.timer = setTimeout(() => this.body.classList.remove('disable-hover'), 500)
 	}
 
-	handleMessage(ev: MessageEvent) {
-		if (ev.data.projects) {
-			dispatch(getProjects(ev.data.projects))
-		}
-	}
-
 	componentDidMount() {
 		window.addEventListener('scroll', this.handleScroll)
-		window.addEventListener('message', this.handleMessage)
 	}
 
 	componentWillUnmount() {
 		window.removeEventListener('scroll', this.handleScroll)
-		window.removeEventListener('message', this.handleMessage)
 	}
 
 	render() {

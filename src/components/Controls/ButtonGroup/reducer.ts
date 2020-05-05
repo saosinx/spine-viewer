@@ -16,7 +16,7 @@ const initialState: IState = {
 
 export const setAnimation = createAction<any, 'SET_ANIMATION'>('SET_ANIMATION')
 
-const reducer = createReducer({}, initialState)
+export const reducer = createReducer({}, initialState)
 
 reducer.on(setAnimation, (state, { projectName, animation, spineName, skin }) => ({
 	...state,
@@ -30,5 +30,3 @@ export const setAnimationAsync = (state: IState): any => (dispatch: Dispatch) =>
 	dispatch(setAnimation(state))
 	return Promise.resolve(state)
 }
-
-export default reducer

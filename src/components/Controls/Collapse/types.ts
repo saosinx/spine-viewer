@@ -1,13 +1,13 @@
-import { IState as ICanvasState } from '../../../reducers/canvas.reducer'
+import { IState as ICanvasState } from '../ButtonGroup/reducer'
 
 export type PanelHeaderProps = {
 	title: string
-	validation: Ivalidation
+	results: Ivalidation
 }
 
 export type CollapseProps = {
 	projects: IProject[]
-	validation: IValidation | any
+	results: IValidation | any
 	canvasState: ICanvasState
 }
 
