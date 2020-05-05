@@ -1,4 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Instructions on how to compile and run spine-viewer:
+1. install npm modules:<br/>
+_npm i_
+
+2. build :<br/>
+_npm run build_
+
+3. start:<br/>
+_npm start_
 
 ## Available Scripts
 
