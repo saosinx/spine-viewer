@@ -1,19 +1,18 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { RootState } from '../../reducers'
-import { stateValidation } from '../../reducers/data.reducer'
+
+import { validateProject } from './reducer'
 import Collapse from './Collapse'
-import Input from '../Input'
+import Input from './Input'
 import * as S from './styled'
 
 type ControlsProps = {
 	projects: IProject[]
-	stateValidation: typeof stateValidation
+	validateProject: typeof validateProject
 }
 
 class Controls extends React.PureComponent<ControlsProps, {}> {
 	componentDidUpdate() {
-		this.props.stateValidation(this.props.projects)
+		this.props.validateProject(this.props.projects)
 	}
 
 	render() {
@@ -26,12 +25,4 @@ class Controls extends React.PureComponent<ControlsProps, {}> {
 	}
 }
 
-const mapStateToProps = (state: RootState) => ({
-	projects: state.data.projects,
-})
-
-const mapDispatchToProps = {
-	stateValidation,
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Controls)
+export default Controls

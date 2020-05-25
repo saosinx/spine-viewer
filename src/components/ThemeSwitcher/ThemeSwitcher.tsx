@@ -1,9 +1,8 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
-import { RootState } from '../../reducers'
-import { dispatch } from '../../store'
-import { setTheme } from '../../reducers/theme.reducer'
+
+import { RootState, dispatch } from '../../store'
+import { setTheme } from './reducer'
 
 import * as S from './styled'
 

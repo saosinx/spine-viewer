@@ -9,7 +9,12 @@ type CanvasState = {
 }
 
 class Canvas extends React.PureComponent<{}, CanvasState> {
-	state = { isDrawing: false, clientRect: undefined, translation: [0, 0], zoom: 1 }
+	state = {
+		isDrawing: false,
+		clientRect: undefined,
+		translation: [0, 0],
+		zoom: 1,
+	}
 
 	private canvasRef = React.createRef<HTMLCanvasElement>()
 

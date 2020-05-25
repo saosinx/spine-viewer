@@ -1,6 +1,6 @@
 import React from 'react'
 import { dispatch } from '../../../store'
-import { setAnimationAsync, IState as ICanvasState } from '../../../reducers/canvas.reducer'
+import { setAnimationAsync, IState as ICanvasState } from './reducer'
 import * as Types from './types'
 import * as S from './styled'
 

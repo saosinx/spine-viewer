@@ -8,10 +8,9 @@ const initialState: IThemeReducer = {
 	value: (localStorage.getItem('theme') as string) || 'light',
 }
 
-const reducer = createReducer<typeof initialState>({}, initialState)
+export const reducer = createReducer<typeof initialState>({}, initialState)
 
 export const setTheme = createAction<string, 'SET_THEME'>('SET_THEME')
-
 
 reducer.on(setTheme, (state, value) => {
 	return {
@@ -19,5 +18,3 @@ reducer.on(setTheme, (state, value) => {
 		value,
 	}
 })
-
-export default reducer
