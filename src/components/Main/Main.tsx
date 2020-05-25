@@ -16,21 +16,21 @@ export default class Main extends React.PureComponent<MainProps, {}> {
 		this.handleMessage = this.handleMessage.bind(this)
 	}
 
-	handleMessage(ev: MessageEvent) {
+	private handleMessage(ev: MessageEvent) {
 		if (ev.data.projects) {
 			this.props.getProjects(ev.data.projects)
 		}
 	}
 
-	componentDidMount() {
+	public componentDidMount() {
 		window.addEventListener('message', this.handleMessage)
 	}
 
-	componentWillUnmount() {
+	public componentWillUnmount() {
 		window.removeEventListener('message', this.handleMessage)
 	}
 
-	render() {
+	public render() {
 		return (
 			<S.Main>
 				<Controls />

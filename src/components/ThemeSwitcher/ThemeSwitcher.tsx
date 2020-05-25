@@ -14,22 +14,22 @@ class ThemeSwitcher extends React.Component<{ theme: string }, { isChecked: bool
 		this.handleThemeChange = this.handleThemeChange.bind(this)
 	}
 
-	saveLocalTheme(theme: string): void {
+	private saveLocalTheme(theme: string): void {
 		localStorage.setItem('theme', theme)
 	}
 
-	toogleTheme(theme: string): void {
+	private toogleTheme(theme: string): void {
 		dispatch(setTheme(theme))
 	}
 
-	handleThemeChange() {
+	private handleThemeChange() {
 		const theme = this.state.isChecked ? 'light' : 'dark'
 		this.setState({ isChecked: !this.state.isChecked })
 		this.toogleTheme(theme)
 		this.saveLocalTheme(theme)
 	}
 
-	render() {
+	public render() {
 		return (
 			<S.ThemeSwitcher>
 				<S.ToggleSwitch checked={this.state.isChecked}>

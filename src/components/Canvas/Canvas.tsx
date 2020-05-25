@@ -18,28 +18,28 @@ class Canvas extends React.PureComponent<{}, CanvasState> {
 
 	private canvasRef = React.createRef<HTMLCanvasElement>()
 
-	updateBounds = () => {
+	private updateBounds = () => {
 		this.setState(state => ({
 			...state,
 			clientRect: this.canvasRef.current!.getBoundingClientRect(),
 		}))
 	}
 
-	startTranslation = () => {
+	private startTranslation = () => {
 		this.setState(state => ({
 			...state,
 			isDrawing: true,
 		}))
 	}
 
-	stopTranslation = () => {
+	private stopTranslation = () => {
 		this.setState(state => ({
 			...state,
 			isDrawing: false,
 		}))
 	}
 
-	handleMouseMove = (ev: React.MouseEvent<HTMLCanvasElement>) => {
+	private handleMouseMove = (ev: React.MouseEvent<HTMLCanvasElement>) => {
 		if (!this.state.isDrawing) return
 
 		const translation = [
@@ -60,11 +60,11 @@ class Canvas extends React.PureComponent<{}, CanvasState> {
 		)
 	}
 
-	handleMouseUp = () => this.state.isDrawing && this.stopTranslation()
+	private handleMouseUp = () => this.state.isDrawing && this.stopTranslation()
 
-	handleMouseLeave = () => this.state.isDrawing && this.stopTranslation()
+	private handleMouseLeave = () => this.state.isDrawing && this.stopTranslation()
 
-	handleMouseDown = (ev: React.MouseEvent<HTMLCanvasElement>) => {
+	private handleMouseDown = (ev: React.MouseEvent<HTMLCanvasElement>) => {
 		!ev.button && this.startTranslation()
 
 		if (ev.button === 2) {
@@ -81,7 +81,7 @@ class Canvas extends React.PureComponent<{}, CanvasState> {
 		}
 	}
 
-	handleWheel = (ev: React.WheelEvent<HTMLCanvasElement>) => {
+	private handleWheel = (ev: React.WheelEvent<HTMLCanvasElement>) => {
 		const k = ev.deltaY < 0 ? 1.1 : 0.9
 		const zoom = this.state.zoom * k
 
@@ -93,20 +93,20 @@ class Canvas extends React.PureComponent<{}, CanvasState> {
 		window.postMessage({ zoom }, '*')
 	}
 
-	handleContextMenu = (ev: React.MouseEvent<HTMLCanvasElement>) => ev.preventDefault()
+	private handleContextMenu = (ev: React.MouseEvent<HTMLCanvasElement>) => ev.preventDefault()
 
-	handleWindowResize = () => this.updateBounds()
+	private handleWindowResize = () => this.updateBounds()
 
-	componentDidMount() {
+	public componentDidMount() {
 		this.updateBounds()
 		window.addEventListener('resize', this.handleWindowResize)
 	}
 
-	componentWillUnmount() {
+	public componentWillUnmount() {
 		window.removeEventListener('resize', this.handleWindowResize)
 	}
 
-	render() {
+	public render() {
 		return (
 			<S.CanvasContainer className="block canvas-container">
 				<ColorPicker />

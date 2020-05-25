@@ -14,7 +14,7 @@ export default class ColorPicker extends React.PureComponent<{}, { color: string
 		this.handleColorChange = this.handleColorChange.bind(this)
 	}
 
-	handleColorChange(ev: React.SyntheticEvent) {
+	private handleColorChange(ev: React.SyntheticEvent) {
 		ev.persist()
 		this.setState(
 			() => ({
@@ -24,7 +24,7 @@ export default class ColorPicker extends React.PureComponent<{}, { color: string
 		)
 	}
 
-	render() {
+	public render() {
 		return (
 			<S.ColorPicker onClick={() => this.inputColorRef.current!.click()} color={this.state.color}>
 				<S.InputColor

@@ -45,18 +45,17 @@ export default class Input extends React.PureComponent<InputProps, {}> {
 		this.handleClick = this.handleClick.bind(this)
 	}
 
-	handleChange() {
+	private handleChange() {
 		const files: IFileList = Object.values(this.inputFileRef.current!.files as IFileList | FileList)
-		this.props.postFilesAsync(files).then(() => {
-			window.postMessage({ files }, '*')
-		})
+
+		this.props.postFilesAsync(files).then(() => window.postMessage({ files }, '*'))
 	}
 
-	handleClick() {
+	private handleClick() {
 		this.inputFileRef.current!.click()
 	}
 
-	render() {
+	public render() {
 		return (
 			<S.Input>
 				<S.ButtonContainer>

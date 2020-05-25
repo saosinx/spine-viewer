@@ -8,7 +8,7 @@ export type ButtonProps = {
 }
 
 export type ButtonGroupProps = {
-	canvasState: ICanvasState
+	activeProject: ICanvasState
 	objects: string[]
 	project: IProject
 	spine: ISpine

@@ -22,16 +22,16 @@ const Button: React.FC<Types.ButtonProps> = props => {
 	)
 }
 
-const ButtonGroup: React.FC<Types.ButtonGroupProps> = ({ canvasState, spine, ...props }) => {
+const ButtonGroup: React.FC<Types.ButtonGroupProps> = ({ activeProject, spine, ...props }) => {
 	const handleControlSet = ({ animation, skin }: any): void => {
 		const opts = {
 			projectName: props.project.base,
 			spineName: spine.skeletonFile.name,
-			animation: animation || canvasState.animation || spine.animations[0],
-			skin: skin || canvasState.skin || spine.skins[0],
+			animation: animation || activeProject.animation || spine.animations[0],
+			skin: skin || activeProject.skin || spine.skins[0],
 		}
 
-		if (spine.skeletonFile.name !== canvasState.spineName) {
+		if (spine.skeletonFile.name !== activeProject.spineName) {
 			opts.animation = animation || spine.animations[0]
 			opts.skin = skin || spine.skins[0]
 		}
@@ -55,8 +55,8 @@ const ButtonGroup: React.FC<Types.ButtonGroupProps> = ({ canvasState, spine, ...
 				<Button
 					key={index.toString()}
 					active={
-						canvasState.spineName === spine.skeletonFile.name &&
-						(canvasState.animation === object || canvasState.skin === object)
+						activeProject.spineName === spine.skeletonFile.name &&
+						(activeProject.animation === object || activeProject.skin === object)
 					}
 					animation={props.type === 'animations' ? object : undefined}
 					skin={props.type === 'skins' ? object : undefined}

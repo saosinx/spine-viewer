@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { RootState } from '../../../store'
 
 const mapStateToProps = (state: RootState) => ({
-	canvasState: {
+	activeProject: {
 		...state.project,
 	},
 	results: state.validation.results,

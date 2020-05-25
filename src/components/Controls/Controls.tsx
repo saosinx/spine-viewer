@@ -11,11 +11,11 @@ type ControlsProps = {
 }
 
 class Controls extends React.PureComponent<ControlsProps, {}> {
-	componentDidUpdate() {
+	public componentDidUpdate() {
 		this.props.validateProject(this.props.projects)
 	}
 
-	render() {
+	public render() {
 		return (
 			<S.Controls>
 				<Input />
