@@ -1,43 +1,31 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Main from '../components/Main'
 import ThemeSwitcher from '../components/ThemeSwitcher'
 
-export default class App extends React.Component<{}, {}> {
-	body: HTMLElement
-	timer: number
+export const App = () => {
+	useEffect(() => {
+		const body: HTMLElement = document.body
+		let timer: ReturnType<typeof setTimeout> = setTimeout(() => '', 1000)
 
-	constructor(props: any) {
-		super(props)
+		function handleScroll(): void {
+			clearTimeout(timer)
 
-		this.body = document.body
-		this.timer = 0
+			if (!body.classList.contains('disable-hover')) {
+				body.classList.add('disable-hover')
+			}
 
-		this.handleScroll = this.handleScroll.bind(this)
-	}
-
-	handleScroll() {
-		clearTimeout(this.timer)
-		if (!this.body.classList.contains('disable-hover')) {
-			this.body.classList.add('disable-hover')
+			timer = setTimeout(() => body.classList.remove('disable-hover'), 500)
 		}
 
-		this.timer = setTimeout(() => this.body.classList.remove('disable-hover'), 500)
-	}
+		window.addEventListener('scroll', handleScroll)
 
-	componentDidMount() {
-		window.addEventListener('scroll', this.handleScroll)
-	}
+		return () => window.removeEventListener('scroll', handleScroll)
+	}, [])
 
-	componentWillUnmount() {
-		window.removeEventListener('scroll', this.handleScroll)
-	}
-
-	render() {
-		return (
-			<>
-				<ThemeSwitcher />
-				<Main />
-			</>
-		)
-	}
+	return (
+		<>
+			<ThemeSwitcher />
+			<Main />
+		</>
+	)
 }

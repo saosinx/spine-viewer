@@ -1,39 +1,37 @@
-import React from 'react'
-import * as S from './styled'
+import React, { useState, useRef, useEffect } from 'react'
 
-export default class ColorPicker extends React.PureComponent<{}, { color: string }> {
-	private inputColorRef = React.createRef<HTMLInputElement>()
+import './styles.scss'
 
-	constructor(props: any) {
-		super(props)
+export const ColorPicker = () => {
+	const inputColorRef = useRef<HTMLInputElement>(null)
 
-		this.state = {
-			color: '#000000',
-		}
+	const [color, setColor] = useState('#000000')
 
-		this.handleColorChange = this.handleColorChange.bind(this)
-	}
-
-	private handleColorChange(ev: React.SyntheticEvent) {
+	const handleColorChange = (ev: React.SyntheticEvent) => {
 		ev.persist()
-		this.setState(
-			() => ({
-				color: (ev.target as HTMLInputElement).value,
-			}),
-			() => window.postMessage({ backgroundColor: this.state.color }, '*')
-		)
+
+		setColor((ev.target as HTMLInputElement).value)
 	}
 
-	public render() {
-		return (
-			<S.ColorPicker onClick={() => this.inputColorRef.current!.click()} color={this.state.color}>
-				<S.InputColor
-					type="color"
-					value={this.state.color}
-					ref={this.inputColorRef}
-					onChange={this.handleColorChange}
-				/>
-			</S.ColorPicker>
-		)
-	}
+	useEffect(() => {
+		window.postMessage({ backgroundColor: color }, '*')
+	}, [color])
+
+	return (
+		<div
+			className="color-picker"
+			onClick={() => inputColorRef.current!.click()}
+			style={{
+				backgroundColor: color,
+			}}
+		>
+			<input
+				className="input-color"
+				type="color"
+				value={color}
+				ref={inputColorRef}
+				onChange={handleColorChange}
+			/>
+		</div>
+	)
 }

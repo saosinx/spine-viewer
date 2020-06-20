@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 import { postFilesAsync } from '../reducer'
-import * as S from './styled'
 
-const FileInput = React.forwardRef<HTMLInputElement, { onChange(): void }>((props, ref) => (
+import './styles.scss'
+
+const FileInput = React.forwardRef<HTMLInputElement, { onChange(): void }>(({ onChange }, ref) => (
 	<input
 		{...{
-			onChange: props.onChange,
+			onChange: onChange,
 			ref: ref,
 			type: 'file',
 			directory: '',
@@ -17,53 +18,44 @@ const FileInput = React.forwardRef<HTMLInputElement, { onChange(): void }>((prop
 	/>
 ))
 
-const InputButton: React.FC<{ onClick(): void }> = props => {
-	return (
-		<S.Button type="button" onClick={props.onClick}>
-			<S.Icon>
-				<svg viewBox="64 64 896 896" focusable="false" width="1em" height="1em" fill="currentColor">
-					<path d="M400 317.7h73.9V656c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V317.7H624c6.7 0 10.4-7.7 6.3-12.9L518.3 163a8 8 0 0 0-12.6 0l-112 141.7c-4.1 5.3-.4 13 6.3 13zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z"></path>
-				</svg>
-			</S.Icon>
-			<span>Choose folder</span>
-		</S.Button>
-	)
-}
+const InputButton = ({ onClick }: any) => (
+	<button className="btn-input" type="button" onClick={onClick}>
+		<i>
+			<svg viewBox="64 64 896 896" focusable="false" width="1em" height="1em" fill="currentColor">
+				<path d="M400 317.7h73.9V656c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V317.7H624c6.7 0 10.4-7.7 6.3-12.9L518.3 163a8 8 0 0 0-12.6 0l-112 141.7c-4.1 5.3-.4 13 6.3 13zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z"></path>
+			</svg>
+		</i>
+		<span>Choose folder</span>
+	</button>
+)
 
-type InputProps = {
-	files: IFile[]
+type Props = {
+	files: Array<IFile>
 	postFilesAsync: typeof postFilesAsync
 }
 
-export default class Input extends React.PureComponent<InputProps, {}> {
-	private inputFileRef = React.createRef<HTMLInputElement>()
+export const Input = ({ files, postFilesAsync }: Props) => {
+	const inputFileRef = useRef<HTMLInputElement>(null)
 
-	constructor(props: any) {
-		super(props)
-
-		this.handleChange = this.handleChange.bind(this)
-		this.handleClick = this.handleClick.bind(this)
-	}
-
-	private handleChange() {
-		const files: IFileList = Object.values(this.inputFileRef.current!.files as IFileList | FileList)
-
-		this.props.postFilesAsync(files).then(() => window.postMessage({ files }, '*'))
-	}
-
-	private handleClick() {
-		this.inputFileRef.current!.click()
-	}
-
-	public render() {
-		return (
-			<S.Input>
-				<S.ButtonContainer>
-					<FileInput onChange={this.handleChange} ref={this.inputFileRef} />
-					<InputButton onClick={this.handleClick} />
-				</S.ButtonContainer>
-				{!!this.props.files.length && <S.InputLog>{`${this.props.files.length} files`}</S.InputLog>}
-			</S.Input>
+	const handleChange = () => {
+		const files: Array<IFile> = Object.values(
+			inputFileRef.current!.files as Array<IFile> | FileList
 		)
+
+		postFilesAsync(files).then(() => window.postMessage({ files }, '*'))
 	}
+
+	const handleClick = () => {
+		inputFileRef.current!.click()
+	}
+
+	return (
+		<div className="input">
+			<div className="btn-input-container">
+				<FileInput onChange={handleChange} ref={inputFileRef} />
+				<InputButton onClick={handleClick} />
+			</div>
+			{Boolean(files.length) && <span className="input-log">{`${files.length} files`}</span>}
+		</div>
+	)
 }

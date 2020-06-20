@@ -1,128 +1,77 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ColorPicker from '../ColorPicker'
-import * as S from './styled'
+import './styles.scss'
 
-type CanvasState = {
-	isDrawing: boolean
-	clientRect: DOMRect | undefined
-	zoom: number
-}
+export const Canvas = () => {
+	const [zoom, setZoom] = useState(1)
+	const [translation, setTranslation] = useState([0, 0])
+	const [isDrawing, setDrawingState] = useState(false)
 
-class Canvas extends React.PureComponent<{}, CanvasState> {
-	state = {
-		isDrawing: false,
-		clientRect: undefined,
-		translation: [0, 0],
-		zoom: 1,
+	const startTranslation = () => {
+		setDrawingState(true)
 	}
 
-	private canvasRef = React.createRef<HTMLCanvasElement>()
-
-	private updateBounds = () => {
-		this.setState(state => ({
-			...state,
-			clientRect: this.canvasRef.current!.getBoundingClientRect(),
-		}))
+	const stopTranslation = () => {
+		setDrawingState(false)
 	}
 
-	private startTranslation = () => {
-		this.setState(state => ({
-			...state,
-			isDrawing: true,
-		}))
-	}
+	const handleMouseMove = (ev: React.MouseEvent<HTMLCanvasElement>) => {
+		if (!isDrawing) return
 
-	private stopTranslation = () => {
-		this.setState(state => ({
-			...state,
-			isDrawing: false,
-		}))
-	}
+		const newTranslation = [translation[0] + ev.movementX, translation[1] + ev.movementY]
 
-	private handleMouseMove = (ev: React.MouseEvent<HTMLCanvasElement>) => {
-		if (!this.state.isDrawing) return
-
-		const translation = [
-			this.state.translation[0] + ev.movementX,
-			this.state.translation[1] + ev.movementY,
-		]
-
-		this.setState(state => ({
-			...state,
-			translation,
-		}))
+		setTranslation(newTranslation)
 
 		window.postMessage(
 			{
-				translation,
+				newTranslation,
 			},
 			'*'
 		)
 	}
 
-	private handleMouseUp = () => this.state.isDrawing && this.stopTranslation()
+	const handleMouseUp = () => isDrawing && stopTranslation()
 
-	private handleMouseLeave = () => this.state.isDrawing && this.stopTranslation()
+	const handleMouseLeave = () => isDrawing && stopTranslation()
 
-	private handleMouseDown = (ev: React.MouseEvent<HTMLCanvasElement>) => {
-		!ev.button && this.startTranslation()
+	const handleMouseDown = (ev: React.MouseEvent<HTMLCanvasElement>) => {
+		!ev.button && startTranslation()
 
 		if (ev.button === 2) {
-			const translation = [0, 0]
-			const zoom = 1
+			const translation: Array<number> = [0, 0]
+			const newZoom = 1
 
-			this.setState(state => ({
-				...state,
-				translation,
-				zoom,
-			}))
+			setTranslation(translation)
+			setZoom(newZoom)
 
-			window.postMessage({ translation, zoom }, '*')
+			window.postMessage({ translation, newZoom }, '*')
 		}
 	}
 
-	private handleWheel = (ev: React.WheelEvent<HTMLCanvasElement>) => {
+	const handleWheel = (ev: React.WheelEvent<HTMLCanvasElement>) => {
 		const k = ev.deltaY < 0 ? 1.1 : 0.9
-		const zoom = this.state.zoom * k
+		const newZoom = zoom * k
 
-		this.setState(state => ({
-			...state,
-			zoom,
-		}))
-
-		window.postMessage({ zoom }, '*')
+		setZoom(newZoom)
+		console.log(newZoom)
+		window.postMessage({ newZoom }, '*')
 	}
 
-	private handleContextMenu = (ev: React.MouseEvent<HTMLCanvasElement>) => ev.preventDefault()
+	const handleContextMenu = (ev: React.MouseEvent<HTMLCanvasElement>) => ev.preventDefault()
 
-	private handleWindowResize = () => this.updateBounds()
-
-	public componentDidMount() {
-		this.updateBounds()
-		window.addEventListener('resize', this.handleWindowResize)
-	}
-
-	public componentWillUnmount() {
-		window.removeEventListener('resize', this.handleWindowResize)
-	}
-
-	public render() {
-		return (
-			<S.CanvasContainer className="block canvas-container">
-				<ColorPicker />
-				<S.Canvas
-					id="canvas"
-					ref={this.canvasRef}
-					onWheel={this.handleWheel}
-					onMouseUp={this.handleMouseUp}
-					onMouseDown={this.handleMouseDown}
-					onMouseMove={this.handleMouseMove}
-					onMouseLeave={this.handleMouseLeave}
-					onContextMenu={this.handleContextMenu}
-				/>
-			</S.CanvasContainer>
-		)
-	}
+	return (
+		<div className="canvas-container">
+			<ColorPicker />
+			<canvas
+				id="canvas"
+				className="canvas"
+				onWheel={handleWheel}
+				onMouseUp={handleMouseUp}
+				onMouseDown={handleMouseDown}
+				onMouseMove={handleMouseMove}
+				onMouseLeave={handleMouseLeave}
+				onContextMenu={handleContextMenu}
+			/>
+		</div>
+	)
 }
-
-export default Canvas

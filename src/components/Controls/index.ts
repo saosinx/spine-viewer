@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 
 import { RootState } from '../../store'
 import { validateProject } from './reducer'
-import Controls from './Controls'
+import { Controls } from './Controls'
 
 const mapStateToProps = (state: RootState) => ({
 	projects: state.init.projects,

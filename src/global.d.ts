@@ -6,12 +6,8 @@ interface IFile {
 	webkitRelativePath: string
 }
 
-interface IFileList extends Array {
-	[Symbol.iterator](): IterableIterator<IFile>
-}
-
 interface ISpine {
-	animations: string[]
+	animations: Array<string>
 	skeletonFile: IFile
 	skeletonJson: {
 		animations: {
@@ -27,21 +23,21 @@ interface ISpine {
 		skins: { [s: string]: unknown } | ArrayLike<unknown>
 		slots: ArrayLike<unknown>
 	}
-	skins: string[]
+	skins: Array<string>
 }
 
 interface IProject {
 	base: string
-	imageFiles: IFile[]
+	imageFiles: Array<IFile>
 	imagesMap: Object
-	spines: ISpine[]
+	spines: Array<ISpine>
 }
 
 interface Ivalidation {
 	images: {
 		size: string | number
-		unused: string[]
-		missed: string[]
+		unused: Array<string>
+		missed: Array<string>
 	}
 }
 

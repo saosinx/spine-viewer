@@ -1,0 +1,61 @@
+@import 'themes/colors.scss';
+
+.btn {
+	background-color: transparent;
+	border-color: $alto;
+	color: rgba(#000, 0.65);
+	height: 1.5rem;
+	padding: 0 0.5rem;
+	transition: 
+		background-color 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+	&.-active.-skin {
+		background-color: $pomegrana-tea;
+		border-color: $pomegrana-tea;
+	}
+
+	&.-active.-animation {
+		background-color: $dodger-blue;
+		border-color: $dodger-blue;
+	}
+
+	&.-skin:hover:not(.-active) {
+		color: $pomegrana-tea;
+		border-color: currentColor;
+	}
+
+	&.-animation:hover:not(.-active) {
+		color: $dodger-blue;
+		border-color: currentColor;
+	}
+
+	&.-active {
+		color: rgba(#000, 0.65);
+		z-index: 2;
+	}
+
+	&:hover {
+		z-index: 1;
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		text-decoration: none;
+		outline: 0;
+	}
+}
+
+.btn-group {
+	transition: all 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+	.btn {
+		border-radius: 0;
+		margin-left: -0.0625rem;
+		margin-top: -0.0625rem;
+	}
+
+	& + & {
+		margin-left: 0;
+	}
+}

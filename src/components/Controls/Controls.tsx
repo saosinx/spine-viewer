@@ -1,28 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { validateProject } from './reducer'
 import Collapse from './Collapse'
 import Input from './Input'
-import * as S from './styled'
+import './styles.scss'
 
-type ControlsProps = {
-	projects: IProject[]
+type Props = {
+	projects: Array<IProject>
 	validateProject: typeof validateProject
 }
 
-class Controls extends React.PureComponent<ControlsProps, {}> {
-	public componentDidUpdate() {
-		this.props.validateProject(this.props.projects)
-	}
+export const Controls = ({ projects, validateProject }: Props) => {
+	useEffect(() => {
+		validateProject(projects)
+	}, [projects])
 
-	public render() {
-		return (
-			<S.Controls>
-				<Input />
-				{!!this.props.projects.length && <Collapse projects={this.props.projects} />}
-			</S.Controls>
-		)
-	}
+	return (
+		<div className="controls">
+			<Input />
+			{Boolean(projects.length) && <Collapse projects={projects} />}
+		</div>
+	)
 }
-
-export default Controls

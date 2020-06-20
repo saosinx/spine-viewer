@@ -1,6 +1,6 @@
-import styled from 'styled-components/macro'
+@import 'themes/colors.scss';
 
-const ThemeSwitcher = styled.div`
+.theme-switcher {
 	position: fixed;
 	bottom: 1.5625rem;
 	right: 1.5625rem;
@@ -11,11 +11,10 @@ const ThemeSwitcher = styled.div`
 	&:hover {
 		opacity: 1;
 	}
-`
+}
 
-const ToggleSwitch = styled.label<{ checked?: boolean }>`
-	background-color: ${({ checked, theme }) =>
-		checked ? theme.colors.sanMarino : theme.colors.anakiwa};
+label.toggle-switch {
+	background-color: $anakiwa;
 	border-radius: 5.25rem;
 	cursor: pointer;
 	display: inline-block;
@@ -23,12 +22,16 @@ const ToggleSwitch = styled.label<{ checked?: boolean }>`
 	position: relative;
 	transition: background-color 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 	width: 5.625rem;
-`
 
-const ToggleKnob = styled.span`
-	background-color: ${({ theme }) => theme.colors.peachOrange};
+	&.-checked {
+		background-color: $san-marino;
+	}
+}
+
+.toggle-knob {
+	background-color: $peach-orange;
 	border-radius: 50%;
-	box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0.125rem 0.375rem rgba(#000, 0.3);
 	display: inline-block;
 	position: relative;
 	top: 0.1875rem;
@@ -38,39 +41,39 @@ const ToggleKnob = styled.span`
 	height: 2.75rem;
 	width: 2.75rem;
 	z-index: 1;
-`
 
-const Crater = styled.span`
-	background-color: ${({ theme }) => theme.colors.cashmere};
-	border-radius: 100%;
-	opacity: 0;
-	position: absolute;
-	transition: opacity 200ms ease-in-out;
+	> span {
+		background-color: $macaroni-and-cheese;
+		border-radius: 100%;
+		opacity: 0;
+		position: absolute;
+		transition: opacity 200ms ease-in-out;
 
-	&:nth-child(1) {
-		top: 1.125rem;
-		left: 0.625rem;
-		height: 0.25rem;
-		width: 0.25rem;
+		&:nth-child(1) {
+			top: 1.125rem;
+			left: 0.625rem;
+			height: 0.25rem;
+			width: 0.25rem;
+		}
+
+		&:nth-child(2) {
+			top: 1.75rem;
+			left: 1.375rem;
+			height: 0.375rem;
+			width: 0.375rem;
+		}
+
+		&:nth-child(3) {
+			top: 0.625rem;
+			left: 1.5625rem;
+			height: 0.5rem;
+			width: 0.5rem;
+		}
 	}
+}
 
-	&:nth-child(2) {
-		top: 1.75rem;
-		left: 1.375rem;
-		height: 0.375rem;
-		width: 0.375rem;
-	}
-
-	&:nth-child(3) {
-		top: 0.625rem;
-		left: 1.5625rem;
-		height: 0.5rem;
-		width: 0.5rem;
-	}
-`
-
-const Star = styled.span`
-	background-color: ${({ theme }) => theme.colors.white};
+.stars > span {
+	background-color: $white;
 	border-radius: 50%;
 	position: absolute;
 	transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
@@ -132,40 +135,40 @@ const Star = styled.span`
 		width: 0.125rem;
 		z-index: 0;
 	}
-`
-/* prettier-ignore */
-const ThemeSwitcherInput = styled.input`
+}
+
+input.theme-switcher-input {
 	display: none;
 
 	&:checked {
-		+ ${ToggleKnob} {
-			background-color: ${({theme}) => theme.colors.peach};
+		+ .toggle-knob {
+			background-color: $peach;
 			transform: translate(2.5rem, 0) rotate(0);
 
-			${Crater} {
+			> span {
 				opacity: 1;
 			}
 		}
 
-		~ div {
-			${Star}:nth-child(1) {
+		~ .stars {
+			span:nth-child(1) {
 				height: 0.125rem;
 				width: 0.125rem;
 			}
 
-			${Star}:nth-child(2) {
+			span:nth-child(2) {
 				transform: translate(-0.3125rem, 0);
 				height: 0.25rem;
 				width: 0.25rem;
 			}
 
-			${Star}:nth-child(3) {
+			span:nth-child(3) {
 				transform: translate(-0.4375rem, 0);
 				height: 0.125rem;
 				width: 0.125rem;
 			}
 
-			${Star} {
+			span {
 				&:nth-child(4),
 				&:nth-child(5),
 				&:nth-child(6) {
@@ -175,19 +178,17 @@ const ThemeSwitcherInput = styled.input`
 				}
 			}
 
-			${Star}:nth-child(4) {
+			span:nth-child(4) {
 				transition-delay: 200ms;
 			}
 
-			${Star}:nth-child(5) {
+			span:nth-child(5) {
 				transition-delay: 300ms;
 			}
 
-			${Star}:nth-child(6) {
+			span:nth-child(6) {
 				transition-delay: 400ms;
 			}
 		}
 	}
-`
-
-export { ThemeSwitcher, ThemeSwitcherInput, ToggleSwitch, ToggleKnob, Crater, Star }
+}

@@ -28,5 +28,15 @@ reducer.on(setAnimation, (state, { projectName, animation, spineName, skin }) =>
 
 export const setAnimationAsync = (state: IState): any => (dispatch: Dispatch) => {
 	dispatch(setAnimation(state))
+
+	window.postMessage(
+		{
+			projectName: state.projectName,
+			spineName: state.spineName,
+			animation: state.animation,
+			skin: state.skin,
+		},
+		'*'
+	)
 	return Promise.resolve(state)
 }

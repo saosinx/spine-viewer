@@ -1,31 +1,51 @@
 import React from 'react'
+import { Button as AntButton } from 'antd'
+import cn from 'classnames'
+
 import { dispatch } from '../../../store'
 import { setAnimationAsync, IState as ICanvasState } from './reducer'
-import * as Types from './types'
-import * as S from './styled'
 
-const Button: React.FC<Types.ButtonProps> = props => {
-	const trigger = props.animation ? 'animation' : 'skin'
-	const active = props.active ? true : false
+import './styles.scss'
+
+type ButtonProps = {
+	active?: boolean
+	animation: string | undefined
+	skin: string | undefined
+	handleControlSet(args: any): void
+}
+
+const Button = ({ animation, active = false, skin, handleControlSet }: ButtonProps) => {
+	const trigger = animation ? 'animation' : 'skin'
 
 	const handleClick = () => {
-		props.handleControlSet({
-			animation: props.animation,
-			skin: props.skin,
+		handleControlSet({
+			animation,
+			skin,
 		})
 	}
 
 	return (
-		<S.Button active={active.toString()} trigger={trigger} onClick={handleClick}>
-			{props.animation || props.skin}
-		</S.Button>
+		<AntButton
+			className={cn('btn', { [`-${trigger}`]: trigger }, { [`-active`]: active })}
+			onClick={handleClick}
+		>
+			{animation || skin}
+		</AntButton>
 	)
 }
 
-const ButtonGroup: React.FC<Types.ButtonGroupProps> = ({ activeProject, spine, ...props }) => {
+type ButtonGroupProps = {
+	activeProject: ICanvasState
+	objects: Array<string>
+	project: IProject
+	spine: ISpine
+	type: 'skins' | 'animations'
+}
+
+export const ButtonGroup = ({ project, activeProject, spine, objects, type }: ButtonGroupProps) => {
 	const handleControlSet = ({ animation, skin }: any): void => {
 		const opts = {
-			projectName: props.project.base,
+			projectName: project.base,
 			spineName: spine.skeletonFile.name,
 			animation: animation || activeProject.animation || spine.animations[0],
 			skin: skin || activeProject.skin || spine.skins[0],
@@ -36,35 +56,23 @@ const ButtonGroup: React.FC<Types.ButtonGroupProps> = ({ activeProject, spine, .
 			opts.skin = skin || spine.skins[0]
 		}
 
-		dispatch(setAnimationAsync(opts)).then((opts: ICanvasState) => {
-			window.postMessage(
-				{
-					projectName: opts.projectName,
-					spineName: opts.spineName,
-					animation: opts.animation,
-					skin: opts.skin,
-				},
-				'*'
-			)
-		})
+		dispatch(setAnimationAsync(opts))
 	}
 
 	return (
-		<S.ButtonGroup>
-			{props.objects.map((object, index) => (
+		<div className="btn-group">
+			{objects.map((object, index) => (
 				<Button
 					key={index.toString()}
 					active={
 						activeProject.spineName === spine.skeletonFile.name &&
 						(activeProject.animation === object || activeProject.skin === object)
 					}
-					animation={props.type === 'animations' ? object : undefined}
-					skin={props.type === 'skins' ? object : undefined}
+					animation={type === 'animations' ? object : undefined}
+					skin={type === 'skins' ? object : undefined}
 					handleControlSet={handleControlSet}
 				/>
 			))}
-		</S.ButtonGroup>
+		</div>
 	)
 }
-
-export default ButtonGroup

@@ -1,16 +1,18 @@
 import { createAction, createReducer } from 'redux-act'
 
+type ThemeMode = 'light' | 'dark'
+
 interface IThemeReducer {
-	value: string
+	value: ThemeMode
 }
 
 const initialState: IThemeReducer = {
-	value: (localStorage.getItem('theme') as string) || 'light',
+	value: (localStorage.getItem('theme') as ThemeMode) || 'light',
 }
 
 export const reducer = createReducer<typeof initialState>({}, initialState)
 
-export const setTheme = createAction<string, 'SET_THEME'>('SET_THEME')
+export const setTheme = createAction<ThemeMode, 'SET_THEME'>('SET_THEME')
 
 reducer.on(setTheme, (state, value) => {
 	return {

@@ -6,7 +6,7 @@ export type PanelHeaderProps = {
 }
 
 export type CollapseProps = {
-	projects: IProject[]
+	projects: Array<IProject>
 	results: IValidation | any
 	activeProject: IProjectState
 }

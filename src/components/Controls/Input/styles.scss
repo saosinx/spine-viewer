@@ -1,13 +1,12 @@
-import styled from 'styled-components/macro'
+@import 'themes/colors.scss';
 
-const Icon = styled.i``
-const ButtonContainer = styled.div`
+.btn-input-container {
 	input[type='file'] {
 		display: none;
 	}
-`
+}
 
-const Button = styled.button`
+.btn-input {
 	line-height: 1.499;
 	position: relative;
 	display: inline-block;
@@ -15,7 +14,7 @@ const Button = styled.button`
 	white-space: nowrap;
 	text-align: center;
 	border: 0.0625rem solid transparent;
-	box-shadow: 0 0.125rem 0 rgba(0, 0, 0, 0.015);
+	box-shadow: 0 0.125rem 0 rgba(#000, 0.015);
 	cursor: pointer;
 	transition: all 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
 	user-select: none;
@@ -24,12 +23,12 @@ const Button = styled.button`
 	padding: 0 0.9375rem;
 	font-size: 0.875rem;
 	border-radius: 0.25rem;
-	color: ${({ theme }) => theme.colors.black65};
+	color: rgba(#000, 0.65);
 	background-color: transparent;
-	border-color: ${({ theme }) => theme.colors.alto};
+	border-color: $alto;
 
-	& > ${Icon} + span,
-	& > span + ${Icon} {
+	& > i + span,
+	& > span + i {
 		margin-left: 0.5rem;
 	}
 
@@ -41,13 +40,13 @@ const Button = styled.button`
 
 	&:hover,
 	&:focus {
-		color: ${({ theme }) => theme.colors.dodgerBlue};
-		border-color: ${({ theme }) => theme.colors.dodgerBlue};
+		color: $dodger-blue;
+		border-color: currentColor;
 	}
 
 	&:active {
-		color: ${({ theme }) => theme.colors.scienceBlue};
-		border-color: ${({ theme }) => theme.colors.scienceBlue};
+		color: $science-blue;
+		border-color: currentColor;
 	}
 
 	&:hover,
@@ -56,20 +55,18 @@ const Button = styled.button`
 		text-decoration: none;
 		background-color: transparent;
 	}
-`
+}
 
-const InputLog = styled.span`
-	color: ${({ theme }) => theme.colors.black65};
-`
+span.input-log {
+	color: rgba(#000, 0.65);
+}
 
-const Input = styled.div`
+.input {
 	display: flex;
 	align-items: center;
 
-	${InputLog} {
+	span.input-log {
 		margin-left: 0.5rem;
 		font-size: 0.875em;
 	}
-`
-
-export { Input, InputLog, Button, ButtonContainer, Icon }
+}
