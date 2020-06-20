@@ -1,0 +1,62 @@
+@import 'themes/colors.scss';
+
+.btn {
+	background-color: transparent;
+	border-color: var(--alto);
+	color: var(--black-65);
+	height: 1.5rem;
+	padding: 0 0.5rem;
+	transition: 
+		background-color 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+	&.-active.-skin {
+		background-color: var(--pomegrana-tea);
+		border-color: var(--pomegrana-tea);
+	}
+
+	&.-active.-animation {
+		background-color: var(--dodger-blue);
+		border-color: var(--dodger-blue);
+	}
+
+	&.-skin:hover:not(.-active) {
+		color: var(--pomegrana-tea);
+		border-color: currentColor;
+	}
+
+	&.-animation:hover:not(.-active) {
+		color: var(--dodger-blue);
+		border-color: currentColor;
+	}
+
+	&.-active {
+		color: var(--white);
+		z-index: 2;
+	}
+
+	&:hover {
+		background-color: transparent;
+		z-index: 1;
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		text-decoration: none;
+		outline: 0;
+	}
+}
+
+.btn-group {
+	transition: all 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+	.btn {
+		border-radius: 0;
+		margin-left: -0.0625rem;
+		margin-top: -0.0625rem;
+	}
+
+	& + & {
+		margin-left: 0;
+	}
+}

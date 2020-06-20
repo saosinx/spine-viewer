@@ -1,65 +1,65 @@
-import React from 'react'
-import { connect } from 'react-redux'
+import React, { useState } from 'react'
+import cn from 'classnames'
 
-import { RootState, dispatch } from '../../store'
-import { setTheme } from './reducer'
+import { dispatch } from '../../store'
+import { ITheme, themes } from '../../themes'
+import { setTheme, ThemeMode, Themes } from './reducer'
 
-import * as S from './styled'
+import './styles.scss'
 
-class ThemeSwitcher extends React.Component<{ theme: string }, { isChecked: boolean }> {
-	constructor(props: any) {
-		super(props)
+export const ThemeSwitcher = () => {
+	const [isChecked, setInputState] = useState(
+		localStorage.getItem('theme') === Themes.light ? false : true
+	)
 
-		this.state = { isChecked: this.props.theme === 'light' ? false : true }
-		this.handleThemeChange = this.handleThemeChange.bind(this)
-	}
-
-	private saveLocalTheme(theme: string): void {
+	const saveLocalTheme = (theme: ThemeMode): void => {
 		localStorage.setItem('theme', theme)
 	}
 
-	private toogleTheme(theme: string): void {
+	const toogleTheme = (theme: ThemeMode): void => {
 		dispatch(setTheme(theme))
+		const newTheme: ITheme | undefined = themes.find(({ name }) => name === theme)
+		if (!newTheme) return
+		const rootElement = document.documentElement
+
+		Object.keys(newTheme).forEach(property => {
+			if (property === 'name') return
+
+			rootElement.style.setProperty(property, newTheme[property])
+		})
 	}
 
-	private handleThemeChange() {
-		const theme = this.state.isChecked ? 'light' : 'dark'
-		this.setState({ isChecked: !this.state.isChecked })
-		this.toogleTheme(theme)
-		this.saveLocalTheme(theme)
+	const handleThemeChange = () => {
+		const theme: ThemeMode = isChecked ? Themes.light : Themes.dark
+		setInputState(!isChecked)
+		toogleTheme(theme)
+		saveLocalTheme(theme)
 	}
 
-	public render() {
-		return (
-			<S.ThemeSwitcher>
-				<S.ToggleSwitch checked={this.state.isChecked}>
-					<S.ThemeSwitcherInput
-						type="checkbox"
-						name="themeSwitcherInput"
-						checked={this.state.isChecked}
-						onChange={this.handleThemeChange}
-					/>
-					<S.ToggleKnob>
-						<S.Crater />
-						<S.Crater />
-						<S.Crater />
-					</S.ToggleKnob>
-					<div>
-						<S.Star />
-						<S.Star />
-						<S.Star />
-						<S.Star />
-						<S.Star />
-						<S.Star />
-					</div>
-				</S.ToggleSwitch>
-			</S.ThemeSwitcher>
-		)
-	}
+	return (
+		<div className="theme-switcher">
+			<label className={cn('theme-switcher_toggle', { '-checked': isChecked })}>
+				<input
+					className="theme-switcher_input"
+					type="checkbox"
+					name="themeSwitcherInput"
+					checked={isChecked}
+					onChange={handleThemeChange}
+				/>
+				<div className="theme-switcher_craters">
+					<span />
+					<span />
+					<span />
+				</div>
+				<div className="theme-switcher_stars">
+					<span />
+					<span />
+					<span />
+					<span />
+					<span />
+					<span />
+				</div>
+			</label>
+		</div>
+	)
 }
-
-const mapStateToProps = (state: RootState) => ({
-	theme: state.theme.value,
-})
-
-export default connect(mapStateToProps)(ThemeSwitcher)

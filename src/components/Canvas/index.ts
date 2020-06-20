@@ -1,1 +1,1 @@
-export { default } from './Canvas'
+export { Canvas as default } from './Canvas'

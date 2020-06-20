@@ -5,18 +5,16 @@ import thunk from 'redux-thunk'
 
 import { reducer as init } from './components/Main'
 import { reducer as project } from './components/Controls/ButtonGroup'
-import { reducer as theme } from './components/ThemeSwitcher'
 import { reducer as validation } from './components/Controls'
 
 const reducers = combineReducers({
 	init,
 	project,
-	theme,
 	validation,
 })
 
 let store: Store
-const configureStore = function () {
+const configureStore = (): Store => {
 	const middlewares = [thunk]
 	const enchancers = composeWithDevTools(applyMiddleware(...middlewares))
 	store = createStore(reducers, compose(enchancers))
@@ -25,8 +23,6 @@ const configureStore = function () {
 
 export type RootState = StateType<typeof reducers>
 
-export const dispatch = function (action: Action): any {
-	return store.dispatch(action)
-}
+export const dispatch = <T>(action: Action<T>): Action<T> => store.dispatch(action)
 
 export default configureStore

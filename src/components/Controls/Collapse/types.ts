@@ -6,7 +6,7 @@ export type PanelHeaderProps = {
 }
 
 export type CollapseProps = {
-	projects: IProject[]
+	projects: Array<IProject>
 	results: IValidation | any
 	activeProject: IProjectState
 }
@@ -27,4 +27,5 @@ export type PanelSectionProps = {
 
 export type TooltipProps = {
 	title: string
+	children: React.ReactNode
 }

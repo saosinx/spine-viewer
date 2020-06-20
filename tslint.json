@@ -1,0 +1,18 @@
+{
+  "extends": [
+    "./node_modules/react-redux-typescript-scripts/tslint.json"
+  ],
+  "rules": {
+    "no-import-side-effect": [false],
+    "semicolon": [false],
+    "no-console": [false],
+    "only-arrow-functions": [true, "allow-declarations"],
+    "no-unused-expression": [true, "allow-fast-null-checks"],
+    "no-shadowed-variable": [false],
+    "no-submodule-imports": false,
+    "type-literal-delimiter": false,
+    "array-type": false,
+    "forin": false,
+    "prefer-for-of": false
+  }
+}

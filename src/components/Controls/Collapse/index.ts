@@ -1,4 +1,4 @@
-import Collapse from './Collapse'
+import { Collapse } from './Collapse'
 import { connect } from 'react-redux'
 
 import { RootState } from '../../../store'

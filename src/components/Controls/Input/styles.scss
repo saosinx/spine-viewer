@@ -1,0 +1,71 @@
+@import 'themes/colors.scss';
+
+.input-file {
+	&_container {
+		display: flex;
+		align-items: center;
+	}
+
+	&_inner {
+		input[type='file'] {
+			display: none;
+		}
+	}
+
+	&_button {
+		line-height: 1.499;
+		position: relative;
+		display: inline-block;
+		font-weight: 400;
+		white-space: nowrap;
+		text-align: center;
+		border: 0.0625rem solid transparent;
+		box-shadow: 0 0.125rem 0 rgba(var(--black), 0.015);
+		cursor: pointer;
+		transition: all 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+		user-select: none;
+		touch-action: manipulation;
+		height: 2rem;
+		padding: 0 0.9375rem;
+		font-size: 0.875rem;
+		border-radius: 0.25rem;
+		color: var(--black-65);
+		background-color: transparent;
+		border-color: var(--alto);
+
+		& > i + span,
+		& > span + i {
+			margin-left: 0.5rem;
+		}
+
+		&,
+		&:active,
+		&:focus {
+			outline: 0;
+		}
+
+		&:hover,
+		&:focus {
+			color: var(--dodger-blue);
+			border-color: currentColor;
+		}
+
+		&:active {
+			color: var(--science-blue);
+			border-color: currentColor;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			text-decoration: none;
+			background-color: transparent;
+		}
+	}
+
+	&_log {
+		color: var(--black-65);
+		margin-left: 0.5rem;
+		font-size: 0.875em;
+	}
+}

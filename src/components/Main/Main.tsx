@@ -1,41 +1,31 @@
-import React from 'react'
-
+import React, { useEffect } from 'react'
 import { getProjects } from './reducer'
 import Controls from '../Controls'
 import Canvas from '../Canvas'
-import * as S from './styled'
 
-type MainProps = {
+import './styles.scss'
+
+type Props = {
 	getProjects: typeof getProjects
 }
 
-export default class Main extends React.PureComponent<MainProps, {}> {
-	constructor(props: any) {
-		super(props)
-
-		this.handleMessage = this.handleMessage.bind(this)
-	}
-
-	private handleMessage(ev: MessageEvent) {
-		if (ev.data.projects) {
-			this.props.getProjects(ev.data.projects)
+export const Main = ({ getProjects }: Props) => {
+	useEffect(() => {
+		function handleMessage(ev: MessageEvent) {
+			if (ev.data.projects) {
+				getProjects(ev.data.projects)
+			}
 		}
-	}
 
-	public componentDidMount() {
-		window.addEventListener('message', this.handleMessage)
-	}
+		window.addEventListener('message', handleMessage)
 
-	public componentWillUnmount() {
-		window.removeEventListener('message', this.handleMessage)
-	}
+		return () => window.removeEventListener('message', handleMessage)
+	}, [])
 
-	public render() {
-		return (
-			<S.Main>
-				<Controls />
-				<Canvas />
-			</S.Main>
-		)
-	}
+	return (
+		<main className="main">
+			<Controls />
+			<Canvas />
+		</main>
+	)
 }

@@ -1,7 +1,7 @@
 import { createAction, createReducer, Dispatch } from 'redux-act'
 
 interface IState {
-	files: IFileList
+	files: Array<IFile>
 	results: IValidation
 }
 
@@ -12,20 +12,20 @@ const initialState: IState = {
 
 export const reducer = createReducer<typeof initialState>({}, initialState)
 
-export const postFiles = createAction<IFileList, 'POST_FILES'>('POST_FILES')
-export const validateProject = createAction<IProject[], 'STATE_VALIDATION'>('STATE_VALIDATION')
+export const postFiles = createAction<Array<IFile>, 'POST_FILES'>('POST_FILES')
+export const validateProject = createAction<Array<IProject>, 'STATE_VALIDATION'>('STATE_VALIDATION')
 
-reducer.on(postFiles, (state: IState, files: IFileList = []) => ({
+reducer.on(postFiles, (state: IState, files: Array<IFile> = []) => ({
 	...state,
 	files: [...files],
 }))
 
-reducer.on(validateProject, (state: IState, projects: IProject[]) => {
-	const trimExtenstion = (string: string): string => string.replace(/\.[^/.]+$/, '')
+reducer.on(validateProject, (state: IState, projects: Array<IProject>) => {
+	const trimExtenstion = (str: string): string => str.replace(/\.[^/.]+$/, '')
 	const toMegabytes = (value: number): string => (value / 1024 ** 2).toFixed(2) + 'MB'
 	const toKilobytes = (value: number): string => (value / 1024).toFixed(2) + 'KB'
 
-	const extractImageNames = function (skin: { [x: string]: any }, collection: Set<string>) {
+	const extractImageNames = (skin: { [x: string]: any }, collection: Set<string>) => {
 		Object.keys(skin).forEach(key => {
 			const image = skin[key]
 			if (image.path) {
@@ -45,14 +45,14 @@ reducer.on(validateProject, (state: IState, projects: IProject[]) => {
 		const projectImages = project.imageFiles.map(({ name }) => trimExtenstion(name))
 
 		project.spines.forEach(spine => {
-			for (let [, value] of Object.entries(spine.skeletonJson.skins)) {
-				for (let i in value as any) {
+			for (const [, value] of Object.entries(spine.skeletonJson.skins)) {
+				for (const i in value as any) {
 					extractImageNames((value as any)[i], requiredImagesSet)
 				}
 			}
 		})
 
-		const requiredImages = [...requiredImagesSet]
+		const requiredImages = [...(requiredImagesSet as any)]
 		const res: Ivalidation['images'] = {
 			size: 0,
 			unused: projectImages.filter(image => !requiredImages.includes(image)),
@@ -83,7 +83,7 @@ reducer.on(validateProject, (state: IState, projects: IProject[]) => {
 	}
 })
 
-export const postFilesAsync = (files: IFileList): any => (dispatch: Dispatch) => {
+export const postFilesAsync = (files: Array<IFile>): any => (dispatch: Dispatch) => {
 	dispatch(postFiles(files))
 	return Promise.resolve(files)
 }

@@ -1,0 +1,64 @@
+@import 'themes/colors.scss';
+
+.collapse {
+	&_panel {
+		transition: all 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+		&_header {
+			display: flex;
+			align-items: center;
+			color: var(--black-85);
+		}
+
+		&_section {
+			&_title {
+				margin-bottom: 0.0625rem;
+				color: var(--black-65);
+				font-weight: normal;
+			}
+		
+			& + & {
+				margin-top: 0.3125rem;
+			}
+		
+			border-color: var(--alto !important);
+		}
+
+	}
+}
+
+.ant-collapse-wrapper {
+	.ant-collapse {
+		background: var(--alabaster);
+		border-color: var(--alto);
+		
+		&-header {
+			background: var(--alabaster);
+			padding: 0.5rem 1rem !important;
+			padding-left: 2.5rem !important;
+			font-weight: bold;
+		}
+
+		&-content {
+			background: var(--snowy);
+			border-color: var(--alto);
+		}
+
+		&-content-box {
+			padding: 0.3125rem 0.625rem;
+		}
+
+		&-arrow {
+			color: var(--black-85) !important;
+		}
+
+		&-item {
+			border-color: var(--alto);
+		}
+	}
+
+	.ant-icon {
+		font-size: 20px;
+		margin-left: 0.625rem;
+	}
+}

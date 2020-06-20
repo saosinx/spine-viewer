@@ -1,47 +1,78 @@
-interface IFile {
-	lastModified: number
-	name: string
-	size: number
-	type: string
-	webkitRelativePath: string
+interface IFile extends File {
+	readonly size: number
+	readonly type: string
+	readonly webkitRelativePath: string
 }
 
-interface IFileList extends Array {
-	[Symbol.iterator](): IterableIterator<IFile>
+interface IFileList {
+	[Symbol.iterator](): IterableIterator<File>
+}
+
+interface IImageFile extends IFile {}
+interface ISkeletonFile extends IFile {}
+
+interface ISlot {
+	readonly attachment: string
+	readonly blend: string
+	readonly bone: string
+	readonly name: string
+}
+
+interface IBone {
+	readonly name: string
+	readonly parent?: string
+	readonly x?: number
+	readonly y?: number
 }
 
 interface ISpine {
-	animations: string[]
-	skeletonFile: IFile
-	skeletonJson: {
-		animations: {
-			[s: string]: unknown
+	readonly animations: Array<string>
+	readonly skeletonFile: ISkeletonFile
+	readonly skeletonJson: {
+		readonly animations: {
+			[key: string]: unknown
 		}
-		bones: ArrayLike<unknown>
-		skeleton: {
+		readonly bones: Array<IBone>
+		readonly skeleton: {
+			audio: string
 			hash: string
-			height: number
+			images: string
 			spine: string
+			height: number
 			width: number
 		}
-		skins: { [s: string]: unknown } | ArrayLike<unknown>
-		slots: ArrayLike<unknown>
+
+		readonly skins:
+			| {
+					[key: string]: {
+						[key: string]: {
+							height: number
+							name: string
+							scaleX: number
+							scaleY: number
+							width: number
+							y: number
+						}
+					}
+			  }
+			| ['default']
+		readonly slots: Array<ISlot>
 	}
-	skins: string[]
+	readonly skins: Array<string>
 }
 
 interface IProject {
-	base: string
-	imageFiles: IFile[]
-	imagesMap: Object
-	spines: ISpine[]
+	readonly base: string
+	readonly imageFiles: Array<IImageFile>
+	readonly imagesMap: Object
+	readonly spines: Array<ISpine>
 }
 
 interface Ivalidation {
 	images: {
 		size: string | number
-		unused: string[]
-		missed: string[]
+		unused: Array<string>
+		missed: Array<string>
 	}
 }
 

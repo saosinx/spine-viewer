@@ -1,0 +1,14 @@
+@import 'themes/colors.scss';
+
+.main {
+	background: var(--white);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+	min-height: 100vh;
+	min-width: fit-content;
+	transition:
+		background 250ms ease-out,
+		border-color 250ms ease-out,
+		color 250ms ease-out;
+}
