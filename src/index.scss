@@ -1,4 +1,6 @@
-@import 'themes/themes.scss';
+@import 'css-vars/css-vars';
+
+$css-vars-use-native: true;
 
 * {
 	background-color: transparent;
