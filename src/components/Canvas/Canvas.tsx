@@ -7,34 +7,23 @@ export const Canvas = () => {
 	const [translation, setTranslation] = useState([0, 0])
 	const [isDrawing, setDrawingState] = useState(false)
 
-	const startTranslation = () => {
-		setDrawingState(true)
-	}
+	const startTranslation = (): void => setDrawingState(true)
+	const stopTranslation = (): void => setDrawingState(false)
 
-	const stopTranslation = () => {
-		setDrawingState(false)
-	}
+	const handleMouseUp = (): void | false => isDrawing && stopTranslation()
+	const handleMouseLeave = (): void | false => isDrawing && stopTranslation()
 
-	const handleMouseMove = (ev: React.MouseEvent<HTMLCanvasElement>) => {
+	const handleMouseMove = (ev: React.MouseEvent<HTMLCanvasElement>): void => {
 		if (!isDrawing) return
 
 		const newTranslation = [translation[0] + ev.movementX, translation[1] + ev.movementY]
 
 		setTranslation(newTranslation)
 
-		window.postMessage(
-			{
-				translation: newTranslation,
-			},
-			'*'
-		)
+		window.postMessage({ translation: newTranslation }, '*')
 	}
 
-	const handleMouseUp = () => isDrawing && stopTranslation()
-
-	const handleMouseLeave = () => isDrawing && stopTranslation()
-
-	const handleMouseDown = (ev: React.MouseEvent<HTMLCanvasElement>) => {
+	const handleMouseDown = (ev: React.MouseEvent<HTMLCanvasElement>): void => {
 		!ev.button && startTranslation()
 
 		if (ev.button === 2) {
@@ -48,7 +37,7 @@ export const Canvas = () => {
 		}
 	}
 
-	const handleWheel = (ev: React.WheelEvent<HTMLCanvasElement>) => {
+	const handleWheel = (ev: React.WheelEvent<HTMLCanvasElement>): void => {
 		const k = ev.deltaY < 0 ? 1.1 : 0.9
 		const newZoom = zoom * k
 
@@ -57,7 +46,7 @@ export const Canvas = () => {
 		window.postMessage({ zoom: newZoom }, '*')
 	}
 
-	const handleContextMenu = (ev: React.MouseEvent<HTMLCanvasElement>) => ev.preventDefault()
+	const handleContextMenu = (ev: React.MouseEvent<HTMLCanvasElement>): void => ev.preventDefault()
 
 	return (
 		<div className="canvas-container">

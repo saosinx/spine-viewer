@@ -1,11 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import cn from 'classnames'
 
-import { dispatch } from '../../store'
 import { ITheme, themes } from '../../themes'
-import { setTheme, ThemeMode, Themes } from './reducer'
 
 import './styles.scss'
+
+export enum Themes {
+	light = 'light',
+	dark = 'dark',
+}
+
+export type ThemeMode = Themes.light | Themes.dark
 
 export const ThemeSwitcher = () => {
 	const [isChecked, setInputState] = useState(
@@ -17,7 +22,6 @@ export const ThemeSwitcher = () => {
 	}
 
 	const toogleTheme = (theme: ThemeMode): void => {
-		dispatch(setTheme(theme))
 		const newTheme: ITheme | undefined = themes.find(({ name }) => name === theme)
 		if (!newTheme) return
 		const rootElement = document.documentElement
@@ -35,6 +39,23 @@ export const ThemeSwitcher = () => {
 		toogleTheme(theme)
 		saveLocalTheme(theme)
 	}
+
+	const init = () => {
+		switch (localStorage.getItem('theme')) {
+			case Themes.light:
+				toogleTheme(Themes.light)
+				break
+			case Themes.dark:
+				toogleTheme(Themes.dark)
+				break
+			default:
+				saveLocalTheme(Themes.light)
+				toogleTheme(Themes.light)
+				break
+		}
+	}
+
+	useEffect(() => init(), [])
 
 	return (
 		<div className="theme-switcher">
